@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-    experimental: {
-        serverComponentsExternalPackages: ["typeorm"],
-        pageDataCollectionTimeout: 200000,
-      },
+  experimental: {
+    serverComponentsExternalPackages: ["typeorm"],
+  },
 }
 
 module.exports = nextConfig

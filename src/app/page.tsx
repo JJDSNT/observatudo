@@ -5,7 +5,7 @@ import Eixos from './components/Eixos';
 import Link from 'next/link';
 
 const Home = () => {
-
+/*
   const [codigoEstadoSelecionado, setCodigoEstadoSelecionado] = useState<number | null>(null);
   const [codigoCidadeSelecionada, setCodigoCidadeSelecionada] = useState<number | null>(null);
   const [numeroEixoSelecionado, setNumeroEixoSelecionado] = useState<number | null>(null);
@@ -53,6 +53,10 @@ const Home = () => {
       )}
     </div>
   );
+*/
+return (
+  <div>A</div>
+);
 };
 
 export default Home;
