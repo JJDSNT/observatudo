@@ -9,7 +9,7 @@ import { Fonte } from "@/app/models/Fonte"
 import { Eixo, Eixos } from "../models/Eixo";
 import { ValorIndicador } from "../models/ValorIndicador";
 
-
+/*
 export class CreateDataController {
 
   public async createData() {
@@ -196,3 +196,4 @@ export class CreateDataController {
 
   }
 }
+*/

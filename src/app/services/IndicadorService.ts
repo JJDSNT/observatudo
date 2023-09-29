@@ -23,7 +23,7 @@ export class IndicadorService {
     );
   }
 
-
+/*
   async buscarIndicadoresPorEixo(eixoId: number): Promise<Indicador[]> {
     return await indicadorRepository.createQueryBuilder("indicador")
       .leftJoin("indicador.eixos", "eixo")
@@ -99,5 +99,7 @@ async buscarIndicadoresComValoresPorEixo(localidadeId: number): Promise<any[]> {
     await this.indicadorRepository.remove(indicador);
     return true;
   }
+
+*/
 }
 

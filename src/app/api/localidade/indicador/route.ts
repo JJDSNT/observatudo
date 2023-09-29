@@ -3,8 +3,9 @@ import { NextResponse } from "next/server";
 import { Container } from 'typedi';
 import { LocalidadeController } from "@/app/controllers/LocalidadeController";
 
-export async function GET(): Promise<NextResponse> {
-  try {
+export async function GET() {
+  return Response.json("TODO");
+  /*try {
     const localidadeController = Container.get(LocalidadeController);
     const localidades = await localidadeController.getIndicadoresPorLocalidade();
     return NextResponse.json({ localidades });
@@ -13,5 +14,5 @@ export async function GET(): Promise<NextResponse> {
       return NextResponse.json({ message: error.message }, { status: 500 });
     }
     return NextResponse.json({ message: "Unknown error occurred" }, { status: 500 });
-  }
+  }*/
 }

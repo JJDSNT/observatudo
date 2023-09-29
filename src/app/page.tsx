@@ -6,20 +6,20 @@ import Link from 'next/link';
 
 const Home = () => {
 
-  const [codigoEstadoSelecionado, setCodigoEstadoSelecionado] = useState<string | null>(null);
-  const [codigoCidadeSelecionada, setCodigoCidadeSelecionada] = useState<string | null>(null);
+  const [codigoEstadoSelecionado, setCodigoEstadoSelecionado] = useState<number | null>(null);
+  const [codigoCidadeSelecionada, setCodigoCidadeSelecionada] = useState<number | null>(null);
   const [numeroEixoSelecionado, setNumeroEixoSelecionado] = useState<number | null>(null);
 
   const handleEixoSelecionado = (numeroEixo: number) => {
     setNumeroEixoSelecionado(numeroEixo);
   };
 
-  const handleEstadoSelecionado = (codigoEstado: string) => {
+  const handleEstadoSelecionado = (codigoEstado: number) => {
     console.log('Estado selecionado:', codigoEstado);
     setCodigoEstadoSelecionado(codigoEstado);
   };
 
-  const handleCidadeSelecionada = (codigoCidade: string) => {
+  const handleCidadeSelecionada = (codigoCidade: number) => {
     console.log('Cidade selecionada:', codigoCidade)
     setCodigoCidadeSelecionada(codigoCidade);
   };

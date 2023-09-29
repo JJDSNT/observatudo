@@ -5,7 +5,6 @@ import { Cidade } from '@/app/models/Cidade';
 import { LocalidadeService } from '../services/LocalidadeService';
 
 
-
 @Service()
 export class LocalidadeController {
   private localidadeService: LocalidadeService;
@@ -25,18 +24,18 @@ export class LocalidadeController {
   public async getCidades(): Promise<Cidade[] | null> {
     return this.localidadeService.getCidades();
   }
-
+/*
   public async getCidadesByEstado(estadoId?: number | undefined): Promise<Cidade[] | Cidade | null> {
     return this.localidadeService.getCidadesByEstado(estadoId);
   }
-
+*/
   public async getEstadosECidades(): Promise<{ estado: Estado, cidades: Cidade[] }[] | null> {
-    console.log('getestadosecidades')
+    console.log('localidadeController: getestadosecidades')
     return this.localidadeService.getEstadosECidades();
   }
-
+/*
   public async getIndicadoresPorLocalidade(): Promise<Localidade[] | null> {
     return this.localidadeService.getIndicadoresPorLocalidade2();
   }
-
+*/
 }

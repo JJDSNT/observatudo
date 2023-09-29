@@ -18,7 +18,7 @@ export class EstadoService {
     let estados = await EstadoRepository.find();
     return estados;
   }
-
+/*
   public async buscarEstadoPorUF(uf: string): Promise<Estado | undefined> {
     const estados = await this.estadoRepository.getEstados();
     return estados.find((estado) => estado.uf === uf);
@@ -35,5 +35,5 @@ export class EstadoService {
     }
     return null;
   }
-
+*/
 }

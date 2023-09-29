@@ -53,7 +53,7 @@ export class LocalidadeService {
 
   }
 
-
+/*
 
   public async getIndicadoresPorLocalidade() : Promise<Localidade[] | null> {
     const localidades = await this.localidadeRepository.find({
@@ -107,7 +107,7 @@ export class LocalidadeService {
     return result;
   }
 
-  
+
   public async getCidadesByEstado(estadoId: number | undefined): Promise<Cidade[] | null> {
     const estado = await this.getEstadoById(estadoId);
     if (estado) {
@@ -171,6 +171,6 @@ export class LocalidadeService {
     }
     return localidade;
   }
-
+*/
 
 }

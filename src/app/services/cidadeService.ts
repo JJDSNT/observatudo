@@ -1,17 +1,21 @@
-import { Cidade } from '../models/Cidade';
-import { CidadeRepository } from '../repositories/cidadeRepository';
+import { Cidade } from '@/app/models/Cidade';
+import { CidadeRepository } from '@/app/repositories/CidadeRepository';
 
 export class CidadeService {
-  private cidadeRepository: CidadeRepository;
+
+  //private cidadeRepository: CidadeRepository;
 
   constructor() {
-    this.cidadeRepository = new CidadeRepository();
+  //  this.cidadeRepository = new CidadeRepository();
   }
 
   public async getCidades(estadoId: number): Promise<Cidade[] | null> {
-    return this.cidadeRepository.getCidadesByEstado(estadoId);
+    //return this.cidadeRepository.getCidadesByEstado(estadoId);
+    console.log('getcidades services');
+    let cidades = await CidadeRepository.find();
+    return cidades;
   }
-
+/*
   public async getCidadeByIBGE(estadoId: number): Promise<Cidade[] | null> {
     return this.cidadeRepository.getCidadesByEstado(estadoId);
   }
@@ -19,4 +23,5 @@ export class CidadeService {
   public async getCidadesByEstado(estadoId: number): Promise<Cidade[] | null> {
     return this.cidadeRepository.getCidadesByEstado(estadoId);
   }
+*/  
 }

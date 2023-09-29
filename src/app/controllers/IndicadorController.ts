@@ -23,7 +23,7 @@ export class IndicadorController {
       return error;
     }
   }
-
+/*
   async listarIndicadoresAgrupadosPorEixo() {
     try {
       const indicadores = await this.indicadorService.listarIndicadoresAgrupadosPorEixo();
@@ -146,6 +146,8 @@ export class IndicadorController {
       return res.status(500).json({ message: "Erro ao excluir o indicador" });
     }
   }
+
+  */
 }
 
 export default IndicadorController;

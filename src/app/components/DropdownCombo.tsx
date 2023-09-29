@@ -26,12 +26,11 @@ const DropdownCombo: React.FC<DropdownComboProps> = ({ onEstadoSelecionado, onCi
 
   useEffect(() => {
     const fetchEstadosECidades = async () => {
-      console.log('oi');
+
       try {
         const response = await httpClient.get('/api/localidade');
         const data = response.data; 
 
-        console.log(data);
         if (data && data.estados) {
           setEstados(data.estados);
           setEstadoSelecionado(data.estados[0] || null);
