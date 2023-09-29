@@ -1,5 +1,5 @@
 import React, { ReactElement, useEffect, useState } from 'react';
-import axios from 'axios';
+import httpClient from '@/app/utils/httpClient';
 import { IconContext } from 'react-icons';
 import { FaBicycle, FaGlobeAmericas, FaHeartbeat, FaHome, FaMoneyBillWave, FaQuestion, FaUserGraduate, FaShieldAlt } from 'react-icons/fa';
 
@@ -27,7 +27,7 @@ const Eixos: React.FC<EixosProps>= ({ onEixoSelecionado }) => {
   useEffect(() => {
     const fetchEixos = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/eixos');
+        const response = await httpClient.get('/api/eixos');
         setEixos(response.data.eixos);
       } catch (error) {
         console.error('Erro ao buscar os eixos:', error);
