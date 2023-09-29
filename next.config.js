@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+
+const nextConfig = {
+    experimental: {
+        serverComponentsExternalPackages: ["typeorm"],
+      },
+}
 
 module.exports = nextConfig

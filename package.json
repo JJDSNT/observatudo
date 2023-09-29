@@ -9,17 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^1.5.1",
+    "next": "latest",
+    "oracledb": "^6.1.0",
     "react": "latest",
     "react-dom": "latest",
-    "next": "latest"
+    "react-icons": "^4.11.0",
+    "typedi": "^0.10.0",
+    "typeorm": "^0.3.17"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "@types/react": "latest",
     "@types/node": "latest",
+    "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
     "postcss": "latest",
-    "tailwindcss": "latest"
+    "tailwindcss": "latest",
+    "typescript": "latest"
   }
 }
