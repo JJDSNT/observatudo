@@ -1,5 +1,5 @@
 import "reflect-metadata"
-import DB from '../database/config/ormconfig_seminit'
+//import DB from '../database/config/ormconfig_seminit'
 import { Localidade } from "../models/Localidade";
 import { Pais } from "@/app/models/Pais";
 import { Estado } from "../models/Estado";
