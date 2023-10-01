@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 import { Service } from 'typedi';
 import { Indicador } from '../models/Indicador';
-import { IndicadorService } from "../services/IndicadorService";
+import { IndicadorService } from "@/app/services/IndicadorService";
 
 
 @Service()
@@ -23,7 +23,7 @@ export class IndicadorController {
       return error;
     }
   }
-/*
+
   async listarIndicadoresAgrupadosPorEixo() {
     try {
       const indicadores = await this.indicadorService.listarIndicadoresAgrupadosPorEixo();
@@ -44,11 +44,11 @@ export class IndicadorController {
     }
   }
 
-
+/*
   async listarIndicadoresPorEixo(req: Request, res: Response) {
     try {
-      const { eixoId } = req.params;
-
+      //const { eixoId } = req.params;
+const eixoId = 1;
       const indicadores = await this.indicadorService.buscarIndicadoresPorEixo(Number(eixoId));
 
       if (indicadores.length === 0) {
@@ -147,7 +147,8 @@ export class IndicadorController {
     }
   }
 
-  */
+*/
+
 }
 
 export default IndicadorController;

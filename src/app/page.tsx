@@ -12,17 +12,6 @@ const Home = () => {
   const [codigoCidadeSelecionada, setCodigoCidadeSelecionada] = useState<number | null>(null);
   const [numeroEixoSelecionado, setNumeroEixoSelecionado] = useState<number | null>(null);
 
-  // Efeito de inicialização
-  useEffect(() => {
-    // Inicializar o banco de dados quando a página é carregada
-    initializeDatabase();
-
-    // Função de limpeza (encerramento do banco de dados) quando a página é descarregada
-    return () => {
-    closeDatabase();
-    };
-  }, []);
-
   const handleEixoSelecionado = (numeroEixo: number) => {
     setNumeroEixoSelecionado(numeroEixo);
   };

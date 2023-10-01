@@ -25,7 +25,6 @@ const Eixos: React.FC<EixosProps> = ({ onEixoSelecionado }) => {
   };
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
       const fetchEixos = async () => {
         try {
           const response = await httpClient.get('/api/eixos');
@@ -36,7 +35,6 @@ const Eixos: React.FC<EixosProps> = ({ onEixoSelecionado }) => {
       };
 
       fetchEixos();
-    }
   }, []);
 
 

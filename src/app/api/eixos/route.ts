@@ -1,4 +1,5 @@
 import { Container } from 'typedi';
+import { closeDatabase } from '@/app/infra/database'
 import { EixoController } from "@/app/controllers/EixoController";
 
 

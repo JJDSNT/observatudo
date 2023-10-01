@@ -58,19 +58,19 @@ export const initializeDatabase = async (): Promise<void> => {
             console.log(`Data Source has been initialized`);
         } catch (error) {
             console.error(`Data Source initialization error: `, error);
-            process.exit(1);
+            //process.exit(1);
         }
     }
 };
 
 export const closeDatabase = async (): Promise<void> => {
-    if (!AppDataSource.isInitialized) {
+    if (AppDataSource.isInitialized) {
         try {
             await AppDataSource.destroy();
             console.log(`Data Source has been closed`);
         } catch (error) {
             console.error(`Data Source closing error: `, error);
-            process.exit(1);
+            //process.exit(1);
         }
     }
 };

@@ -110,15 +110,3 @@ export class Indicador {
 
 
 
-/*
-  @Column("jsonb")
-  valores!: Map<Date, number>;
- 
-  getValores2(): Map<Date, number> {
-    return this.valores;
-  }
- 
-  getValor2(date: Date): number | undefined {
-    return this.valores.get(date);
-  }
-*/

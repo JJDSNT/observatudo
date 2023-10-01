@@ -2,8 +2,8 @@ import { Service } from 'typedi';
 import { In, Repository } from 'typeorm';
 
 
-import { Indicador } from "../models/Indicador";
-import { IndicadorRepository } from "../repositories/IndicadorRepository"
+import { Indicador } from "@/app/models/Indicador";
+import { IndicadorRepository } from "@/app/repositories/IndicadorRepository"
 
 @Service()
 export class IndicadorService {
@@ -23,16 +23,16 @@ export class IndicadorService {
     );
   }
 
-/*
+
   async buscarIndicadoresPorEixo(eixoId: number): Promise<Indicador[]> {
-    return await indicadorRepository.createQueryBuilder("indicador")
+    return await this.indicadorRepository.createQueryBuilder("indicador")
       .leftJoin("indicador.eixos", "eixo")
       .where("eixo.id = :eixoId", { eixoId })
       .getMany();
   }
 
   async listarIndicadoresAgrupadosPorEixo() {
-    const indicadores = await indicadorRepository
+    const indicadores = await this.indicadorRepository
       .createQueryBuilder('indicador')
       .leftJoinAndSelect('indicador.eixo', 'eixo')
       .select('eixo.nome', 'nomeEixo')
@@ -53,7 +53,7 @@ async buscarIndicadoresComValoresPorEixo(localidadeId: number): Promise<any[]> {
     .getMany();
 }
 
-
+/*
   async criarIndicador(nome: string, descricao: string, eixos: number[]): Promise<Indicador> {
     const indicador = new Indicador();
     indicador.nome = nome;
@@ -99,7 +99,6 @@ async buscarIndicadoresComValoresPorEixo(localidadeId: number): Promise<any[]> {
     await this.indicadorRepository.remove(indicador);
     return true;
   }
-
 */
 }
 
