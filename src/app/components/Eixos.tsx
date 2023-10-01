@@ -14,7 +14,7 @@ interface EixosProps {
   onEixoSelecionado: (numeroEixo: number) => void;
 }
 
-const Eixos: React.FC<EixosProps>= ({ onEixoSelecionado }) => {
+const Eixos: React.FC<EixosProps> = ({ onEixoSelecionado }) => {
   const [eixos, setEixos] = useState<Eixo[]>([]);
 
   const [eixoSelecionado, setEixoSelecionado] = useState<number | null>(null);
@@ -25,17 +25,20 @@ const Eixos: React.FC<EixosProps>= ({ onEixoSelecionado }) => {
   };
 
   useEffect(() => {
-    const fetchEixos = async () => {
-      try {
-        const response = await httpClient.get('/api/eixos');
-        setEixos(response.data.eixos);
-      } catch (error) {
-        console.error('Erro ao buscar os eixos:', error);
-      }
-    };
+    if (typeof window !== 'undefined') {
+      const fetchEixos = async () => {
+        try {
+          const response = await httpClient.get('/api/eixos');
+          setEixos(response.data.eixos);
+        } catch (error) {
+          console.error('Erro ao buscar os eixos:', error);
+        }
+      };
 
-    fetchEixos();
+      fetchEixos();
+    }
   }, []);
+
 
   const renderIcon = (icon: string): React.ReactElement | null => {
     switch (icon) {

@@ -1,14 +1,27 @@
 'use client'
 import React, { useState, useEffect } from 'react';
+
+import { initializeDatabase, closeDatabase } from '@/app/infra/database';
 import DropdownCombo from './components/DropdownCombo';
 import Eixos from './components/Eixos';
 import Link from 'next/link';
 
 const Home = () => {
-/*
+
   const [codigoEstadoSelecionado, setCodigoEstadoSelecionado] = useState<number | null>(null);
   const [codigoCidadeSelecionada, setCodigoCidadeSelecionada] = useState<number | null>(null);
   const [numeroEixoSelecionado, setNumeroEixoSelecionado] = useState<number | null>(null);
+
+  // Efeito de inicialização
+  useEffect(() => {
+    // Inicializar o banco de dados quando a página é carregada
+    initializeDatabase();
+
+    // Função de limpeza (encerramento do banco de dados) quando a página é descarregada
+    return () => {
+    closeDatabase();
+    };
+  }, []);
 
   const handleEixoSelecionado = (numeroEixo: number) => {
     setNumeroEixoSelecionado(numeroEixo);
@@ -53,10 +66,8 @@ const Home = () => {
       )}
     </div>
   );
-*/
-return (
-  <div>A</div>
-);
+
 };
+
 
 export default Home;

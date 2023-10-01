@@ -25,8 +25,8 @@ const DropdownCombo: React.FC<DropdownComboProps> = ({ onEstadoSelecionado, onCi
 
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
     const fetchEstadosECidades = async () => {
-
       try {
         const response = await httpClient.get('/api/localidade');
         const data = response.data; 
@@ -42,6 +42,7 @@ const DropdownCombo: React.FC<DropdownComboProps> = ({ onEstadoSelecionado, onCi
     };
 
     fetchEstadosECidades();
+  }
   }, []);
 
   const handleEstadoChange = (event: React.ChangeEvent<HTMLSelectElement>) => {

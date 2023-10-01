@@ -52,12 +52,26 @@ export const AppDataSource = new DataSource({
 });
 
 export const initializeDatabase = async (): Promise<void> => {
-    try {
-        await AppDataSource.initialize();
-        console.log(`Data Source has been initialized`);
-    } catch (error) {
-        console.error(`Data Source initialization error: `,error);
-        process.exit(1);
+    if (!AppDataSource.isInitialized) {
+        try {
+            await AppDataSource.initialize();
+            console.log(`Data Source has been initialized`);
+        } catch (error) {
+            console.error(`Data Source initialization error: `, error);
+            process.exit(1);
+        }
+    }
+};
+
+export const closeDatabase = async (): Promise<void> => {
+    if (!AppDataSource.isInitialized) {
+        try {
+            await AppDataSource.destroy();
+            console.log(`Data Source has been closed`);
+        } catch (error) {
+            console.error(`Data Source closing error: `, error);
+            process.exit(1);
+        }
     }
 };
 
