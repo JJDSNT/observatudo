@@ -5,8 +5,9 @@ if (!AppDataSource.isInitialized) {
     try {
         await AppDataSource.initialize();
     } catch (err) {
-        console.error(`Data Source initialization error`, err);
+        console.error(`#####EIXO: Data Source initialization error`, err);
     }
 }
 
+console.log("##########EIXOS peguei o repositorio");
 export const EixoRepository = AppDataSource.manager.getRepository(Eixo);

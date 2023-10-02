@@ -1,4 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn, ManyToMany, JoinTable, Unique } from 'typeorm';
+import type { Relation } from "typeorm";
 import { Indicador } from "./Indicador";
 
 export enum Eixos {
@@ -28,7 +29,7 @@ export class Eixo {
 
   @ManyToMany('Indicador', 'eixos')
   @JoinTable({ name: "indicador_eixo" })
-  indicadores!: Indicador[];
+  indicadores!: Relation<Indicador[]>;
   
   getIndicadores(): Indicador[] {
     return this.indicadores;

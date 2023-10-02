@@ -14,16 +14,17 @@ export class IndicadorController {
   }
 
 
-  async buscarTodosIndicadores(_req: Request) {
+  async buscarTodosIndicadores() {
     try {
       const indicadores = await this.indicadorService.buscarTodosIndicadores();
+      console.log ("#######Indicadores controller");
       return indicadores;
     } catch (error) {
-      console.error("Erro ao buscar os indicadores:", error);
+      console.error("Erro ao buscar todo os indicadores:", error);
       return error;
     }
   }
-
+/*
   async listarIndicadoresAgrupadosPorEixo() {
     try {
       const indicadores = await this.indicadorService.listarIndicadoresAgrupadosPorEixo();
@@ -44,7 +45,7 @@ export class IndicadorController {
     }
   }
 
-/*
+
   async listarIndicadoresPorEixo(req: Request, res: Response) {
     try {
       //const { eixoId } = req.params;

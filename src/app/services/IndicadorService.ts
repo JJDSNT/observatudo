@@ -15,15 +15,16 @@ export class IndicadorService {
   
 
   async buscarTodosIndicadores(): Promise<Indicador[]> {
+    console.log("########Indicador service");
     return await this.indicadorRepository.find(
       {
-        relations: ['eixos'],
+        //relations: ['eixos'],
         //loadRelationIds: true,
       }
     );
   }
 
-
+/*
   async buscarIndicadoresPorEixo(eixoId: number): Promise<Indicador[]> {
     return await this.indicadorRepository.createQueryBuilder("indicador")
       .leftJoin("indicador.eixos", "eixo")
@@ -53,7 +54,7 @@ async buscarIndicadoresComValoresPorEixo(localidadeId: number): Promise<any[]> {
     .getMany();
 }
 
-/*
+
   async criarIndicador(nome: string, descricao: string, eixos: number[]): Promise<Indicador> {
     const indicador = new Indicador();
     indicador.nome = nome;

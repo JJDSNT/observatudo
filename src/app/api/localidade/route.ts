@@ -6,8 +6,10 @@ import { LocalidadeController } from "@/app/controllers/LocalidadeController";
 export async function GET() {
 
   try {
+    console.log("########LOCALIDADE Route START");
     const localidadeController = Container.get(LocalidadeController);
     const estados = await localidadeController.getEstadosECidades();
+    console.log("########LOCALIDADE Route RETORNA");
     return Response.json({ estados });
   } catch (error: unknown) {
     if (error instanceof Error) {

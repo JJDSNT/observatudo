@@ -1,5 +1,5 @@
+//import { NextResponse } from "next/server";
 import { Container } from 'typedi';
-import { closeDatabase } from '@/app/infra/database'
 import { EixoController } from "@/app/controllers/EixoController";
 
 
@@ -19,7 +19,7 @@ const eixos = [
     try {
       const eixoController = Container.get(EixoController);
       const eixos = await eixoController.getEixos();
-      console.log("########EIXOS Route");
+      console.log("########Indicadores EIXOS Route");
       return Response.json({ eixos });
     } catch (error: unknown) {
       if (error instanceof Error) {

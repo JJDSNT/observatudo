@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import type { Relation } from "typeorm";
 import { Indicador } from "./Indicador";
 
 @Entity()
@@ -13,5 +14,5 @@ export class Fonte {
   url!: string;
 
   @OneToMany('Indicador', 'fonte')
-  indicadores!: Indicador[];
+  indicadores!: Relation<Indicador[]>;
 }
