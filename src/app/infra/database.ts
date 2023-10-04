@@ -40,7 +40,8 @@ options = {
     password: process.env.TYPEORM_PASSWORD,
     database: process.env.TYPEORM_DATABASE,
     connectString: process.env.TYPEORM_CONNECTSTRING,
-    logging: false,
+    logging: 'all',
+    logger: 'advanced-console',
     synchronize: false,
     entities: [Cidade, Eixo, Estado, Fonte, Indicador, Localidade, Pais, ValorIndicador],
 }
