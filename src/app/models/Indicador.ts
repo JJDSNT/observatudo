@@ -6,7 +6,7 @@ import { Fonte } from "./Fonte"
 import { ValorIndicador } from "./ValorIndicador"
 
 
-@Entity()
+@Entity({ name: 'indicador' })
 @Unique(['codigo_indicador', 'fonte'])
 export class Indicador {
   @PrimaryColumn()

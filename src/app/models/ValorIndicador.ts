@@ -3,7 +3,7 @@ import type { Relation } from "typeorm";
 import { Localidade } from "./Localidade";
 import { Indicador } from "./Indicador";
 
-@Entity()
+@Entity({ name: 'valor_indicador' })
 @Unique(['localidade', 'indicador','data'])
 export class ValorIndicador {
 

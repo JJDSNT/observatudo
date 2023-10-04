@@ -3,8 +3,9 @@ import type { Relation } from "typeorm";
 import { Localidade } from "./Localidade";
 import { Estado } from "./Estado";
 
-@Entity()
+@Entity({ name: 'cidade' })
 export class Cidade extends Localidade {
+
 
   constructor(codigo: number, nome: string) {
     super(codigo, nome);

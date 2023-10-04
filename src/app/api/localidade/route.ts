@@ -3,6 +3,8 @@ import { Container } from 'typedi';
 import { closeDatabase } from "@/app/infra/database"
 import { LocalidadeController } from "@/app/controllers/LocalidadeController";
 
+
+
 export async function GET() {
 
   try {

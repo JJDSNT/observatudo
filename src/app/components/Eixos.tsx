@@ -76,4 +76,16 @@ const Eixos: React.FC<EixosProps> = ({ onEixoSelecionado }) => {
   );
 };
 
+export async function getServerSideProps() {
+  // Lógica para buscar dados do servidor
+  const data = {};
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+
 export default Eixos;

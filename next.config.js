@@ -2,8 +2,10 @@
 
 const nextConfig = {
   staticPageGenerationTimeout: 300000,
+  
   experimental: {
-    //serverComponentsExternalPackages: ["typeorm"],
+    serverComponentsExternalPackages: ["typeorm","typedi"],
+    serverMinification: false,
   },
 }
 

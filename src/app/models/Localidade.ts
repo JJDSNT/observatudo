@@ -5,7 +5,7 @@ import { Indicador } from "@/app/models/Indicador"
 import { ValorIndicador } from "@/app/models/ValorIndicador";
 
 
-@Entity()
+@Entity({ name: 'localidade' })
 export class Localidade {
   @PrimaryColumn()
   codigo!: number; // Código IBGE como chave primária

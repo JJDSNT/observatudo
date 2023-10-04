@@ -4,7 +4,7 @@ import { Localidade } from "./Localidade";
 import { Cidade } from "./Cidade";
 import { Estado } from "./Estado";
 
-@Entity()
+@Entity({ name: 'pais' })
 export class Pais extends Localidade {
   @PrimaryColumn()
   codigo!: number;

@@ -114,4 +114,17 @@ const DropdownCombo: React.FC<DropdownComboProps> = ({ onEstadoSelecionado, onCi
 
 };
 
+
+export async function getServerSideProps() {
+  // Lógica para buscar dados do servidor
+  const data = {};
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+
 export default DropdownCombo;

@@ -12,7 +12,7 @@ export enum Eixos {
   Personalizado = 'Personalizado',
 }
 
-@Entity()
+@Entity({ name: 'eixo' })
 @Unique(['nome'])
 export class Eixo {
   @PrimaryGeneratedColumn()

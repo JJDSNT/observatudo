@@ -3,7 +3,7 @@ import type { Relation } from "typeorm";
 import { Localidade } from "./Localidade";
 import { Cidade } from "./Cidade";
 
-@Entity()
+@Entity({ name: 'estado' })
 export class Estado extends Localidade {
   @PrimaryColumn()
   codigo!: number;

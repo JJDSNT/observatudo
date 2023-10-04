@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
 import type { Relation } from "typeorm";
 import { Indicador } from "./Indicador";
 
-@Entity()
+@Entity({ name: 'fonte' })
 export class Fonte {
   @PrimaryGeneratedColumn()
   id!: number;
