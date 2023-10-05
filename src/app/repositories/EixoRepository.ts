@@ -9,5 +9,4 @@ if (!AppDataSource.isInitialized) {
     }
 }
 
-console.log("##########EIXOS peguei o repositorio");
 export const EixoRepository = AppDataSource.manager.getRepository(Eixo);

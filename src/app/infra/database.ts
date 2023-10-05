@@ -40,7 +40,7 @@ options = {
     password: process.env.TYPEORM_PASSWORD,
     database: process.env.TYPEORM_DATABASE,
     connectString: process.env.TYPEORM_CONNECTSTRING,
-    logging: 'all',
+    logging: false,
     logger: 'advanced-console',
     synchronize: false,
     entities: [Cidade, Eixo, Estado, Fonte, Indicador, Localidade, Pais, ValorIndicador],
@@ -59,7 +59,7 @@ export const initializeDatabase = async (): Promise<void> => {
             console.log(`Data Source has been initialized`);
         } catch (error) {
             console.error(`######DATABASE: Data Source initialization error: `, error);
-            //process.exit(1);
+            process.exit(1);
         }
     }
 };

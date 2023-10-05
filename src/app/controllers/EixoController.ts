@@ -14,9 +14,9 @@ export class EixoController {
   public async getEixos(): Promise<Eixo[] | null> {
     return this.eixoService.getEixos();
   }
-/*
+
   public async getEixosComIndicadores(): Promise<Eixo[] | null> {
     return this.eixoService.getEixosComIndicadores();
   }
-*/
+
 }

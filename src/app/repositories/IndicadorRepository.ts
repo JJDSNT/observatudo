@@ -5,8 +5,8 @@ if (!AppDataSource.isInitialized) {
     try {
         await AppDataSource.initialize();
     } catch (err) {
-        console.error(`####INDICADOR: Data Source initialization error`, err);
+        console.error(`#####INDICADOR: Data Source initialization error`, err);
     }
 }
-console.log("##########INDICADORES peguei o repositorio");
+
 export const IndicadorRepository = AppDataSource.manager.getRepository(Indicador);

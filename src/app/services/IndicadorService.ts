@@ -13,12 +13,10 @@ export class IndicadorService {
   constructor() { }
 
   
-
   async buscarTodosIndicadores(): Promise<Indicador[]> {
-    console.log("########Indicador service");
     return await this.indicadorRepository.find(
       {
-        //relations: ['eixos'],
+        relations: ['eixos'],
         //loadRelationIds: true,
       }
     );

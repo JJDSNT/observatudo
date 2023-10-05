@@ -6,10 +6,9 @@ if (!AppDataSource.isInitialized) {
         await AppDataSource.initialize();
         console.log('database foi inicializado');
     } catch (err) {
-        console.error(`####ESTADO: Data Source initialization error`, err);
+        console.error(`#####ESTADO: Data Source initialization error`, err);
     }
 }
 
-console.log("##########ESTADO peguei o repositorio");
 export const EstadoRepository = AppDataSource.manager.getRepository(Estado);
 

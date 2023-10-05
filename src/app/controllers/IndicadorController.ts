@@ -17,7 +17,6 @@ export class IndicadorController {
   async buscarTodosIndicadores() {
     try {
       const indicadores = await this.indicadorService.buscarTodosIndicadores();
-      console.log ("#######Indicadores controller");
       return indicadores;
     } catch (error) {
       console.error("Erro ao buscar todo os indicadores:", error);
