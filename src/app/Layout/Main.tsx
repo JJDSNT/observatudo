@@ -1,43 +1,26 @@
-import React, { useState } from 'react';
-import DropdownCombo from '@/app/components/DropdownCombo';
-import Eixos from '@/app/components/Eixos';
-import Aside from './Aside';
-import { useInfoStore } from '@/app/stores/useInfoStore';
+import React from 'react';
+import Dashboard from './Pages/Dashboard';
+import ListarIndicadores from './Pages/ListarIndicadores';
+import { useSidebarStore } from '@/app/stores/useSidebarStore';
 
 const Main = () => {
-  const { estadoSelecionado, cidadeSelecionada, eixoSelecionado, setEstado, setCidade, setEixo } = useInfoStore();
 
+  const { activePage } = useSidebarStore();
 
   return (
     <main className="container mx-auto mt-10">
 
-      <header className="bg-gray-200 p-4 rounded-lg">
-        <DropdownCombo />
 
-      </header>
-      <hr />
-
-      {/* Conteúdo Principal */}
-      
-        <Eixos />
-        {/* Adicione seus componentes de dashboard aqui */}
-      
-
-
-      {estadoSelecionado && (
-        <p>O código do estado selecionado é: {estadoSelecionado}</p>
-      )}
-      {cidadeSelecionada && (
-        <p>O código da cidade selecionada é: {cidadeSelecionada.toString()}</p>
-      )}
-      {eixoSelecionado && (
-        <p>O número do eixo selecionado é: {eixoSelecionado}</p>
+      {activePage === 'dashboard' ? (
+        <Dashboard />
+      ) : (
+        <ListarIndicadores />
       )}
 
       {/* Rodapé */}
-      <footer className="mt-10">
+      <footer className="mt-10 flex items-center justify-center">
         <hr />
-        footer
+        <p>Desenvolvido com <span role="img" aria-label="Coração">❤️</span> dedicação.</p>
       </footer>
     </main>
   );

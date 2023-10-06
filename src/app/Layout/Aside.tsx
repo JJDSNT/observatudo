@@ -5,14 +5,23 @@ import React from 'react';
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { FaArrowsAltH, FaGithub, FaGlobeAmericas, FaHeartbeat, FaHome, FaList, FaMoneyBillWave, FaQuestion, FaUserGraduate, FaShieldAlt, FaCentercode } from 'react-icons/fa';
 import { useSidebarStore } from '@/app/stores/useSidebarStore';
+import { useInfoStore } from '@/app/stores/useInfoStore';
 import sidebarBg from './assets/bg.jpg';
 import avatar from './assets/avatar.jpg';
 
 
 
 const Aside = () => {
+  const { setEixo } = useInfoStore();
+  const { handleCollapsedChange, collapsed, toggled, setActivePage } = useSidebarStore();
 
-  const { handleCollapsedChange, collapsed, toggled, handleMenuItemClick } = useSidebarStore();
+  const handleMenuItemClick = (item: string | number): void => {
+    if (typeof item === 'number') {
+      setEixo(item);
+    } else {
+      setActivePage(item);
+    }
+  };
 
   return (
     <Sidebar
@@ -56,16 +65,16 @@ const Aside = () => {
           <MenuItem icon={<FaArrowsAltH />} onClick={() => handleCollapsedChange()}> Menu</MenuItem>
         </Menu>
         <Menu>
-          <MenuItem icon={<FaHeartbeat />}> Saúde</MenuItem>
-          <MenuItem icon={<FaUserGraduate />}> Educação</MenuItem>
-          <MenuItem icon={<FaHome />}> Assistência social</MenuItem>
-          <MenuItem icon={<FaShieldAlt />}> Segurança</MenuItem>
-          <MenuItem icon={<FaGlobeAmericas />}> Meio ambiente,<br />Urbanização &<br />Mobilidade</MenuItem>
-          <MenuItem icon={<FaMoneyBillWave />}> Economia & Finanças</MenuItem>
-          <MenuItem icon={<FaQuestion />}> Personalizado</MenuItem>
+          <MenuItem icon={<FaHeartbeat />} onClick={() => handleMenuItemClick(1)}> Saúde</MenuItem>
+          <MenuItem icon={<FaUserGraduate />} onClick={() => handleMenuItemClick(2)}> Educação</MenuItem>
+          <MenuItem icon={<FaHome />} onClick={() => handleMenuItemClick(3)}> Assistência social</MenuItem>
+          <MenuItem icon={<FaShieldAlt />} onClick={() => handleMenuItemClick(4)}> Segurança</MenuItem>
+          <MenuItem icon={<FaGlobeAmericas />} onClick={() => handleMenuItemClick(5)}> Meio ambiente,<br />Urbanização &<br />Mobilidade</MenuItem>
+          <MenuItem icon={<FaMoneyBillWave />} onClick={() => handleMenuItemClick(6)}> Economia & Finanças</MenuItem>
+          <MenuItem icon={<FaQuestion />} onClick={() => handleMenuItemClick(7)}> Personalizado</MenuItem>
         </Menu>
         <Menu>
-          <MenuItem icon={<FaList /> } onClick={() => handleMenuItemClick('listarIndicadores')}> Listar indicadores</MenuItem>
+          <MenuItem icon={<FaList />} onClick={() => handleMenuItemClick('listarIndicadores')}> Listar indicadores</MenuItem>
         </Menu>
       </Menu>
       <Menu rootStyles={{ textAlign: 'center' }}>

@@ -4,7 +4,7 @@ import { useSidebarStore } from "@/app/stores/useSidebarStore";
 import logo from "@/app/Layout/assets/logo.jpg";
 
 const Navbar = () => {
-  const { handleToggleSidebar, setToggled, toggled } = useSidebarStore();
+  const { activePage, handleToggleSidebar, setToggled, toggled } = useSidebarStore();
   return (
     <nav className="bg-blue-800 p-2" role="navigation">
       <div className="container mx-auto flex justify-between items-center">
@@ -18,7 +18,7 @@ const Navbar = () => {
           <FaBars />
         </button>
       </div>
-      agora: { toggled.toString() }
+      agora: { activePage.toString() }
     </nav>
   );
 };

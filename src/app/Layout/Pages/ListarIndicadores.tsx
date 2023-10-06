@@ -1,4 +1,3 @@
-// ListarIndicadores.js
 import React from 'react';
 
 function ListarIndicadores() {
