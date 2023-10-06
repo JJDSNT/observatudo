@@ -18,7 +18,8 @@
     "react-pro-sidebar": "^1.1.0-alpha.1",
     "sharp": "^0.32.6",
     "typedi": "^0.10.0",
-    "typeorm": "^0.3.17"
+    "typeorm": "^0.3.17",
+    "zustand": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "latest",

@@ -1,40 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from './Navbar';
 import Aside from './Aside';
 import Main from './Main';
 
+import { useSidebarStore } from '@/app/stores/useSidebarStore';
+
 function Layout() {
 
-  const [collapsed, setCollapsed] = useState<boolean>(false);
-  const [toggled, setToggled] = useState<boolean>(false);
-
-  const handleCollapsedChange = ():void => {
-    setCollapsed(!collapsed);
-  };
-
-  const handleToggleSidebar = ():void => {
-    setToggled(!toggled);
-  };
-
-  const handleBackdropClick = () => {
-    if (toggled) {
-      setToggled(false);
-    }
-  };
+  const { toggled, setToggled, handleBackdropClick } = useSidebarStore();
 
   return (
-  
-    <div className={`app ${toggled ? 'toggled' : ''}`} onClick={handleBackdropClick}>
-      <Navbar handleToggleSidebar={handleToggleSidebar} />
 
-      <Aside        
-        collapsed={collapsed}
-        toggled={toggled}
-        handleToggleSidebar={handleToggleSidebar}
-        handleCollapsedChange={handleCollapsedChange}
-        onBackdropClick={handleBackdropClick}
-      />
-      <Main />
+    <div className={`app ${toggled ? 'toggled' : ''}`} onClick={handleBackdropClick}>
+      <Navbar />
+      { toggled.toString() }
+      <div style={{ display: 'flex' }}>
+        <Aside />
+        <Main />
+      </div>
     </div>
   );
 }

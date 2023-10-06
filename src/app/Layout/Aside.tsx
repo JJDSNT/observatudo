@@ -1,21 +1,18 @@
-import React, { useState } from 'react';
-import { Sidebar, Menu, MenuItem, SidebarProps, sidebarClasses } from 'react-pro-sidebar';
+// https://github.com/azouaoui-med/react-pro-sidebar/blob/master/CHANGELOG.md
+
+
+import React from 'react';
+import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { FaArrowsAltH, FaGithub, FaGlobeAmericas, FaHeartbeat, FaHome, FaList, FaMoneyBillWave, FaQuestion, FaUserGraduate, FaShieldAlt, FaCentercode } from 'react-icons/fa';
+import { useSidebarStore } from '@/app/stores/useSidebarStore';
 import sidebarBg from './assets/bg.jpg';
 import avatar from './assets/avatar.jpg';
 
 
 
-interface Props {
-  collapsed: boolean;
-  toggled: boolean;
-  handleToggleSidebar: () => void;
-  handleCollapsedChange: () => void;
-  onBackdropClick: () => void;
-}
+const Aside = () => {
 
-const Aside = ({ collapsed, toggled, handleCollapsedChange }: Props) => {
-  
+  const { handleCollapsedChange, collapsed, toggled, handleMenuItemClick } = useSidebarStore();
 
   return (
     <Sidebar
@@ -68,7 +65,7 @@ const Aside = ({ collapsed, toggled, handleCollapsedChange }: Props) => {
           <MenuItem icon={<FaQuestion />}> Personalizado</MenuItem>
         </Menu>
         <Menu>
-          <MenuItem icon={<FaList />}> Listar indicadores</MenuItem>
+          <MenuItem icon={<FaList /> } onClick={() => handleMenuItemClick('listarIndicadores')}> Listar indicadores</MenuItem>
         </Menu>
       </Menu>
       <Menu rootStyles={{ textAlign: 'center' }}>

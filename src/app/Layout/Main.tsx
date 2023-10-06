@@ -1,34 +1,35 @@
 import React, { useState } from 'react';
 import DropdownCombo from '@/app/components/DropdownCombo';
 import Eixos from '@/app/components/Eixos';
+import Aside from './Aside';
+import { useInfoStore } from '@/app/stores/useInfoStore';
 
 const Main = () => {
-  const [codigoEstadoSelecionado, setCodigoEstadoSelecionado] = useState<number | null>(null);
-  const [codigoCidadeSelecionada, setCodigoCidadeSelecionada] = useState<number | null>(null);
+  const { estadoSelecionado, cidadeSelecionada, eixoSelecionado, setEstado, setCidade, setEixo } = useInfoStore();
+
+  
   const [numeroEixoSelecionado, setNumeroEixoSelecionado] = useState<number | null>(null);
 
   const handleEixoSelecionado = (numeroEixo: number) => {
     setNumeroEixoSelecionado(numeroEixo);
   };
-
+/*
   const handleEstadoSelecionado = (codigoEstado: number) => {
     console.log('Estado selecionado:', codigoEstado);
-    setCodigoEstadoSelecionado(codigoEstado);
+    setEstado(codigoEstado);
   };
 
   const handleCidadeSelecionada = (codigoCidade: number) => {
     console.log('Cidade selecionada:', codigoCidade)
-    setCodigoCidadeSelecionada(codigoCidade);
+    setCidade(codigoCidade);
   };
-
+*/
   return (
     <main className="container mx-auto mt-10">
 
       <header className="bg-gray-200 p-4 rounded-lg">
-        <DropdownCombo
-          onEstadoSelecionado={handleEstadoSelecionado}
-          onCidadeSelecionada={handleCidadeSelecionada}
-        />
+        <DropdownCombo />
+
       </header>
       <hr />
 
@@ -39,11 +40,11 @@ const Main = () => {
       
 
 
-      {codigoEstadoSelecionado && (
-        <p>O código do estado selecionado é: {codigoEstadoSelecionado}</p>
+      {estadoSelecionado && (
+        <p>O código do estado selecionado é: {estadoSelecionado}</p>
       )}
-      {codigoCidadeSelecionada && (
-        <p>O código da cidade selecionada é: {codigoCidadeSelecionada}</p>
+      {cidadeSelecionada && (
+        <p>O código da cidade selecionada é: {cidadeSelecionada.toString()}</p>
       )}
       {numeroEixoSelecionado && (
         <p>O número do eixo selecionado é: {numeroEixoSelecionado}</p>
