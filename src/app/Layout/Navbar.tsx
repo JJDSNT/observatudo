@@ -12,7 +12,7 @@ const Navbar = ({ handleToggleMenu }: Props) => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <div className="mr-3" id="navbar_avatar" style={{ border: 0 }}>
-            <img className="rounded-full" width={32} src={logo} alt="logo" />
+            <img className="rounded-full" width={32} src={logo.src} alt="logo" />
           </div>
           <h1 className="text-white text-lg font-bold">ObservaTudo</h1>
         </div>
