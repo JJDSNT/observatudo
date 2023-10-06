@@ -7,23 +7,7 @@ import { useInfoStore } from '@/app/stores/useInfoStore';
 const Main = () => {
   const { estadoSelecionado, cidadeSelecionada, eixoSelecionado, setEstado, setCidade, setEixo } = useInfoStore();
 
-  
-  const [numeroEixoSelecionado, setNumeroEixoSelecionado] = useState<number | null>(null);
 
-  const handleEixoSelecionado = (numeroEixo: number) => {
-    setNumeroEixoSelecionado(numeroEixo);
-  };
-/*
-  const handleEstadoSelecionado = (codigoEstado: number) => {
-    console.log('Estado selecionado:', codigoEstado);
-    setEstado(codigoEstado);
-  };
-
-  const handleCidadeSelecionada = (codigoCidade: number) => {
-    console.log('Cidade selecionada:', codigoCidade)
-    setCidade(codigoCidade);
-  };
-*/
   return (
     <main className="container mx-auto mt-10">
 
@@ -35,7 +19,7 @@ const Main = () => {
 
       {/* Conteúdo Principal */}
       
-        <Eixos onEixoSelecionado={handleEixoSelecionado} />
+        <Eixos />
         {/* Adicione seus componentes de dashboard aqui */}
       
 
@@ -46,8 +30,8 @@ const Main = () => {
       {cidadeSelecionada && (
         <p>O código da cidade selecionada é: {cidadeSelecionada.toString()}</p>
       )}
-      {numeroEixoSelecionado && (
-        <p>O número do eixo selecionado é: {numeroEixoSelecionado}</p>
+      {eixoSelecionado && (
+        <p>O número do eixo selecionado é: {eixoSelecionado}</p>
       )}
 
       {/* Rodapé */}

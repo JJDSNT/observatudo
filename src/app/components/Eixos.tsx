@@ -1,5 +1,6 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import httpClient from '@/app/utils/httpClient';
+import { useInfoStore } from '@/app/stores/useInfoStore';
 import { IconContext } from 'react-icons';
 import { FaBicycle, FaGlobeAmericas, FaHeartbeat, FaHome, FaMoneyBillWave, FaQuestion, FaUserGraduate, FaShieldAlt } from 'react-icons/fa';
 
@@ -10,33 +11,26 @@ interface Eixo {
   cor: string;
 }
 
-interface EixosProps {
-  onEixoSelecionado: (numeroEixo: number) => void;
-}
-
-const Eixos: React.FC<EixosProps> = ({ onEixoSelecionado }) => {
+const Eixos: React.FC = () => {
+  const { eixoSelecionado, setEixo } = useInfoStore();
   const [eixos, setEixos] = useState<Eixo[]>([]);
 
-  const [eixoSelecionado, setEixoSelecionado] = useState<number | null>(null);
-
-  const handleEixoSelecionado = (numeroEixo: number) => {
-    setEixoSelecionado(numeroEixo);
-    onEixoSelecionado(numeroEixo);
-  };
-
   useEffect(() => {
-      const fetchEixos = async () => {
-        try {
-          const response = await httpClient.get('/api/eixos');
-          setEixos(response.data.eixos);
-        } catch (error) {
-          console.error('Erro ao buscar os eixos:', error);
-        }
-      };
+    const fetchEixos = async () => {
+      try {
+        const response = await httpClient.get('/api/eixos');
+        setEixos(response.data.eixos);
+      } catch (error) {
+        console.error('Erro ao buscar os eixos:', error);
+      }
+    };
 
-      fetchEixos();
+    fetchEixos();
   }, []);
 
+  const handleEixoSelecionado = (numeroEixo: number) => {
+    setEixo(numeroEixo);
+  };
 
   const renderIcon = (icon: string): React.ReactElement | null => {
     switch (icon) {
@@ -74,17 +68,5 @@ const Eixos: React.FC<EixosProps> = ({ onEixoSelecionado }) => {
     </div>
   );
 };
-
-export async function getServerSideProps() {
-  // Lógica para buscar dados do servidor
-  const data = {};
-
-  return {
-    props: {
-      data,
-    },
-  };
-}
-
 
 export default Eixos;
