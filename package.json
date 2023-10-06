@@ -9,14 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/react-burger-menu": "^2.8.4",
     "axios": "^1.5.1",
     "next": "latest",
     "oracledb": "^6.1.0",
     "react": "latest",
-    "react-burger-menu": "^3.0.9",
     "react-dom": "latest",
     "react-icons": "^4.11.0",
+    "react-pro-sidebar": "^1.1.0-alpha.1",
+    "sharp": "^0.32.6",
     "typedi": "^0.10.0",
     "typeorm": "^0.3.17"
   },

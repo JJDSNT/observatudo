@@ -3,10 +3,10 @@ import logo from "@/app/Layout/assets/logo.jpg";
 import { FaBars } from "react-icons/fa";
 
 interface Props {
-  handleToggleMenu: () => void; // Renomeado para handleToggleMenu
+  handleToggleSidebar: () => void;
 }
 
-const Navbar = ({ handleToggleMenu }: Props) => {
+const Navbar = ({ handleToggleSidebar }: Props) => {
   return (
     <nav className="bg-blue-800 p-2" role="navigation">
       <div className="container mx-auto flex justify-between items-center">
@@ -16,7 +16,7 @@ const Navbar = ({ handleToggleMenu }: Props) => {
           </div>
           <h1 className="text-white text-lg font-bold">ObservaTudo</h1>
         </div>
-        <button onClick={handleToggleMenu} className="text-white text-2xl">
+        <button onClick={() => handleToggleSidebar()} className="text-white text-2xl">
           <FaBars />
         </button>
       </div>

@@ -4,22 +4,37 @@ import Aside from './Aside';
 import Main from './Main';
 
 function Layout() {
-  const [menuToggled, setMenuToggled] = useState<boolean>(false);
 
-  const handleToggleMenu = (): void => {
-    setMenuToggled(!menuToggled);
+  const [collapsed, setCollapsed] = useState<boolean>(false);
+  const [toggled, setToggled] = useState<boolean>(false);
+
+  const handleCollapsedChange = ():void => {
+    setCollapsed(!collapsed);
+  };
+
+  const handleToggleSidebar = ():void => {
+    setToggled(!toggled);
+  };
+
+  const handleBackdropClick = () => {
+    if (toggled) {
+      setToggled(false);
+    }
   };
 
   return (
-    <div id="outer-container">
-      {/* Navbar fixo */}
-      <Navbar handleToggleMenu={handleToggleMenu} />
+  
+    <div className={`app ${toggled ? 'toggled' : ''}`} onClick={handleBackdropClick}>
+      <Navbar handleToggleSidebar={handleToggleSidebar} />
 
-      {/* Conteúdo Principal (Main) */}
-      <div id="page-wrap">
-        <Aside pageWrapId="page-wrap" outerContainerId="outer-container" />
-        <Main />
-      </div>
+      <Aside        
+        collapsed={collapsed}
+        toggled={toggled}
+        handleToggleSidebar={handleToggleSidebar}
+        handleCollapsedChange={handleCollapsedChange}
+        onBackdropClick={handleBackdropClick}
+      />
+      <Main />
     </div>
   );
 }
