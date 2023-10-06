@@ -4,8 +4,8 @@ import { LocalidadeController } from "@/app/controllers/LocalidadeController";
 export async function GET() {
   try {
     const localidadeController = Container.get(LocalidadeController);
-    const localidades = await localidadeController.getEstadosECidades();
-    return Response.json({ localidades });
+    const estados = await localidadeController.getEstadosECidades();
+    return Response.json({ estados });
   } catch (error: unknown) {
     if (error instanceof Error) {
       return Response.json({ message: error.message }, { status: 500 });

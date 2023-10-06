@@ -29,7 +29,7 @@ const DropdownCombo: React.FC<DropdownComboProps> = ({ onEstadoSelecionado, onCi
       try {
         const response = await httpClient.get('/api/localidade');
         const data = response.data; 
-
+        console.log('resultado '+data);
         if (data && data.estados) {
           setEstados(data.estados);
           setEstadoSelecionado(data.estados[0] || null);
@@ -60,6 +60,7 @@ const DropdownCombo: React.FC<DropdownComboProps> = ({ onEstadoSelecionado, onCi
   };
 
   if (estados.length === 0) {
+    console.log (estados);
     return <div>Carregando...</div>;
   }
 
@@ -88,8 +89,6 @@ const DropdownCombo: React.FC<DropdownComboProps> = ({ onEstadoSelecionado, onCi
         <label htmlFor="cidade" className="block mb-1 text-sm font-medium text-gray-700">
           Cidade
         </label>
-
-
 
         {estadoSelecionado && estadoSelecionado.cidades && estadoSelecionado.cidades.length > 0 && (
           <select

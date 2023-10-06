@@ -68,8 +68,7 @@ const Eixos: React.FC<EixosProps> = ({ onEixoSelecionado }) => {
           className={`${eixo.cor} text-black border rounded-lg p-4 flex flex-col items-center justify-center space-y-2`}
           onClick={() => handleEixoSelecionado(eixo.id)}
         >
-          {renderIcon(eixo.icon)}
-          <span>{eixo.nome}</span>
+          {renderIcon(eixo.icon)}<span>{eixo.nome}</span>
         </button>
       ))}
     </div>
