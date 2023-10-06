@@ -11,10 +11,13 @@ function Layout() {
   };
 
   return (
-    <div className="flex h-screen bg-gray-100">
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <Navbar handleToggleMenu={handleToggleMenu} />
-        <Aside />
+    <div id="outer-container">
+      {/* Navbar fixo */}
+      <Navbar handleToggleMenu={handleToggleMenu} />
+
+      {/* Conteúdo Principal (Main) */}
+      <div id="page-wrap">
+        <Aside pageWrapId="page-wrap" outerContainerId="outer-container" />
         <Main />
       </div>
     </div>

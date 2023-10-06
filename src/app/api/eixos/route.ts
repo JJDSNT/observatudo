@@ -19,7 +19,6 @@ const eixos = [
     try {
       const eixoController = Container.get(EixoController);
       const eixos = await eixoController.getEixos();
-      console.log("########EIXOS Route");
       return Response.json({ eixos });
     } catch (error: unknown) {
       if (error instanceof Error) {

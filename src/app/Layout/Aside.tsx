@@ -1,7 +1,12 @@
-import React, { useState } from "react";
-import { slide as Menu } from "react-burger-menu";
+import React, { useState } from 'react';
+import { slide as Menu } from 'react-burger-menu';
 
-const Aside = () => {
+interface AsideProps {
+  pageWrapId: string;
+  outerContainerId: string;
+}
+
+const Aside: React.FC<AsideProps> = ({ pageWrapId, outerContainerId }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -11,9 +16,21 @@ const Aside = () => {
   return (
     <div>
       <Menu
+        noOverlay 
+        pageWrapId={pageWrapId}
+        outerContainerId={outerContainerId}
         isOpen={menuOpen}
         onStateChange={(state) => setMenuOpen(state.isOpen)}
-        styles={{ bmMenu: { paddingTop: '50px' } }}
+        styles={{
+          bmOverlay: {
+            background: 'rgba(0, 0, 0, 0.3)',
+          },
+          bmMenu: {
+            background: 'rgba(0, 0, 0, 0.7)', // Plano de fundo semi-transparente
+            paddingTop: '50px',
+          },
+          // Outros estilos conforme necessário
+        }}
       >
         {[
           { text: "Home", link: "/" },
@@ -31,3 +48,4 @@ const Aside = () => {
 };
 
 export default Aside;
+
