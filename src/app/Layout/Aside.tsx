@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
-import { FaArrowsAltH, FaGithub, FaGlobeAmericas, FaHeartbeat, FaHome, FaList, FaMoneyBillWave, FaQuestion, FaUserGraduate, FaShieldAlt, FaCentercode } from 'react-icons/fa';
+import { FaArrowsAltH, FaGithub, FaChartBar, FaGlobeAmericas, FaHeartbeat, FaHome, FaList, FaMoneyBillWave, FaQuestion, FaUserGraduate, FaShieldAlt, FaCentercode } from 'react-icons/fa';
 import { useSidebarStore } from '@/app/stores/useSidebarStore';
 import { useInfoStore } from '@/app/stores/useInfoStore';
 import sidebarBg from './assets/bg.jpg';
@@ -63,6 +63,9 @@ const Aside = () => {
 
         <Menu>
           <MenuItem icon={<FaArrowsAltH />} onClick={() => handleCollapsedChange()}> Menu</MenuItem>
+        </Menu>
+        <Menu>
+          <MenuItem icon={<FaChartBar />} onClick={() => handleMenuItemClick('dashboard')}> Dashboard</MenuItem>
         </Menu>
         <Menu>
           <MenuItem icon={<FaHeartbeat />} onClick={() => handleMenuItemClick(1)}> Saúde</MenuItem>
