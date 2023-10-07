@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dashboard de Indicadores com Next.js
 
-## Getting Started
+Este é meu primeiro projeto dedicado ao estudo e aprendizado do desenvolvimento web com Next.js e TypeScript. O projeto é um dashboard de indicadores que utiliza dados abertos.
 
-First, run the development server:
+## Tecnologias Utilizadas
 
-```bash
+- **Frontend:**
+  - Next.js: Um framework de React para desenvolvimento web.
+  - TypeScript: Uma linguagem de programação que adiciona tipos estáticos ao JavaScript.
+  - [React Pro Sidebar](https://github.com/azouaoui-med/react-pro-sidebar): Uma barra lateral responsiva para aplicações React.
+
+## Funcionalidades Principais
+
+- Visualização de indicadores em um painel de controle.
+- Integração com dados abertos.
+
+## Como Executar o Projeto
+
+1. Clone este repositório em sua máquina local:
+
+   ```bash
+   git clone https://github.com/JJDSNT/observatudo
+
+
+1 Navegue até o diretório do projeto:
+
+
+    cd nome-do-repo
+
+2 Instale as dependências do projeto:
+
+npm install
+
+3 Inicie o servidor de desenvolvimento:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4 O projeto estará disponível em http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+Contribuições
+Contribuições são bem-vindas! Se você deseja contribuir para este projeto, siga estas etapas:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1 Faça um fork deste repositório.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2 Crie uma branch para sua contribuição:
 
-## Deploy on Vercel
+git checkout -b minha-contribuicao
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3 Faça as alterações desejadas.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4 Envie as alterações para o seu fork:
+
+git push origin minha-contribuicao
+
+5 Abra um pull request neste repositório com a descrição de suas alterações.
+
+
+---
+Observação: Este projeto é destinado apenas para fins de aprendizado e estudo. Não é um projeto de produção completo.
