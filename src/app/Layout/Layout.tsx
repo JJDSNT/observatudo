@@ -11,9 +11,9 @@ function Layout() {
 
   return (
 
-    <div className={`app ${toggled ? 'toggled' : ''}`} onClick={handleBackdropClick}>
+    <div>
       <Navbar />
-      { toggled.toString() }
+      {toggled.toString()}
       <div style={{ display: 'flex' }}>
         <Aside />
         <Main />

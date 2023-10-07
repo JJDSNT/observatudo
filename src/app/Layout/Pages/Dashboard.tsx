@@ -1,4 +1,6 @@
 import DropdownCombo from '@/app/components/DropdownCombo';
+import EixoButton from '@/app/components/EixoButton';
+import EixoDropdown from '@/app/components/EixoDropdown';
 import Eixos from '@/app/components/Eixos';
 import { useInfoStore } from '@/app/stores/useInfoStore';
 
@@ -7,8 +9,9 @@ const Dashboard = () => {
 
     return (
         <>
-            <header className="bg-gray-200 p-4 rounded-lg">
-                <DropdownCombo />
+        <EixoButton />
+            <header className="bg-gray-200 p-4 flex rounded-lg">
+                <DropdownCombo /> <EixoDropdown />
             </header>
             <hr />
             <Eixos />

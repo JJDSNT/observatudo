@@ -11,6 +11,7 @@
   "dependencies": {
     "axios": "^1.5.1",
     "next": "latest",
+    "oci-common": "^2.70.3",
     "oracledb": "^6.1.0",
     "react": "latest",
     "react-dom": "latest",

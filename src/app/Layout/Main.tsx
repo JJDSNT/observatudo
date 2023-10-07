@@ -5,7 +5,7 @@ import { useSidebarStore } from '@/app/stores/useSidebarStore';
 
 const Main = () => {
 
-  const { activePage } = useSidebarStore();
+  const { activePage, handleBackdropClick } = useSidebarStore();
 
   return (
     <main className="container mx-auto mt-10">

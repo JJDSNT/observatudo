@@ -14,7 +14,7 @@ const Navbar = () => {
           </div>
           <h1 className="text-white text-lg font-bold">ObservaTudo</h1>
         </div>
-        <button onClick={() => setToggled(true)} className="text-white text-2xl">
+        <button onClick={handleToggleSidebar} className="text-white text-2xl">
           <FaBars />
         </button>
       </div>

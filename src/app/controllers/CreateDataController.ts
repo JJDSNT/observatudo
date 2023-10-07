@@ -14,6 +14,41 @@ export class CreateDataController {
 
   public async createData() {
 
+
+// Outro arquivo onde você deseja usar a conexão e o cliente Object Storage
+import { objectStorageClient, config } from "./storage"; // Certifique-se de fornecer o caminho correto para o arquivo storage.tsx
+
+// Agora você pode usar objectStorageClient e config neste arquivo
+// Por exemplo, você pode usar objectStorageClient para baixar objetos do Object Storage
+// e config para acessar informações de configuração, como tenancy, user, etc.
+
+// Função para fazer o download de um objeto
+async function downloadObject() {
+  const bucketName = "seu-bucket"; // Substitua pelo nome do seu bucket
+  const objectName = "seu-objeto"; // Substitua pelo nome do objeto que deseja baixar
+
+  const getObjectRequest: objectStorage.models.GetObjectRequest = {
+    bucketName: bucketName,
+    namespaceName: config.get("tenancy"),
+    objectName: objectName
+  };
+
+  try {
+    const response = await objectStorageClient.getObject(getObjectRequest);
+    console.log("Objeto baixado com sucesso:", response.status);
+
+    // Você pode acessar o conteúdo do objeto no response.value
+    // Por exemplo, se for um arquivo JSON: console.log(JSON.parse(response.value.toString()));
+  } catch (error) {
+    console.error("Erro ao baixar objeto:", error);
+  }
+}
+
+// Chame a função conforme necessário
+// downloadObject();
+
+
+
     DB.initialize().then(async () => {
 
       // Criar estados

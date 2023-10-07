@@ -13,7 +13,7 @@ import avatar from './assets/avatar.jpg';
 
 const Aside = () => {
   const { setEixo } = useInfoStore();
-  const { handleCollapsedChange, collapsed, toggled, setActivePage } = useSidebarStore();
+  const { handleCollapsedChange, collapsed, handleBackdropClick, toggled, setActivePage } = useSidebarStore();
 
   const handleMenuItemClick = (item: string | number): void => {
     if (typeof item === 'number') {
@@ -29,8 +29,9 @@ const Aside = () => {
       collapsed={collapsed}
       toggled={toggled}
       breakPoint="md"
+      onBackdropClick={handleBackdropClick}
       rootStyles={{
-        border: 'none',
+        //border: 'none',
         bgColor: '#0c1e35',
       }}
     >
