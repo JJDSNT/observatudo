@@ -7,6 +7,8 @@ Este é meu primeiro projeto dedicado ao estudo e aprendizado do desenvolvimento
 - **Frontend:**
   - Next.js: Um framework de React para desenvolvimento web.
   - TypeScript: Uma linguagem de programação que adiciona tipos estáticos ao JavaScript.
+  - Zustand: Um gerenciador de estado
+  - TypeORM: ORM
   - [React Pro Sidebar](https://github.com/azouaoui-med/react-pro-sidebar): Uma barra lateral responsiva para aplicações React.
 
 ## Funcionalidades Principais
