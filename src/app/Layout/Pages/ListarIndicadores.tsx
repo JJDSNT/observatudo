@@ -1,8 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import httpClient from '@/app/utils/httpClient';
 
+interface Eixo {
+  id: number;
+  nome: string;
+  cor: string;
+  indicadores: Array<{
+    codigo_indicador: string;
+    nome: string;
+    descricao: string;
+  }>;
+}
+
 function ListarIndicadores() {
-  const [eixos, setEixos] = useState([]);
+  const [eixos, setEixos] = useState<Eixo[]>([]);
 
   useEffect(() => {
     const fetchIndicadores = async () => {
