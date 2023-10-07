@@ -17,7 +17,7 @@ const Aside = () => {
 
   const handleMenuItemClick = (item: string | number): void => {
     if (typeof item === 'number') {
-      setActivePage('dashboard')
+      setActivePage('dashboard');
       setEixo(item);
     } else {
       setActivePage(item);
