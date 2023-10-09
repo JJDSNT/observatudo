@@ -30,7 +30,7 @@ export class LocalidadeController {
   }
 */
   public async getEstadosECidades(): Promise<{ estado: Estado, cidades: Cidade[] }[] | null> {
-    console.log('localidadeController: getestadosecidades')
+    console.log('>>> localidadeController: getEstadosECidades')
     return this.localidadeService.getEstadosECidades();
   }
 /*
