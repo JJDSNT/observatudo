@@ -5,8 +5,8 @@ export async function GET() {
     const storageService = new StorageService();
     try {
         const bucketName = 'raw-sources';
-        //const objects = await storageService.listObjects(bucketName);
-        const objects = { message: "oi" };
+        const objects = await storageService.listObjects(bucketName);
+        //const objects = { message: "oi" };
         return Response.json({ objects });
     } catch (error: unknown) {
         if (error instanceof Error) {
