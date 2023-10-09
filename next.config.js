@@ -5,7 +5,8 @@ const nextConfig = {
   
   experimental: {
     serverComponentsExternalPackages: ["typeorm","typedi"],
-    serverMinification: false,
+    serverMinification: false, //typeorm
+    esmExternals: 'loose', //oci sdk
   },
 }
 
