@@ -1,3 +1,4 @@
+//https://stackoverflow.com/questions/39861239/read-and-parse-csv-file-in-s3-without-downloading-the-entire-file#39861758
 import * as objectStorage from "oci-objectstorage";
 import { OciError } from "oci-common";
 import { objectStorageClient } from '@/app/infra/storage';
@@ -69,12 +70,9 @@ class StorageService {
     };
 
     try {
-
       const response = await this.objectStorageClient.getObject(getObjectRequest);
       console.log(response);
-
       const csvData = await getObjectAsText(response);
-
       const jsonData = await new Promise<any[]>((resolve, reject) => {
         const data: any[] = [];
         fastcsv
@@ -89,11 +87,7 @@ class StorageService {
             reject(error);
           });
       });
-
-
-
       console.log("Dados do CSV em JSON:", jsonData);
-
     } catch (error) {
       console.error("Erro ao baixar objeto CSV:", error);
     }
@@ -101,7 +95,7 @@ class StorageService {
 
 
 
-  public async getObjectFromBucket(bucketName: string, objectName: string) {
+  public async parseCSVtoJSON(bucketName: string, objectName: string) {
 
     const namespace = await this.getBucketNamespace(bucketName);
     if (!namespace) {
@@ -116,10 +110,8 @@ class StorageService {
 
     try {
       const response = await this.objectStorageClient.getObject(getObjectRequest);
-
       // Obtém o conteúdo da stream como uma string
       const csvData = await getObjectAsText(response);
-
       // Faz o parse do CSV usando fast-csv
       const jsonData = await new Promise<any[]>((resolve, reject) => {
         const data: any[] = [];
@@ -135,7 +127,6 @@ class StorageService {
             reject(error);
           });
       });
-
       // Agora, você tem jsonData como um array de objetos JSON
       //console.log("Dados do CSV em JSON:", jsonData);
       return jsonData;
@@ -144,6 +135,7 @@ class StorageService {
     }
   }
 
+  
   async getBucketNamespace(bucketName: string): Promise<string | null> {
     try {
       const getNamespaceResponse = await this.objectStorageClient.getNamespace({});
@@ -172,25 +164,3 @@ async function getObjectAsText(response: any): Promise<string> {
   const buffer = Buffer.concat(chunks);
   return buffer.toString('utf-8');
 }
-
-
-  /*
-    async parseCSVToJson(stream: Readable): Promise<any[]> {
-      return new Promise((resolve, reject) => {
-        const data: any[] = []; // Array para armazenar os dados
-  
-        const parser = fastcsv.parseStream(stream)
-          .on('data', (row) => {
-            data.push(row); // Adicione cada linha de dados ao array
-          })
-          .on('end', () => {
-            console.log('Parse do CSV concluído com sucesso!' + data);
-            resolve(data); // Resolva a Promise com os dados
-          })
-          .on('error', (error) => {
-            console.error('Erro ao analisar o CSV:', error);
-            reject(error); // Rejeite a Promise em caso de erro
-          });
-      });
-    }
-  */

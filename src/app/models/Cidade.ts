@@ -1,17 +1,19 @@
-import { Entity, PrimaryColumn, ManyToOne, OneToOne, Column } from "typeorm";
+import { Entity, PrimaryColumn, ManyToOne, OneToOne, Column, JoinColumn } from "typeorm";
 import type { Relation } from "typeorm";
-import { Localidade } from "./Localidade";
-import { Estado } from "./Estado";
+import { Localidade } from "@/app/models/Localidade";
+import { Estado } from "@/app/models/Estado";
 
 @Entity({ name: 'cidade' })
 export class Cidade extends Localidade {
 
 
-  constructor(codigo: number, nome: string) {
+  constructor(codigo: number, nome: string, capital:boolean) {
     super(codigo, nome);
+    this.capital=capital;
   }
 
-  @ManyToOne(() => Estado, estado => estado.cidades)
+  @ManyToOne(() => Estado, estado => estado.cidades , { nullable: false })
+  @JoinColumn({ name: 'estadoCodigo' })
   estado!: Relation<Estado>;
 
   @PrimaryColumn()
