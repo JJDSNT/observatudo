@@ -1,8 +1,10 @@
 import * as objectStorage from "oci-objectstorage";
 import { OciError } from "oci-common";
 import { objectStorageClient } from '@/app/infra/storage';
+import csvtojson from 'csvtojson';
 import * as fastcsv from "fast-csv";
 import { Readable } from "stream";
+import { error } from "console";
 
 class StorageService {
   private objectStorageClient: objectStorage.ObjectStorageClient;
@@ -45,7 +47,6 @@ class StorageService {
         console.error(`HTTP Status Code: ${error.statusCode}`);
         console.error(`Código de Serviço: ${error.serviceCode}`);
         console.error(`Mensagem: ${error.message}`);
-        // Outros detalhes do erro, se necessário...
       } else {
         console.error("Erro desconhecido ao fazer a solicitação:", error);
       }
@@ -56,41 +57,88 @@ class StorageService {
 
   public async parseCSVFromObjectStream(bucketName: string, objectName: string): Promise<void> {
     const namespace = await this.getBucketNamespace(bucketName);
-  
     if (!namespace) {
-      throw new Error("Namespace não foi inicializado corretamente.");
+      console.error("Namespace não foi obtido com sucesso.");
+      throw error("Namespace não foi obtido com sucesso.");
+      //return [];
     }
-  
     const getObjectRequest = {
-      bucketName: bucketName,
       namespaceName: namespace,
+      bucketName: bucketName,
       objectName: objectName
     };
-  
+
+    try {
+
+      const response = await this.objectStorageClient.getObject(getObjectRequest);
+      console.log(response);
+
+      const csvData = await getObjectAsText(response);
+
+      const jsonData = await new Promise<any[]>((resolve, reject) => {
+        const data: any[] = [];
+        fastcsv
+          .parseString(csvData, { headers: true })
+          .on('data', (row) => {
+            data.push(row);
+          })
+          .on('end', () => {
+            resolve(data);
+          })
+          .on('error', (error) => {
+            reject(error);
+          });
+      });
+
+
+
+      console.log("Dados do CSV em JSON:", jsonData);
+
+    } catch (error) {
+      console.error("Erro ao baixar objeto CSV:", error);
+    }
+  }
+
+
+
+  public async getObjectFromBucket(bucketName: string, objectName: string) {
+
+    const namespace = await this.getBucketNamespace(bucketName);
+    if (!namespace) {
+      console.error("Namespace não foi obtido com sucesso.");
+      return [];
+    }
+    const getObjectRequest = {
+      namespaceName: namespace,
+      bucketName: bucketName,
+      objectName: objectName
+    };
+
     try {
       const response = await this.objectStorageClient.getObject(getObjectRequest);
-  
-      console.log("Objeto CSV baixado com sucesso!");
-  
-      // Crie uma stream de leitura a partir do conteúdo do objeto
-      const csvReadStream = Readable.from([response.value.toString()]); // Convertemos para string
-  
-      // Use o fast-csv para fazer o parse do CSV em stream
-      const parser = fastcsv.parse({ headers: true });
-  
-      parser
-        .on("data", (data) => {
-          // Faça algo com cada linha de dados do CSV
-          console.log("Dados do CSV:", data);
-        })
-        .on("end", () => {
-          console.log("Parse do CSV concluído com sucesso!");
-        })
-        .on("error", (error) => {
-          console.error("Erro ao fazer o parse do CSV:", error);
-        });
-  
-      csvReadStream.pipe(parser); // Pipe a stream de leitura para o parser do CSV
+
+      // Obtém o conteúdo da stream como uma string
+      const csvData = await getObjectAsText(response);
+
+      // Faz o parse do CSV usando fast-csv
+      const jsonData = await new Promise<any[]>((resolve, reject) => {
+        const data: any[] = [];
+        fastcsv
+          .parseString(csvData, { headers: true })
+          .on('data', (row) => {
+            data.push(row);
+          })
+          .on('end', () => {
+            resolve(data);
+          })
+          .on('error', (error) => {
+            reject(error);
+          });
+      });
+
+      // Agora, você tem jsonData como um array de objetos JSON
+      //console.log("Dados do CSV em JSON:", jsonData);
+      return jsonData;
     } catch (error) {
       console.error("Erro ao baixar objeto CSV:", error);
     }
@@ -108,7 +156,41 @@ class StorageService {
   }
 
 
+
 }
 
 export { StorageService };
 
+async function getObjectAsText(response: any): Promise<string> {
+  const reader = response.value.getReader();
+  const chunks = [];
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    chunks.push(value);
+  }
+  const buffer = Buffer.concat(chunks);
+  return buffer.toString('utf-8');
+}
+
+
+  /*
+    async parseCSVToJson(stream: Readable): Promise<any[]> {
+      return new Promise((resolve, reject) => {
+        const data: any[] = []; // Array para armazenar os dados
+  
+        const parser = fastcsv.parseStream(stream)
+          .on('data', (row) => {
+            data.push(row); // Adicione cada linha de dados ao array
+          })
+          .on('end', () => {
+            console.log('Parse do CSV concluído com sucesso!' + data);
+            resolve(data); // Resolva a Promise com os dados
+          })
+          .on('error', (error) => {
+            console.error('Erro ao analisar o CSV:', error);
+            reject(error); // Rejeite a Promise em caso de erro
+          });
+      });
+    }
+  */
