@@ -1,0 +1,239 @@
+
+  { id: 1, nome: 'Saúde', icon: 'FaHeartbeat', cor: 'bg-red-500' },
+  { id: 2, nome: 'Educação', icon: 'FaUserGraduate', cor: 'bg-blue-500' },
+  { id: 3, nome: 'Assistência social', icon: 'FaHome', cor: 'bg-pink-500' },
+  { id: 4, nome: 'Segurança', icon: 'FaShieldAlt', cor: 'bg-yellow-500' },
+  { id: 5, nome: 'Meio ambiente, urbanização e mobilidade', icon: 'FaGlobeAmericas', cor: 'bg-green-500' },
+  { id: 6, nome: 'Economia & Finanças', icon: 'FaMoneyBillWave', cor: 'bg-indigo-500' },
+  { id: 7, nome: 'Governança & Administração', icon: 'FaMoneyBillWave', cor: 'bg-orange-500' },
+  { id: 8, nome: 'Personalizado', icon: 'FaQuestion', cor: 'bg-gray-500' }
+
+purple
+teal
+
+
+"codigo_indicador": "3985", "nome": "Índice de Desenvolvimento Humano (IDH) municipal",
+"codigo_indicador": "4009", "nome": "Mortalidade neonatal (crianças de 0 a 27 dias)",
+"codigo_indicador": "4120", "nome": "Serviços públicos informatizados na Secretaria Municipal de Administração",
+"codigo_indicador": "4016", "nome": "Prova Brasil - Matemática",
+"codigo_indicador": "4148", "nome": "Atingir  o  Índice  de  Desenvolvimento  da Educação Básica (IDEB) de 9,0.",
+"codigo_indicador": "3922", "nome": "Dados em formato aberto",
+"codigo_indicador": "125", "nome": "Esgoto que não recebe nenhum tipo de tratamento",
+"codigo_indicador": "27", "nome": "Crianças plenamente alfabetizadas até os 8 anos de idade",
+"codigo_indicador": "5155", "nome": "Índice de Desenvolvimento da Educação Básica (IDEB) - anos finais",
+"codigo_indicador": "127", "nome": "Coleta seletiva",
+"codigo_indicador": "3900","nome": "Mortes por armas de fogo",
+      "codigo_indicador": "23",
+      "nome": "Desemprego",    
+            "codigo_indicador": "3982",
+      "nome": "População atendida por equipes de saúde da família",
+            "codigo_indicador": "5140",
+      "nome": " Vias do metrô",
+            "codigo_indicador": "3865",
+      "nome": "Mortes no trânsito",
+            "codigo_indicador": "4008",
+      "nome": "Mortalidade na infância (crianças menores de 5 anos de idade)",
+            "codigo_indicador": "3965",
+      "nome": "Famílias inscritas no Cadastro Único para programas sociais",
+            "codigo_indicador": "4005",
+      "nome": "Programa de Metas",
+            "codigo_indicador": "4022",
+      "nome": "Razão entre o número de alunos e professores no ensino fundamental",
+            "codigo_indicador": "3897",
+      "nome": "Mortes por agressão",  
+            "codigo_indicador": "150",
+      "nome": "Quantidade de famílias que recebem o benefício de superação da extrema pobreza",
+            "codigo_indicador": "114",
+      "nome": "Gravidez na adolescência",
+            "codigo_indicador": "3945",
+      "nome": "Pedidos respondidos no sistema de informação ao cidadão"
+            "codigo_indicador": "14",
+      "nome": "Perda de água tratada",
+            "codigo_indicador": "98",
+      "nome": "Demanda atendida em creches"
+            "codigo_indicador": "4032",
+      "nome": "Rios e córregos classificados com, pelo menos, \"bom estado\" segundo critérios oficiais"
+           "codigo_indicador": "4040",
+      "nome": "Transporte público por ônibus com energia sustentável",
+            "codigo_indicador": "184",
+      "nome": "População em situação de rua"
+           "codigo_indicador": "3899",
+      "nome": "Avaliação oferta/demanda do abastecimento urbano de água",
+            "codigo_indicador": "145",
+      "nome": "Jovens com ensino médio concluído até os 19 anos de idade",
+            "codigo_indicador": "4153",
+      "nome": "Manter o Ensino Fundamental para a população de 6 a 14 anos.",
+            "codigo_indicador": "4686",
+      "nome": "BENEFICIÁRIOS DO BPC NO CADASTRO ÚNICO"
+            "codigo_indicador": "146",
+      "nome": "Crianças e jovens de 4 a 17 anos na escola"
+            "codigo_indicador": "4011",
+      "nome": "Adequação idade/ano no Ensino Fundamental",
+            "codigo_indicador": "4000",
+      "nome": "Professores com formação em nível superior",
+            "codigo_indicador": "4288",
+      "nome": "PERCENTUAL DE UNIDADES DE SAÚDE COM SISTEMA E-SUS AF IMPLANTADO"
+            "codigo_indicador": "3923",
+      "nome": "Déficit habitacional",
+            "codigo_indicador": "4043",
+      "nome": "Valor total repassado às famílias beneficiárias do Programa Bolsa Família",
+            "codigo_indicador": "4023",
+      "nome": "Razão entre o número de alunos e professores no ensino médio",
+            "codigo_indicador": "147",
+      "nome": "Demanda atendida de vagas na pré-escola"
+           "codigo_indicador": "155",
+      "nome": "Crimes violentos fatais",
+            "codigo_indicador": "3882",
+      "nome": "Acessos negados no sistema de informação ao cidadão",
+            "codigo_indicador": "4384",
+      "nome": "RECURSOS REPASSADOS PARA A ASSISTÊNCIA SOCIAL (COFINANCIAMENTO ESTUDAL E REPASSE MUNICIPAL)",
+            "nome": "Área verde na zona urbana",
+      "descricao": "Total de metros quadrados de área verde pública por habitante e percentual da população que vive em um raio de até 300m de áreas verdes.",
+        "codigo_indicador": "4341",
+      "nome": "COBERTURA DE ACOMPANHAMENTO DAS CONDICIONALIDADES DE SAÚDE DO PROGRAMA BOLSA FAMÍLIA (PBF)"
+           "codigo_indicador": "24",
+      "nome": "Índice de Desenvolvimento da Educação Básica (IDEB) - anos iniciais"
+            "codigo_indicador": "4015",
+      "nome": "Prova Brasil - Língua portuguesa"
+      "codigo_indicador": "4269",
+      "nome": "SERVIÇO DE OUVIDORIA IMPLANTADA NA SECRETARIA MUNICIPAL DE SAÚDE",
+           "codigo_indicador": "159",
+      "nome": "Roubos",
+          "codigo_indicador": "3986",
+      "nome": "Indivíduos que utilizaram o governo eletrônico"
+       "codigo_indicador": "4034",
+      "nome": "Sistemas inteligentes e transparentes de contratação e licitação",
+        "codigo_indicador": "3963",
+      "nome": "Estabelecimentos que realizam interrupção voluntária de gravidez segundo a lei"
+         "codigo_indicador": "137",
+      "nome": "Desemprego de jovens",
+       "codigo_indicador": "3997",
+      "nome": "Lei de Acesso à Informação regulamentada"
+        "codigo_indicador": "3905",
+      "nome": "Cobertura de vacinas"
+       "codigo_indicador": "3936",
+      "nome": "Educação em tempo integral na pré-escola"
+      "codigo_indicador": "6",
+      "nome": "Mortalidade infantil (crianças menores de um ano)"
+       "codigo_indicador": "3892",
+      "nome": "Analfabetismo funcional da população",
+      "codigo_indicador": "3879",
+      "nome": "Área urbana e rural do município"
+      "codigo_indicador": "3927",
+      "nome": "Domicílios com acesso à energia elétrica"
+       "codigo_indicador": "3878",
+      "nome": "Acesso a serviço de coleta de lixo doméstico"
+      "codigo_indicador": "4383",
+      "nome": "FUNÇÕES DE GESTÃO DO SUAS INEXISTENTE"
+       "codigo_indicador": "3995",
+      "nome": "Jovens de 15 a 24 anos de idade que não estudam nem trabalham",
+         "codigo_indicador": "18",
+      "nome": "Rede de esgoto (domicílios sem ligação com a rede de esgoto)"
+      "codigo_indicador": "4301",
+      "nome": "PROPORÇÃO DE REGISTRO DE ÓBITOS COM CAUSA BÁSICA DEFINIDA"
+       "codigo_indicador": "3958",
+      "nome": "Escolas da rede municipal que abrem aos finais de semana para a comunidade"
+       "codigo_indicador": "3943",
+      "nome": "Educação em tempo integral no Ensino Fundamental – anos iniciais",
+      "codigo_indicador": "3962",
+      "nome": "Esgoto tratado antes de chegar ao mar, rios e córregos"
+        "codigo_indicador": "3934",
+      "nome": "Educação em tempo integral nas creches",
+        "codigo_indicador": "4065",
+      "nome": "Famílias inscritas no Cadastro Único para programas sociais "
+       "codigo_indicador": "4077",
+      "nome": "Atendimento em Unidades Básicas de Saúde",
+       "codigo_indicador": "144",
+      "nome": "Ensino superior concluído"
+       "codigo_indicador": "3866",
+      "nome": "Mortalidade por doenças crônicas não transmissíveis"
+        "codigo_indicador": "4349",
+      "nome": "COBERTURA POPULACIONAL ESTIMADA DE SAÚDE BUCAL NA ATENÇÃO BÁSICA"
+       "codigo_indicador": "4020",
+      "nome": "Razão entre as taxas de escolarização por gênero"
+        "codigo_indicador": "4082",
+      "nome": "Gestão Informatizada em Saúde"
+        "codigo_indicador": "4054",
+      "nome": "Leitos hospitalares",
+        "codigo_indicador": "4030",
+      "nome": "Rendimento médio do trabalho principal das pessoas de 16 anos de idade ou mais"
+       "codigo_indicador": "3952",
+      "nome": "PIB do município",
+       "codigo_indicador": "4328",
+      "nome": "MORTALIDADE POR DENGUE, ZIKA E CHIKUNGUNYA"
+       "codigo_indicador": "4340",
+      "nome": "ÓBITOS MATERNOS INVESTIGADOS"
+            "codigo_indicador": "4035",
+      "nome": "Tempo médio gasto da moradia ao local de trabalho",
+      "codigo_indicador": "5159",
+      "nome": "Área desmatada",
+        "codigo_indicador": "5149",
+      "nome": "Geomantas"
+        "codigo_indicador": "4076",
+      "nome": "Mortalidade por COVID-19"
+       "codigo_indicador": "148",
+      "nome": "Demanda atendida de vagas no ensino fundamental"
+      "codigo_indicador": "4332",
+      "nome": "PROCEDIMENTOS AMBULATORIAIS DE ALTA COMPLEXIDADE E POPULAÇÃO RESIDENTE",
+        "codigo_indicador": "3983",
+      "nome": "Indicadores atualizados produzidos pela gestão"
+       "codigo_indicador": "4001",
+      "nome": "Professores com licenciatura",
+        "codigo_indicador": "3950",
+      "nome": "Peso da tarifa de transporte público no orçamento mensal",
+       "codigo_indicador": "170",
+      "nome": "Acidentes de trânsito",
+      "codigo_indicador": "3891",
+      "nome": "Alunos, professores e funcionários vítimas de violência no ambiente escolar",
+        "codigo_indicador": "3914",
+      "nome": "Ocupação das pessoas com 16 anos de idade ou mais",
+        "codigo_indicador": "4",
+      "nome": "Unidades Básicas de Saúde"
+        "codigo_indicador": "3946",
+      "nome": "Empregos formais"
+       "codigo_indicador": "4017",
+      "nome": "Proximidade de transporte público"
+       "codigo_indicador": "3959",
+      "nome": "Plano de gestão integrada de resíduos sólidos"
+       "codigo_indicador": "5158",
+      "nome": "Florestamento e reflorestamento"
+        "codigo_indicador": "4092",
+      "nome": "Políticas Habitacionais"
+        "codigo_indicador": "3864",
+      "nome": "Homicídios na população branca e negra",
+         "codigo_indicador": "113",
+      "nome": "Pré-natal insuficiente"
+      "codigo_indicador": "3902",
+      "nome": "Mulheres jovens de 15 a 24 anos de idade que não estudam nem trabalham",
+       "codigo_indicador": "176",
+      "nome": "Reservas e Áreas Protegidas"
+        "codigo_indicador": "19",
+      "nome": "Quantidade de resíduos per capita",
+      "codigo_indicador": "3933",
+      "nome": "Educação de Jovens e Adultos (EJA) integrada à educação profissional"
+       "codigo_indicador": "171",
+      "nome": "Atropelamentos",
+      "codigo_indicador": "115",
+      "nome": "Mortalidade materna"
+       "codigo_indicador": "3989",
+      "nome": "Portal da Transparência"
+      "codigo_indicador": "3942",
+      "nome": "Educação em tempo integral no Ensino Fundamental – anos finais"
+       "codigo_indicador": "102",
+      "nome": "Analfabetismo na população com 15 anos ou mais",
+      "codigo_indicador": "3957",
+      "nome": "Planejamento integrado entre todas as secretarias"
+       "codigo_indicador": "139",
+      "nome": "Índice de Desenvolvimento da Educação Básica (IDEB) - anos finais",
+      "codigo_indicador": "3871",
+      "nome": "Doenças relacionadas ao saneamento ambiental inadequado",
+        "codigo_indicador": "3872",
+      "nome": "Domicílios com acesso à internet"
+       "codigo_indicador": "3898",
+      "nome": "Áreas destinadas às Unidades de Conservação"
+       "codigo_indicador": "3941",
+      "nome": "Participação do município no Comitê de Bacias",
+       "codigo_indicador": "4007",
+      "nome": "Modernização tecnológica e inovação na administração municipal",
+       "codigo_indicador": "4079",
+      "nome": "Cobertura vacinal crianças",

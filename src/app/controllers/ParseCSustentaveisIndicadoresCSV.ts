@@ -57,7 +57,8 @@ export async function populateIndicadoresDatabase(): Promise<void> {
             uniqueIndicadores.push(indicador);
           }
         }
-      
+        
+        
         await insertDataInBatches(uniqueIndicadores, Indicador);
       }
       

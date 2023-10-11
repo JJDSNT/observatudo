@@ -8,12 +8,12 @@ export enum Eixos {
   AssistenciaSocial = 3,
   Seguranca = 4,
   MeioAmbiente = 5,
-  EconomiaFinancas = 6,
-  GovernancaAdministracao = 7,
+  Economia = 6,
+  Governanca = 7,
   Personalizado = 8,
 }
 
-const nomedosEixos =['Saude','Educacao','AssistenciaSocial','Seguranca','MeioAmbiente','EconomiaFinancas','GovernancaAdministracao','Personalizado']
+const nomedosEixos =['Saude','Educacao','AssistenciaSocial','Seguranca','MeioAmbiente','Economia','Governanca','Personalizado']
 
 export enum labeldosEixos {
   Saude = 'Saúde',
@@ -21,8 +21,8 @@ export enum labeldosEixos {
   AssistenciaSocial = 'Assistência social',
   Seguranca = 'Segurança',
   MeioAmbiente = 'Meio ambiente, urbanização e mobilidade',
-  EconomiaFinancas = 'Economia & Finanças',
-  GovernançaAdministracao = 'Governança & Administração',
+  Economia = 'Economia & Finanças',
+  Governança = 'Governança & Administração',
   Personalizado = 'Personalizado',
 }
 
@@ -34,8 +34,8 @@ export const eixosData = [
   { id: Eixos.AssistenciaSocial, nome: nomedosEixos[2], nomeLegivel:labeldosEixos.AssistenciaSocial, icon: 'FaHome', cor: 'bg-pink-500' },
   { id: Eixos.Seguranca, nome: nomedosEixos[3], nomeLegivel:labeldosEixos.Seguranca, icon: 'FaShieldAlt', cor: 'bg-yellow-500' },
   { id: Eixos.MeioAmbiente, nome: nomedosEixos[4], nomeLegivel:labeldosEixos.MeioAmbiente, icon: 'FaGlobeAmericas', cor: 'bg-green-500' },
-  { id: Eixos.EconomiaFinancas, nome: nomedosEixos[5], nomeLegivel:labeldosEixos.EconomiaFinancas, icon: 'FaMoneyBillWave', cor: 'bg-purple-500' },
-  { id: Eixos.GovernancaAdministracao, nome: nomedosEixos[6], nomeLegivel:labeldosEixos.GovernançaAdministracao, icon: 'FaLandmarkDome', cor: 'bg-indigo-500' },
+  { id: Eixos.Economia, nome: nomedosEixos[5], nomeLegivel:labeldosEixos.Economia, icon: 'FaMoneyBillWave', cor: 'bg-purple-500' },
+  { id: Eixos.Governanca, nome: nomedosEixos[6], nomeLegivel:labeldosEixos.Governança, icon: 'FaLandmarkDome', cor: 'bg-indigo-500' },
   { id: Eixos.Personalizado, nome: nomedosEixos[7], nomeLegivel:labeldosEixos.Personalizado, icon: 'FaQuestion', cor: 'bg-gray-500' }
 ]
 
