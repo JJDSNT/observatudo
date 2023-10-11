@@ -74,8 +74,9 @@ const Aside = () => {
           <MenuItem icon={<FaUserGraduate />} onClick={() => handleMenuItemClick(2)}> Educação</MenuItem>
           <MenuItem icon={<FaHome />} onClick={() => handleMenuItemClick(3)}> Assistência social</MenuItem>
           <MenuItem icon={<FaShieldAlt />} onClick={() => handleMenuItemClick(4)}> Segurança</MenuItem>
-          <MenuItem icon={<FaGlobeAmericas />} onClick={() => handleMenuItemClick(5)}> Meio ambiente,<br />Urbanização &<br />Mobilidade</MenuItem>
+          <MenuItem icon={<FaGlobeAmericas />} onClick={() => handleMenuItemClick(5)}> Meio ambiente</MenuItem>
           <MenuItem icon={<FaMoneyBillWave />} onClick={() => handleMenuItemClick(6)}> Economia & Finanças</MenuItem>
+          <MenuItem icon={<FaMoneyBillWave />} onClick={() => handleMenuItemClick(6)}> Governança</MenuItem>
           <MenuItem icon={<FaQuestion />} onClick={() => handleMenuItemClick(7)}> Personalizado</MenuItem>
         </Menu>
         <Menu>
