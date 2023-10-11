@@ -3,9 +3,12 @@ import httpClient from '@/app/utils/httpClient';
 import { useInfoStore } from '@/app/stores/useInfoStore';
 
 interface Estado {
-  estado: {
+  codigo: number;
+  nome: string;
+  sigla: string;
+  capital: {
     codigo: number;
-    sigla: string;
+    nome: string;
   };
   cidades: {
     codigo: number;
@@ -23,11 +26,14 @@ const DropdownCombo: React.FC = () => {
       try {
         const response = await httpClient.get('/api/localidade');
         const data = response.data;
-        console.log('resultado ' + data);
+
         if (data && data.estados) {
+          const estadoSelecionado = data.estados[0] ? data.estados[0].estado : null;
+          const cidades = estadoSelecionado ? estadoSelecionado.cidades : [];
+        
           setEstados(data.estados);
-          setEstado(data.estados[0] ? data.estados[0].estado.codigo : null);
-          setCidade(data.estados[0] && data.estados[0].cidades[0] ? data.estados[0].cidades[0].codigo : null);
+          setEstado(estadoSelecionado ? estadoSelecionado.codigo : null);
+          setCidade(cidades[0] ? cidades[0].codigo : null);
         }
       } catch (error) {
         console.error('Ocorreu um erro ao buscar os estados e cidades:', error);
@@ -39,12 +45,16 @@ const DropdownCombo: React.FC = () => {
 
   const handleEstadoChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const estadoId = parseInt(event.target.value);
-    const estado = estados.find((estado) => estado.estado.codigo === estadoId);
+    const estado = estados.find((estado) => estado.codigo === estadoId);
 
     if (estado) {
-      setEstado(estado.estado.codigo);
-      setCidade(estado.cidades[0] ? estado.cidades[0].codigo : null);
+      setEstado(estado.codigo);
+      console.log(estado);//pq eu tenho estado dentro de estado?
+      if (estado.capital) {
+        setCidade(estado.capital.codigo);
+      }
     }
+
   };
 
   const handleCidadeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -70,8 +80,8 @@ const DropdownCombo: React.FC = () => {
           onChange={handleEstadoChange}
         >
           {estados.map((estado) => (
-            <option key={estado.estado.codigo} value={estado.estado.codigo}>
-              {estado.estado.sigla}
+            <option key={estado.codigo} value={estado.codigo}>
+              {estado.sigla}
             </option>
           ))}
         </select>
@@ -83,8 +93,6 @@ const DropdownCombo: React.FC = () => {
           Cidade
         </label>
 
-
-
         <select
           id="cidade"
           name="cidade"
@@ -93,7 +101,7 @@ const DropdownCombo: React.FC = () => {
           onChange={handleCidadeChange}
         >
           {estadoSelecionado && estadoSelecionado > 0 ? (
-            estados.find((estado) => estado.estado.codigo === estadoSelecionado)?.cidades.map((cidade) => (
+            estados.find((estado) => estado.codigo === estadoSelecionado)?.cidades.map((cidade) => (
               <option key={cidade.codigo} value={cidade.codigo}>
                 {cidade.nome}
               </option>

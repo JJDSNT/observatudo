@@ -4,9 +4,9 @@ import { Estado } from '@/app/models/Estado';
 if (!AppDataSource.isInitialized) {
     try {
         await AppDataSource.initialize();
-        console.log('>>> ESTADO: Database foi inicializado');
+        console.log('>>> EstadoRepository: Database foi inicializado');
     } catch (err) {
-        console.error(`##### ESTADO: Data Source initialization error`, err);
+        console.error(`### EstadoRepository: Data Source initialization error`, err);
     }
 }
 

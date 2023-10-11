@@ -28,11 +28,10 @@ try {
     authenticationDetailsProvider: authProvider
   });
   //console.log("Cliente ObjectStorage criado com sucesso:", objectStorageClient);
-  console.log(">>> Cliente object storage foi inicializado");
+  console.log(">>> Storage: Cliente object storage foi inicializado");
   //process.exit(1);
 } catch (error) {
   console.error('>>> Storage: Erro durante a inicialização:', error);
-  console.log('>>> Não consegui inicializar');
   process.exit(1);
 }
 

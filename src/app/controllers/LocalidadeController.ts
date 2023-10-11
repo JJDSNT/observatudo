@@ -24,18 +24,38 @@ export class LocalidadeController {
   public async getCidades(): Promise<Cidade[] | null> {
     return this.localidadeService.getCidades();
   }
-/*
-  public async getCidadesByEstado(estadoId?: number | undefined): Promise<Cidade[] | Cidade | null> {
-    return this.localidadeService.getCidadesByEstado(estadoId);
+  /*
+    public async getCidadesByEstado(estadoId?: number | undefined): Promise<Cidade[] | Cidade | null> {
+      return this.localidadeService.getCidadesByEstado(estadoId);
+    }
+  */
+
+  public async getEstadosECidades(): Promise<Estado[] | null> {
+    const estados = await this.localidadeService.getEstadosECidades();
+
+    if (estados) {
+      estados.forEach(estado => {
+        // Ordena as cidades em ordem alfabética pelo nome
+        if (estado.cidades) {
+          estado.cidades.sort((a, b) => a.nome.localeCompare(b.nome));
+        }
+        // Encontre a capital do estado selecionado
+        //const capitalCidade = estado.capital;
+        // Reorganize a lista de cidades para começar com a capital do estado
+        //estado.cidades = [capitalCidade, ...estado.cidades.filter(cidade => cidade !== capitalCidade)];
+      });
+      // Ordena os estados em ordem alfabética pelo nome
+      estados.sort((a, b) => a.nome.localeCompare(b.nome));
+    }
+
+    return estados;
   }
-*/
-  public async getEstadosECidades(): Promise<{ estado: Estado, cidades: Cidade[] }[] | null> {
-    console.log('>>> localidadeController: getEstadosECidades')
-    return this.localidadeService.getEstadosECidades();
-  }
-/*
-  public async getIndicadoresPorLocalidade(): Promise<Localidade[] | null> {
-    return this.localidadeService.getIndicadoresPorLocalidade2();
-  }
-*/
+
+
+
+  /*
+    public async getIndicadoresPorLocalidade(): Promise<Localidade[] | null> {
+      return this.localidadeService.getIndicadoresPorLocalidade2();
+    }
+  */
 }
