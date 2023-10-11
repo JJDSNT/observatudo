@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
-import { FaArrowsAltH, FaGithub, FaChartBar, FaGlobeAmericas, FaHeartbeat, FaHome, FaList, FaMoneyBillWave, FaQuestion, FaUserGraduate, FaShieldAlt, FaCentercode } from 'react-icons/fa';
+import { FaLandmark, FaArrowsAltH, FaGithub, FaChartBar, FaGlobeAmericas, FaHeartbeat, FaHome, FaList, FaMoneyBillWave, FaQuestion, FaUserGraduate, FaShieldAlt, FaCentercode } from 'react-icons/fa';
 import { useSidebarStore } from '@/app/stores/useSidebarStore';
 import { useInfoStore } from '@/app/stores/useInfoStore';
 import sidebarBg from './assets/bg.jpg';
@@ -76,7 +76,7 @@ const Aside = () => {
           <MenuItem icon={<FaShieldAlt />} onClick={() => handleMenuItemClick(4)}> Segurança</MenuItem>
           <MenuItem icon={<FaGlobeAmericas />} onClick={() => handleMenuItemClick(5)}> Meio ambiente</MenuItem>
           <MenuItem icon={<FaMoneyBillWave />} onClick={() => handleMenuItemClick(6)}> Economia & Finanças</MenuItem>
-          <MenuItem icon={<FaMoneyBillWave />} onClick={() => handleMenuItemClick(6)}> Governança</MenuItem>
+          <MenuItem icon={<FaLandmark />} onClick={() => handleMenuItemClick(6)}> Governança</MenuItem>
           <MenuItem icon={<FaQuestion />} onClick={() => handleMenuItemClick(7)}> Personalizado</MenuItem>
         </Menu>
         <Menu>

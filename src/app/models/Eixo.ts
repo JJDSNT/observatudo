@@ -35,7 +35,7 @@ export const eixosData = [
   { id: Eixos.Seguranca, nome: nomedosEixos[3], nomeLegivel:labeldosEixos.Seguranca, icon: 'FaShieldAlt', cor: 'bg-yellow-500' },
   { id: Eixos.MeioAmbiente, nome: nomedosEixos[4], nomeLegivel:labeldosEixos.MeioAmbiente, icon: 'FaGlobeAmericas', cor: 'bg-green-500' },
   { id: Eixos.Economia, nome: nomedosEixos[5], nomeLegivel:labeldosEixos.Economia, icon: 'FaMoneyBillWave', cor: 'bg-purple-500' },
-  { id: Eixos.Governanca, nome: nomedosEixos[6], nomeLegivel:labeldosEixos.Governança, icon: 'FaLandmarkDome', cor: 'bg-indigo-500' },
+  { id: Eixos.Governanca, nome: nomedosEixos[6], nomeLegivel:labeldosEixos.Governança, icon: 'FaLandmark', cor: 'bg-indigo-500' },
   { id: Eixos.Personalizado, nome: nomedosEixos[7], nomeLegivel:labeldosEixos.Personalizado, icon: 'FaQuestion', cor: 'bg-gray-500' }
 ]
 
