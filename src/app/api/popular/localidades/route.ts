@@ -1,9 +1,8 @@
+export async function GET() {
+    return Response.json({ message: 'Para popular dados das localidades com IBGE descomente essa rota!' });
+}
+/*
 import { populateIBGEDatabase } from "@/app/controllers/ParseIBGECSVController";
-
-process.on('unhandledRejection', (reason, promise) => {
-    console.error('Unhandled Promise Rejection:', reason);
-    // Faça o que for necessário com a promessa não tratada, como registrar ou realizar alguma ação específica.
-  });
 
 export async function GET() {
     try {
@@ -17,3 +16,4 @@ export async function GET() {
     }
 }
 
+*/
