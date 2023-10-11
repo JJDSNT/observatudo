@@ -49,7 +49,6 @@ const DropdownCombo: React.FC = () => {
 
     if (estado) {
       setEstado(estado.codigo);
-      console.log(estado);//pq eu tenho estado dentro de estado?
       if (estado.capital) {
         setCidade(estado.capital.codigo);
       }
@@ -79,6 +78,7 @@ const DropdownCombo: React.FC = () => {
           value={estadoSelecionado || ''}
           onChange={handleEstadoChange}
         >
+          <option value="">Escolha o estado...</option>
           {estados.map((estado) => (
             <option key={estado.codigo} value={estado.codigo}>
               {estado.sigla}

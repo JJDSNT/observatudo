@@ -1,4 +1,4 @@
-import IndicadorController from "../../controllers/IndicadorController";
+import IndicadorController from "@/app/controllers/IndicadorController";
 
 export async function GET() {
     try {

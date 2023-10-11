@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
   title: 'ObservaTudo',
   description: 'Dashboard de indicadores cívicos',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
   themeColor: '#041E42',
   twitter: {
     card: "summary",

@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "analyze": "ANALYZE=true next build",
     "lint": "next lint"
   },
   "dependencies": {
@@ -29,6 +30,7 @@
     "zustand": "^4.4.3"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^13.5.4",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",

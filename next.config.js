@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  staticPageGenerationTimeout: 300000,
-  
+  staticPageGenerationTimeout: 200,
+
   experimental: {
     serverComponentsExternalPackages: ["typeorm","typedi"],
     serverMinification: false, //typeorm
@@ -10,4 +10,10 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+
+
+
+module.exports = withBundleAnalyzer(nextConfig);
