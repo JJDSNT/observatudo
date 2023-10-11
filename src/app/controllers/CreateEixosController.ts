@@ -1,4 +1,4 @@
-import { Eixo, eixosData } from "@/app/models/Eixo";
+import { Eixo, Eixos, eixosData } from "@/app/models/Eixo";
 import { EixoService } from "@/app/services/EixoService";
 
 const eixoService = new EixoService();

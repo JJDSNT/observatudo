@@ -46,8 +46,8 @@ export class Eixo {
   @PrimaryColumn({ type: 'int', enum: Eixos })
   id!: Eixos;
 
-  @Column({ type: 'varchar', enum: Eixos })
-  nome!: Eixos;
+  @Column({ type: 'varchar' })
+  nome!: String;
 
   @Column({ type: 'varchar' })
   nomeLegivel!: string;
