@@ -1,13 +1,14 @@
+
 export async function GET() {
-    return Response.json({ message: 'Para popular dados das localidades com IBGE descomente essa rota!' });
+    return Response.json({ message: 'Para popular dados dos indicadores descomente essa rota!' });
 }
 /*
-import { populateIBGEDatabase } from "@/app/controllers/ParseIBGELocalidadesCSVController";
+import { populateIndicadoresDatabase } from "@/app/controllers/ParseCSustentaveisIndicadoresCSV";
 
 export async function GET() {
     try {
-        await populateIBGEDatabase();
-        return Response.json({ message: 'Dados do IBGE populados com sucesso!' });
+        await populateIndicadoresDatabase();
+        return Response.json({ message: 'Indicadores criados com sucesso!' });
     } catch (error: unknown) {
         if (error instanceof Error) {
             return Response.json({ message: error.message }, { status: 500 });

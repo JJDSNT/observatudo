@@ -16,10 +16,10 @@ export class Indicador {
   @ManyToOne('Fonte', 'indicadores')
   fonte!: Relation<Fonte>;
 
-  @Column()
+  @Column({ nullable: false })
   nome: string;
 
-  @Column()
+  @Column({ length: 700 })
   descricao: string;
 
   @Column({ nullable: true, type: 'varchar' })
@@ -30,7 +30,7 @@ export class Indicador {
 
   @ManyToMany(() => Eixo, eixo => eixo.indicadores)
   @JoinTable({ name: "indicador_eixo" })
-  eixos!: Relation<Eixo[]>;
+  eixos?: Relation<Eixo[]> | null;
 
   //@ManyToMany(() => Localidade, localidade => localidade.indicadores)
   //localidades!: Relation<Localidade[]>;
@@ -43,7 +43,7 @@ export class Indicador {
     nome: string,
     descricao: string,
     fonte: Fonte,
-    eixos: Eixo[],
+    eixos?: Eixo[] | null,
     dono?: string,
     email?: string,
   ) {

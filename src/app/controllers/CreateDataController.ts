@@ -17,83 +17,6 @@ export class CreateDataController {
 
 
 
-// Chame a função conforme necessário
-// downloadObject();
-
-  const bucketName = 'seuBucketName';
-  const objectName = 'seuObjectName.csv';
-
-  try {
-    await parseCSVFromObjectStream(bucketName, objectName);
-    console.log('CSV lido e objetos inicializados com sucesso!');
-  } catch (error) {
-    console.error('Erro ao ler o CSV e inicializar objetos:', error);
-  }
-
-    DB.initialize().then(async () => {
-
-      // Criar estados
-      const localidade1 = new Localidade(10, "São Paulo");
-      const estado1 = new Estado(10, "São Paulo", "SP");
-      const localidade2 = new Localidade(20, "Rio de Janeiro");
-      const estado2 = new Estado(20, "Rio de Janeiro", "RJ");
-      const localidade3 = new Localidade(30, "Minas Gerais");
-      const estado3 = new Estado(30, "Minas Gerais", "MG");
-
-
-      // Salvar estados no banco de dados
-      await DB.manager.save(localidade1);
-      await DB.manager.save(estado1);
-      await DB.manager.save(localidade2);
-      await DB.manager.save(estado2);
-      await DB.manager.save(localidade3);
-      await DB.manager.save(estado3);
-
-      // Criar cidades
-
-      const localidade4 = new Localidade(1010, "Campos do Jordão");
-      const cidade1 = new Cidade(1010, "Campos do Jordão");
-      const localidade5 = new Localidade(1011, "Campinas");
-      const cidade2 = new Cidade(1011, "Campinas");
-      const localidade6 = new Localidade(2020, "Rio de Janeiro");
-      const cidade3 = new Cidade(2020, "Rio de Janeiro");
-      const localidade7 = new Localidade(2021, "Niterói");
-      const cidade4 = new Cidade(2021, "Niterói");
-      const localidade8 = new Localidade(3030, "Belo Horizonte");
-      const cidade5 = new Cidade(3030, "Belo Horizonte");
-      const localidade9 = new Localidade(3031, "Uberlândia");
-      const cidade6 = new Cidade(3031, "Uberlândia");
-
-      await DB.manager.save(localidade4);
-      await DB.manager.save(localidade5);
-      await DB.manager.save(localidade6);
-      await DB.manager.save(localidade7);
-      await DB.manager.save(localidade8);
-      await DB.manager.save(localidade9);
-
-      // Salvar cidades no banco de dados
-      await DB.manager.save(cidade1);
-      await DB.manager.save(cidade2);
-      await DB.manager.save(cidade3);
-      await DB.manager.save(cidade4);
-      await DB.manager.save(cidade5);
-      await DB.manager.save(cidade6);
-
-      // Adicionar as cidades como cidades do estado
-      estado1.cidades = [cidade1, cidade2];
-      estado2.cidades = [cidade3, cidade4];
-      estado3.cidades = [cidade5, cidade6];
-
-      // Adicionar as cidades como capital de cada estado
-      estado1.capital = cidade1;
-      estado2.capital = cidade3;
-      estado3.capital = cidade5;
-
-      // Atualizar estados no banco de dados
-      await DB.manager.save(estado1);
-      await DB.manager.save(estado2);
-      await DB.manager.save(estado3);
-
       // Criar eixos
       const eixos = [
         { nome: Eixos.Saude, icon: 'FaHeartbeat', cor: 'bg-red-500' },
@@ -199,7 +122,6 @@ export class CreateDataController {
 
 
 
-      console.log("Here you can setup and run express / fastify / any other framework.")
 
     })
       .catch((err) => {

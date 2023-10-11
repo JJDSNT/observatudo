@@ -127,8 +127,6 @@ class StorageService {
             reject(error);
           });
       });
-      // Agora, você tem jsonData como um array de objetos JSON
-      //console.log("Dados do CSV em JSON:", jsonData);
       return jsonData;
     } catch (error) {
       console.error("Erro ao baixar objeto CSV:", error);
