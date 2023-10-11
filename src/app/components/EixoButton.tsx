@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import httpClient from '@/app/utils/httpClient';
 import { useInfoStore } from '@/app/stores/useInfoStore';
-import { FaBicycle, FaGlobeAmericas, FaHeartbeat, FaHome, FaMoneyBillWave, FaQuestion, FaUserGraduate, FaShieldAlt } from 'react-icons/fa';
+import { FaBicycle, FaLandmark, FaGlobeAmericas, FaHeartbeat, FaHome, FaMoneyBillWave, FaQuestion, FaUserGraduate, FaShieldAlt } from 'react-icons/fa';
 
 
 interface Eixo {
   id: number;
   nome: string;
+  nomeLegivel: string;
   icon: string;
   cor: string;
 }
@@ -42,6 +43,8 @@ const EixoButton: React.FC = () => {
         return <FaGlobeAmericas />;
       case 'FaMoneyBillWave':
         return <FaMoneyBillWave />;
+      case 'FaLandmark':
+        return <FaLandmark />;
       case 'FaQuestion':
         return <FaQuestion />;
       default:
@@ -55,14 +58,13 @@ const EixoButton: React.FC = () => {
   return (
     <button
       type="button"
-      className={`${
-        eixoSelecionadoInfo ? eixoSelecionadoInfo.cor : 'text-black'
-      } border rounded-lg p-4 flex flex-col items-center justify-center space-y-2`}
+      className={`${eixoSelecionadoInfo ? eixoSelecionadoInfo.cor : 'text-black'
+        } border rounded-lg p-4 flex flex-col items-center justify-center space-y-2`}
     >
       {eixoSelecionadoInfo && (
         <>
           {renderIcon(eixoSelecionadoInfo.icon)}
-          <span>{eixoSelecionadoInfo.nome}</span>
+          <span>{eixoSelecionadoInfo.nomeLegivel}</span>
         </>
       )}
     </button>
