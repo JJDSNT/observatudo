@@ -30,7 +30,7 @@ const DropdownCombo: React.FC = () => {
         if (data && data.estados) {
           const estadoSelecionado = data.estados[0] ? data.estados[0].estado : null;
           const cidades = estadoSelecionado ? estadoSelecionado.cidades : [];
-        
+
           setEstados(data.estados);
           setEstado(estadoSelecionado ? estadoSelecionado.codigo : null);
           setCidade(cidades[0] ? cidades[0].codigo : null);
@@ -78,7 +78,9 @@ const DropdownCombo: React.FC = () => {
           value={estadoSelecionado || ''}
           onChange={handleEstadoChange}
         >
-          <option value="">Escolha o estado...</option>
+          {estadoSelecionado ? null : (
+            <option value="">Escolha o estado...</option>
+          )}
           {estados.map((estado) => (
             <option key={estado.codigo} value={estado.codigo}>
               {estado.sigla}
