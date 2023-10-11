@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("http://localhost:3000"),
   title: 'ObservaTudo',
   description: 'Dashboard de indicadores cívicos',
   themeColor: '#041E42',

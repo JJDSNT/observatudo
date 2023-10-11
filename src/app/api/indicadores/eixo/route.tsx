@@ -1,6 +1,11 @@
 import { Container } from 'typedi';
 import { EixoController } from "@/app/controllers/EixoController";
 
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Promise Rejection:', reason);
+  // Faça o que for necessário com a promessa não tratada, como registrar ou realizar alguma ação específica.
+});
+
 export async function GET() {
   try {
     const eixoController = Container.get(EixoController);

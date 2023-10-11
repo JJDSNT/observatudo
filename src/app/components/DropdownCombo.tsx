@@ -24,7 +24,7 @@ const DropdownCombo: React.FC = () => {
   useEffect(() => {
     const fetchEstadosECidades = async () => {
       try {
-        const response = await httpClient.get('/api/localidade');
+        const response = await httpClient.get('/api/localidades');
         const data = response.data;
 
         if (data && data.estados) {
