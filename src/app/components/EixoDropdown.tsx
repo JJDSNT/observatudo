@@ -25,6 +25,10 @@ const EixoDropdown: React.FC = () => {
         fetchEixos();
     }, []);
 
+    useEffect(() => {
+        setSelectedEixo(eixoSelecionado !== null ? eixoSelecionado : undefined);
+    }, [eixoSelecionado]);
+
     const handleEixoChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedValue = parseInt(event.target.value, 10);
         setSelectedEixo(selectedValue);
