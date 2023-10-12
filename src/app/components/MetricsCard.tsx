@@ -7,7 +7,7 @@ interface MetricCardProps {
 
 const MetricsCard: React.FC<MetricCardProps> = ({ indicador }) => {
     return (
-        <div className="w-1/4 p-4">
+        <div className="w-full"> {/* Adicione esta classe para ocupar toda a largura */}
             <div className="bg-white rounded-lg shadow-lg p-4">
                 {indicador && indicador.nome ? (
                     <>
