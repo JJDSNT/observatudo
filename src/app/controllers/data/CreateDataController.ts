@@ -1,14 +1,14 @@
 import "reflect-metadata"
 import { StorageService } from '@/app/services/storageService';
 //import DB from '../database/config/ormconfig_seminit'
-import { Localidade } from "../models/Localidade";
+import { Localidade } from "../../models/Localidade";
 import { Pais } from "@/app/models/Pais";
-import { Estado } from "../models/Estado";
-import { Cidade } from "../models/Cidade";
-import { Indicador } from "../models/Indicador";
+import { Estado } from "../../models/Estado";
+import { Cidade } from "../../models/Cidade";
+import { Indicador } from "../../models/Indicador";
 import { Fonte } from "@/app/models/Fonte"
-import { Eixo, Eixos } from "../models/Eixo";
-import { ValorIndicador } from "../models/ValorIndicador";
+import { Eixo, Eixos } from "../../models/Eixo";
+import { ValorIndicador } from "../../models/ValorIndicador";
 
 /*
 export class CreateDataController {

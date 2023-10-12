@@ -1,7 +1,7 @@
-import { Localidade } from "../models/Localidade";
+import { Localidade } from "../../models/Localidade";
 import { Pais } from "@/app/models/Pais";
-import { Estado } from "../models/Estado";
-import { Cidade } from "../models/Cidade";
+import { Estado } from "../../models/Estado";
+import { Cidade } from "../../models/Cidade";
 import { AppDataSource } from "@/app/infra/database";
 import { StorageService } from "@/app/services/storageService";
 
