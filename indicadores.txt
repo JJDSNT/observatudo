@@ -11,6 +11,42 @@
 purple
 teal
 public async adicionarIndicadoresAoEixo(eixoId: number, indicadores: Indicador[]): Promise<void> {
+const indicatorsToUpdate = [
+    // Saúde (Health)
+
+    { codigo_indicador: '4009', eixoId: 1 }, // "Mortalidade neonatal (crianças de 0 a 27 dias)"
+>>>>{ codigo_indicador: '125', eixoId: 1 },  // "Esgoto que não recebe nenhum tipo de tratamento" -- mudar para meio ambiente
+    { codigo_indicador: '3982', eixoId: 1 }, // "População atendida por equipes de saúde da família"
+    { codigo_indicador: '4008', eixoId: 1 }, // "Mortalidade na infância (crianças menores de 5 anos de idade)"
+
+    // Educação (Education)
+    { codigo_indicador: '4016', eixoId: 2 }, // "Prova Brasil - Matemática"
+    { codigo_indicador: '4148', eixoId: 2 }, // "Atingir  o  Índice  de  Desenvolvimento  da Educação Básica (IDEB) de 9,0."
+    { codigo_indicador: '5155', eixoId: 2 }, // "Índice de Desenvolvimento da Educação Básica (IDEB) - anos finais"
+    { codigo_indicador: '27', eixoId: 2 },   // "Crianças plenamente alfabetizadas até os 8 anos de idade"
+    { codigo_indicador: '4022', eixoId: 2 }, // "Razão entre o número de alunos e professores no ensino fundamental"
+
+    // Assistência Social (Social Assistance)
+    { codigo_indicador: '3965', eixoId: 3 }, // "Famílias inscritas no Cadastro Único para programas sociais"
+    { codigo_indicador: '3985', eixoId: 3 }, // "Índice de Desenvolvimento Humano (IDH) municipal"
+
+    // Segurança (Security)
+    { codigo_indicador: '3900', eixoId: 4 }, // "Mortes por armas de fogo"
+
+    // Meio ambiente, urbanização e mobilidade (Environment, Urbanization, and Mobility)
+    { codigo_indicador: '127', eixoId: 5 }, // "Coleta seletiva"
+    { codigo_indicador: '5140', eixoId: 5 }, // "Vias do metrô"
+    { codigo_indicador: '3865', eixoId: 5 }, // "Mortes no trânsito"
+
+    // Economia & Finanças (Economy & Finance)
+    { codigo_indicador: '23', eixoId: 6 }, // "Desemprego"
+
+    // Governança & Administração (Governança)
+    { codigo_indicador: '4120', eixoId: 7 }, // "Serviços públicos informatizados na Secretaria Municipal de Administração"
+    { codigo_indicador: '3922', eixoId: 7 }, // "Dados em formato aberto"
+    { codigo_indicador: '4005', eixoId: 7 }, // "Programa de Metas"
+];
+
 
 "codigo_indicador": "3985", "nome": "Índice de Desenvolvimento Humano (IDH) municipal",
 "codigo_indicador": "4009", "nome": "Mortalidade neonatal (crianças de 0 a 27 dias)",
@@ -25,65 +61,49 @@ public async adicionarIndicadoresAoEixo(eixoId: number, indicadores: Indicador[]
 "codigo_indicador": "3900","nome": "Mortes por armas de fogo",
 "codigo_indicador": "23", "nome": "Desemprego",    
 "codigo_indicador": "3982", "nome": "População atendida por equipes de saúde da família",
-"codigo_indicador": "5140", "nome": " Vias do metrô",
+"codigo_indicador": "5140", "nome": "Vias do metrô",
 "codigo_indicador": "3865","nome": "Mortes no trânsito",
 "codigo_indicador": "4008","nome": "Mortalidade na infância (crianças menores de 5 anos de idade)",
 "codigo_indicador": "3965", "nome": "Famílias inscritas no Cadastro Único para programas sociais",
 "codigo_indicador": "4005", "nome": "Programa de Metas",
 "codigo_indicador": "4022","nome": "Razão entre o número de alunos e professores no ensino fundamental",
-            
-            
+
+
+
+
+
+
 "codigo_indicador": "3897", "nome": "Mortes por agressão",  
 "codigo_indicador": "150","nome": "Quantidade de famílias que recebem o benefício de superação da extrema pobreza",
 "codigo_indicador": "114", "nome": "Gravidez na adolescência",
 "codigo_indicador": "3945","nome": "Pedidos respondidos no sistema de informação ao cidadão"
+"codigo_indicador": "14", "nome": "Perda de água tratada",
+"codigo_indicador": "98", "nome": "Demanda atendida em creches"
+"codigo_indicador": "4032", "nome": "Rios e córregos classificados com, pelo menos, \"bom estado\" segundo critérios oficiais"
+"codigo_indicador": "4040", "nome": "Transporte público por ônibus com energia sustentável",
+"codigo_indicador": "184", "nome": "População em situação de rua"
+"codigo_indicador": "3899", "nome": "Avaliação oferta/demanda do abastecimento urbano de água",
+"codigo_indicador": "145", "nome": "Jovens com ensino médio concluído até os 19 anos de idade",
+"codigo_indicador": "4153", "nome": "Manter o Ensino Fundamental para a população de 6 a 14 anos.",
+"codigo_indicador": "4686", "nome": "BENEFICIÁRIOS DO BPC NO CADASTRO ÚNICO"
+"codigo_indicador": "146", "nome": "Crianças e jovens de 4 a 17 anos na escola"
+"codigo_indicador": "4011", "nome": "Adequação idade/ano no Ensino Fundamental",
+"codigo_indicador": "4000", "nome": "Professores com formação em nível superior",
+"codigo_indicador": "4288", "nome": "PERCENTUAL DE UNIDADES DE SAÚDE COM SISTEMA E-SUS AF IMPLANTADO"
+"codigo_indicador": "3923", "nome": "Déficit habitacional",
+"codigo_indicador": "4043", "nome": "Valor total repassado às famílias beneficiárias do Programa Bolsa Família",
+"codigo_indicador": "4023", "nome": "Razão entre o número de alunos e professores no ensino médio",
+"codigo_indicador": "147", "nome": "Demanda atendida de vagas na pré-escola"
+"codigo_indicador": "155", "nome": "Crimes violentos fatais",
+"codigo_indicador": "3882", "nome": "Acessos negados no sistema de informação ao cidadão",
+"codigo_indicador": "4384", "nome": "RECURSOS REPASSADOS PARA A ASSISTÊNCIA SOCIAL (COFINANCIAMENTO ESTUDAL E REPASSE MUNICIPAL)",
+            
+            
+            "nome": "Área verde na zona urbana","descricao": "Total de metros quadrados de área verde pública por habitante e percentual da população que vive em um raio de até 300m de áreas verdes.",
+      
 
-            "codigo_indicador": "14",
-      "nome": "Perda de água tratada",
-            "codigo_indicador": "98",
-      "nome": "Demanda atendida em creches"
-            "codigo_indicador": "4032",
-      "nome": "Rios e córregos classificados com, pelo menos, \"bom estado\" segundo critérios oficiais"
-           "codigo_indicador": "4040",
-      "nome": "Transporte público por ônibus com energia sustentável",
-            "codigo_indicador": "184",
-      "nome": "População em situação de rua"
-           "codigo_indicador": "3899",
-      "nome": "Avaliação oferta/demanda do abastecimento urbano de água",
-            "codigo_indicador": "145",
-      "nome": "Jovens com ensino médio concluído até os 19 anos de idade",
-            "codigo_indicador": "4153",
-      "nome": "Manter o Ensino Fundamental para a população de 6 a 14 anos.",
-            "codigo_indicador": "4686",
-      "nome": "BENEFICIÁRIOS DO BPC NO CADASTRO ÚNICO"
-            "codigo_indicador": "146",
-      "nome": "Crianças e jovens de 4 a 17 anos na escola"
-            "codigo_indicador": "4011",
-      "nome": "Adequação idade/ano no Ensino Fundamental",
-            "codigo_indicador": "4000",
-      "nome": "Professores com formação em nível superior",
-            "codigo_indicador": "4288",
-      "nome": "PERCENTUAL DE UNIDADES DE SAÚDE COM SISTEMA E-SUS AF IMPLANTADO"
-            "codigo_indicador": "3923",
-      "nome": "Déficit habitacional",
-            "codigo_indicador": "4043",
-      "nome": "Valor total repassado às famílias beneficiárias do Programa Bolsa Família",
-            "codigo_indicador": "4023",
-      "nome": "Razão entre o número de alunos e professores no ensino médio",
-            "codigo_indicador": "147",
-      "nome": "Demanda atendida de vagas na pré-escola"
-           "codigo_indicador": "155",
-      "nome": "Crimes violentos fatais",
-            "codigo_indicador": "3882",
-      "nome": "Acessos negados no sistema de informação ao cidadão",
-            "codigo_indicador": "4384",
-      "nome": "RECURSOS REPASSADOS PARA A ASSISTÊNCIA SOCIAL (COFINANCIAMENTO ESTUDAL E REPASSE MUNICIPAL)",
-            "nome": "Área verde na zona urbana",
-      "descricao": "Total de metros quadrados de área verde pública por habitante e percentual da população que vive em um raio de até 300m de áreas verdes.",
-        "codigo_indicador": "4341",
-      "nome": "COBERTURA DE ACOMPANHAMENTO DAS CONDICIONALIDADES DE SAÚDE DO PROGRAMA BOLSA FAMÍLIA (PBF)"
-           "codigo_indicador": "24",
-      "nome": "Índice de Desenvolvimento da Educação Básica (IDEB) - anos iniciais"
+"codigo_indicador": "4341", "nome": "COBERTURA DE ACOMPANHAMENTO DAS CONDICIONALIDADES DE SAÚDE DO PROGRAMA BOLSA FAMÍLIA (PBF)"
+"codigo_indicador": "24", "nome": "Índice de Desenvolvimento da Educação Básica (IDEB) - anos iniciais"
             "codigo_indicador": "4015",
       "nome": "Prova Brasil - Língua portuguesa"
       "codigo_indicador": "4269",
