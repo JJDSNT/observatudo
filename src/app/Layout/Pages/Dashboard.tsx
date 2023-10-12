@@ -17,15 +17,7 @@ const Dashboard = () => {
                 <EixoDropdown />
             <hr />
             <Eixos />
-            {estadoSelecionado && (
-                <p>O código do estado selecionado é: {estadoSelecionado}</p>
-            )}
-            {cidadeSelecionada && (
-                <p>O código da cidade selecionada é: {cidadeSelecionada.toString()}</p>
-            )}
-            {eixoSelecionado && (
-                <p>O número do eixo selecionado é: {eixoSelecionado}</p>
-            )}
+            
             <MetricsCards />
         </>
     );

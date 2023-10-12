@@ -6,7 +6,7 @@ import MetricsCard from './MetricsCard';
 
 const MetricsCards: React.FC = () => {
     const [eixos, setEixos] = useState<any[]>([]);
-    const { eixoSelecionado } = useInfoStore();
+    const { eixoSelecionado, estadoSelecionado, cidadeSelecionada } = useInfoStore();
 
     useEffect(() => {
         const fetchIndicadores = async () => {
@@ -32,7 +32,7 @@ const MetricsCards: React.FC = () => {
             {selectedEixo && (
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
                     {selectedEixo.indicadores.map((indicador: Indicador) => (
-                        <MetricsCard key={indicador.id} indicador={indicador} />
+                        <MetricsCard key={indicador.id} indicador={indicador} selectedLocalidade={cidadeSelecionada} />
                     ))}
                 </div>
             )}

@@ -15,7 +15,7 @@ export class ValorIndicador {
   indicador!: Relation<Indicador>;
   
   @ManyToOne(() => Localidade, localidade => localidade.valoresIndicador)
-  @JoinColumn({ name: 'codigo' })
+  @JoinColumn({ name: 'codigoLocalidade' })
   localidade!: Relation<Localidade>;
   
   @Column({ type: "date" })

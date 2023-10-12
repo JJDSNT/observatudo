@@ -19,7 +19,7 @@ export class EixoService {
   async getEixosComIndicadores(): Promise<Eixo[]> {
     return await this.eixoRepository.find(
       {
-        relations: ['indicadores'],
+        relations: ['indicadores', "indicadores.valoresIndicador", "indicadores.valoresIndicador.localidade"],
       }
     );
   }

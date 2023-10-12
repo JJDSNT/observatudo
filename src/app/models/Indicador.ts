@@ -28,7 +28,7 @@ export class Indicador {
   email: string | null;
 
   @ManyToMany(() => Eixo, eixo => eixo.indicadores)
-  //@JoinTable({ name: "indicador_eixo" })
+  //@JoinTable({ name: "indicador_eixo" }) - colocar apenas em um lado do relacionamento
   eixos?: Relation<Eixo[]> | null;
 
   //@ManyToMany(() => Localidade, localidade => localidade.indicadores)
