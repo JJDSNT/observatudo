@@ -44,7 +44,7 @@ export const eixosData = [
 @Unique(['nome'])
 export class Eixo {
   @PrimaryColumn({ type: 'int', enum: Eixos })
-  id!: Eixos;
+  id!: number;
 
   @Column({ type: 'varchar' })
   nome!: String;

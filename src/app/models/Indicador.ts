@@ -7,11 +7,10 @@ import { ValorIndicador } from "./ValorIndicador"
 
 
 @Entity({ name: 'indicador' })
-@Unique(['codigo_indicador', 'fonte'])
+@Unique(['id', 'fonte'])
 export class Indicador {
   @PrimaryColumn()
-  codigo_indicador!: string;
-
+  id!: number;
 
   @ManyToOne('Fonte', 'indicadores')
   fonte!: Relation<Fonte>;
@@ -29,7 +28,7 @@ export class Indicador {
   email: string | null;
 
   @ManyToMany(() => Eixo, eixo => eixo.indicadores)
-  @JoinTable({ name: "indicador_eixo" })
+  //@JoinTable({ name: "indicador_eixo" })
   eixos?: Relation<Eixo[]> | null;
 
   //@ManyToMany(() => Localidade, localidade => localidade.indicadores)
@@ -39,7 +38,7 @@ export class Indicador {
   valoresIndicador!: Relation<ValorIndicador[]>;
 
   constructor(
-    codigo_indicador: string,
+    id: number,
     nome: string,
     descricao: string,
     fonte: Fonte,
@@ -47,7 +46,7 @@ export class Indicador {
     dono?: string,
     email?: string,
   ) {
-    this.codigo_indicador = codigo_indicador;
+    this.id = id;
     this.nome = nome;
     this.descricao = descricao;
     this.fonte = fonte;
@@ -56,12 +55,12 @@ export class Indicador {
     this.email = email ?? null;
   }
 
-  getCodigoIndicador(): string {
-    return this.codigo_indicador;
+  getCodigoIndicador(): number {
+    return this.id;
   }
 
-  setCodigoIndicador(codigo_indicador: string): void {
-    this.codigo_indicador = codigo_indicador;
+  setCodigoIndicador(id: number): void {
+    this.id = id;
   }
 
   getFonte(): Fonte {

@@ -42,12 +42,18 @@ export class EixoService {
 
   public async adicionarIndicadoresAoEixo(eixoId: number, indicadores: Indicador[]): Promise<void> {
     try {
-      const opcoes = { where: { id: eixoId } };
-      const eixo = await this.eixoRepository.findOne(opcoes);
+      const eixo = await this.eixoRepository.findOne({
+        where: { id: eixoId },
+        relations: ['indicadores'],
+      });
+
       if (!eixo) {
         throw new Error('Eixo não encontrado');
       }
-      eixo.indicadores = indicadores;
+      if (!eixo.indicadores) {
+        eixo.indicadores = [];
+      }
+      eixo.indicadores.push(...indicadores);
       await this.eixoRepository.save(eixo);
       console.log('Indicadores adicionados ao eixo com sucesso!');
     } catch (error) {

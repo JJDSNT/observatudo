@@ -10,7 +10,7 @@
 
 purple
 teal
-
+public async adicionarIndicadoresAoEixo(eixoId: number, indicadores: Indicador[]): Promise<void> {
 
 "codigo_indicador": "3985", "nome": "Índice de Desenvolvimento Humano (IDH) municipal",
 "codigo_indicador": "4009", "nome": "Mortalidade neonatal (crianças de 0 a 27 dias)",
@@ -23,30 +23,21 @@ teal
 "codigo_indicador": "5155", "nome": "Índice de Desenvolvimento da Educação Básica (IDEB) - anos finais",
 "codigo_indicador": "127", "nome": "Coleta seletiva",
 "codigo_indicador": "3900","nome": "Mortes por armas de fogo",
-      "codigo_indicador": "23",
-      "nome": "Desemprego",    
-            "codigo_indicador": "3982",
-      "nome": "População atendida por equipes de saúde da família",
-            "codigo_indicador": "5140",
-      "nome": " Vias do metrô",
-            "codigo_indicador": "3865",
-      "nome": "Mortes no trânsito",
-            "codigo_indicador": "4008",
-      "nome": "Mortalidade na infância (crianças menores de 5 anos de idade)",
-            "codigo_indicador": "3965",
-      "nome": "Famílias inscritas no Cadastro Único para programas sociais",
-            "codigo_indicador": "4005",
-      "nome": "Programa de Metas",
-            "codigo_indicador": "4022",
-      "nome": "Razão entre o número de alunos e professores no ensino fundamental",
-            "codigo_indicador": "3897",
-      "nome": "Mortes por agressão",  
-            "codigo_indicador": "150",
-      "nome": "Quantidade de famílias que recebem o benefício de superação da extrema pobreza",
-            "codigo_indicador": "114",
-      "nome": "Gravidez na adolescência",
-            "codigo_indicador": "3945",
-      "nome": "Pedidos respondidos no sistema de informação ao cidadão"
+"codigo_indicador": "23", "nome": "Desemprego",    
+"codigo_indicador": "3982", "nome": "População atendida por equipes de saúde da família",
+"codigo_indicador": "5140", "nome": " Vias do metrô",
+"codigo_indicador": "3865","nome": "Mortes no trânsito",
+"codigo_indicador": "4008","nome": "Mortalidade na infância (crianças menores de 5 anos de idade)",
+"codigo_indicador": "3965", "nome": "Famílias inscritas no Cadastro Único para programas sociais",
+"codigo_indicador": "4005", "nome": "Programa de Metas",
+"codigo_indicador": "4022","nome": "Razão entre o número de alunos e professores no ensino fundamental",
+            
+            
+"codigo_indicador": "3897", "nome": "Mortes por agressão",  
+"codigo_indicador": "150","nome": "Quantidade de famílias que recebem o benefício de superação da extrema pobreza",
+"codigo_indicador": "114", "nome": "Gravidez na adolescência",
+"codigo_indicador": "3945","nome": "Pedidos respondidos no sistema de informação ao cidadão"
+
             "codigo_indicador": "14",
       "nome": "Perda de água tratada",
             "codigo_indicador": "98",

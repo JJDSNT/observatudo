@@ -15,7 +15,7 @@ const storageService = new StorageService();
 
 export async function populateIndicadoresDatabase(): Promise<void> {
     const bucketName = 'raw-sources';
-    const batchSize = 500;
+    const batchSize = 100;
 
     const jsonDataIndicadores = await storageService.parseCSVtoJSON(bucketName, 'cidades_sustentaveis/indicadores.csv');
 
@@ -49,7 +49,7 @@ export async function populateIndicadoresDatabase(): Promise<void> {
       
           // Check if an indicator with the same codigo_indicador already exists in uniqueIndicadores
           const existsIndex = uniqueIndicadores.findIndex(
-            (uniqueIndicador) => uniqueIndicador.codigo_indicador === indicador.codigo_indicador
+            (uniqueIndicador) => uniqueIndicador.id === indicador.id
           );
       
           // If not found, add the indicator to the uniqueIndicadores array
