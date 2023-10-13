@@ -25,10 +25,6 @@ const MetricsCards: React.FC = () => {
 
     return (
         <>
-            <div>Teste</div>
-            {eixoSelecionado && (
-                <p>O número do eixo selecionado é: {eixoSelecionado}</p>
-            )}
             {selectedEixo && (
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
                     {selectedEixo.indicadores.map((indicador: Indicador) => (

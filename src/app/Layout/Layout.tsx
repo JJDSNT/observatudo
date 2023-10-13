@@ -13,7 +13,6 @@ function Layout() {
 
     <div>
       <Navbar />
-      {toggled.toString()}
       <div style={{ display: 'flex' }}>
         <Aside />
         <Main />
