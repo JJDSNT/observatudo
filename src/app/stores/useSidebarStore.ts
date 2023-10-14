@@ -15,7 +15,7 @@ interface SidebarStore {
 
 export const useSidebarStore = create<SidebarStore>((set) => ({
     collapsed: false,
-    toggled: true,
+    toggled: false,
     activePage: 'dashboard',
     setCollapsed: (collapsed) => set({ collapsed }),
     setToggled: (toggled) => set({ toggled }),

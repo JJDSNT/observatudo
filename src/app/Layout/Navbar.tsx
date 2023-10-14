@@ -9,7 +9,17 @@ const Navbar = () => {
   const { activePage, handleToggleSidebar, setToggled, toggled } = useSidebarStore();
   const { data: session } = useSession();
   return (
-    <nav className="bg-blue-800 p-2" role="navigation">
+    <nav className="p-2" role="navigation"
+    style={{
+      backgroundColor: 'rgba(37, 47, 110, 1)',
+      zIndex: '1000',
+      position: 'fixed',
+      width: '100%',
+      top: 0,
+      left: 0,
+      right: 0,
+      margin: 0,
+      }}>
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <div className="mr-3" id="navbar_logo" style={{ border: 0 }}>
