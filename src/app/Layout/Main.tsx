@@ -1,16 +1,23 @@
 import React from 'react';
-import { FaGithub } from "react-icons/fa"
+import { useSidebarStore } from '@/app/stores/useSidebarStore';
+import Footer from "@/app/components/Footer"
 import Dashboard from './Pages/Dashboard';
 import ListarIndicadores from './Pages/ListarIndicadores';
-import { useSidebarStore } from '@/app/stores/useSidebarStore';
-import NavMenu from "@/app/components/AuthNav"
 
 const Main = () => {
 
-  const { activePage, handleBackdropClick } = useSidebarStore();
+  const { activePage, handleBackdropClick, toggled, collapsed } = useSidebarStore();
+
+  const sidebarWidth = collapsed ? 80 : 270;
+  const mainStyles = {
+    marginLeft: toggled ? `${sidebarWidth}px` : '0',
+    width: toggled ? `calc(100% - ${sidebarWidth}px)` : '100%',
+    //transform: toggled ? `translateX(${sidebarWidth}px)` : 'none', // Ajuste a largura de acordo com a largura da sua barra lateral
+    transition: 'transform 0.3s ease-in-out' // Adicione uma transição suave
+  };
 
   return (
-    <main className="container mx-auto mt-10">
+    <main className="container mx-auto mt-10" style={mainStyles}>
 
 
 
@@ -21,24 +28,8 @@ const Main = () => {
       )}
 
 
-      {/* Rodapé */}
-      <footer className="mt-10 flex flex-col items-center justify-center text-center">
-        <hr className="w-1/3 my-4 border-gray-300" />
-        <p className="mb-2">Desenvolvido com <span role="img" aria-label="Coração">❤️</span> dedicação.</p>
-        <div className="flex items-center">
-          <span>
-            <FaGithub />
-          </span>
-          <a
-            href="https://github.com/JJDSNT/otfrontend2"
-            target="_blank"
-            className="ps-sidebar-btn ml-2"
-            rel="noopener noreferrer"
-          >
-            Código-fonte
-          </a>
-        </div>
-      </footer>
+      <Footer />
+
 
     </main>
   );

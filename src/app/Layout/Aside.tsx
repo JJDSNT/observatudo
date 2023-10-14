@@ -9,6 +9,7 @@ import { useSidebarStore } from '@/app/stores/useSidebarStore';
 import { useInfoStore } from '@/app/stores/useInfoStore';
 import sidebarBg from './assets/bg.jpg';
 import { useSession } from 'next-auth/react';
+import ThemeSelector from '../components/ThemeSelector';
 
 
 const Aside = () => {
@@ -36,6 +37,8 @@ const Aside = () => {
         toggled={toggled}
         breakPoint="all"
         onBackdropClick={handleBackdropClick}
+        width='270px'
+        collapsedWidth='80px'
         rootStyles={{
           border: 'none',
           [`.${sidebarClasses.container}`]: {
@@ -43,41 +46,44 @@ const Aside = () => {
             paddingTop: '70px',
             height: '100%',
             //zIndex: '5',
-            top:0,
-            left:0
+            top: 0,
+            left: 0
           },
-          [`.${sidebarClasses.root}`]:{
-            marginTop:'0px',
-            left:'0px',
+          [`.${sidebarClasses.root}`]: {
+            marginTop: '0px',
+            left: '0px',
             height: '100%'
           }
         }}
       >
-      <Menu>
         <Menu>
-          {session && (
-            <MenuItem icon={<FaCogs />} component={<Link href="/admin" />}> Admin</MenuItem>
-          )}
-          <MenuItem icon={<FaArrowsAltH />} onClick={() => handleCollapsedChange()}> Menu</MenuItem>
+          <Menu>
+            <ThemeSelector />
+          </Menu>
+          <Menu>
+            {session && (
+              <MenuItem icon={<FaCogs />} component={<Link href="/admin" />}> Admin</MenuItem>
+            )}
+            <MenuItem icon={<FaArrowsAltH />} onClick={() => handleCollapsedChange()}> Menu</MenuItem>
+          </Menu>
+          <Menu>
+            <MenuItem icon={<FaChartBar />} onClick={() => handleMenuItemClick('dashboard')}> Dashboard</MenuItem>
+          </Menu>
+          <Menu>
+            <MenuItem icon={<FaHeartbeat />} onClick={() => handleMenuItemClick(1)}> Saúde</MenuItem>
+            <MenuItem icon={<FaUserGraduate />} onClick={() => handleMenuItemClick(2)}> Educação</MenuItem>
+            <MenuItem icon={<FaHome />} onClick={() => handleMenuItemClick(3)}> Assistência social</MenuItem>
+            <MenuItem icon={<FaShieldAlt />} onClick={() => handleMenuItemClick(4)}> Segurança</MenuItem>
+            <MenuItem icon={<FaGlobeAmericas />} onClick={() => handleMenuItemClick(5)}> Meio ambiente</MenuItem>
+            <MenuItem icon={<FaMoneyBillWave />} onClick={() => handleMenuItemClick(6)}> Economia & Finanças</MenuItem>
+            <MenuItem icon={<FaLandmark />} onClick={() => handleMenuItemClick(6)}> Governança</MenuItem>
+            <MenuItem icon={<FaQuestion />} onClick={() => handleMenuItemClick(7)}> Personalizado</MenuItem>
+          </Menu>
+          <Menu>
+            <MenuItem icon={<FaList />} onClick={() => handleMenuItemClick('listarIndicadores')}> Listar indicadores</MenuItem>
+          </Menu>
         </Menu>
-        <Menu>
-          <MenuItem icon={<FaChartBar />} onClick={() => handleMenuItemClick('dashboard')}> Dashboard</MenuItem>
-        </Menu>
-        <Menu>
-          <MenuItem icon={<FaHeartbeat />} onClick={() => handleMenuItemClick(1)}> Saúde</MenuItem>
-          <MenuItem icon={<FaUserGraduate />} onClick={() => handleMenuItemClick(2)}> Educação</MenuItem>
-          <MenuItem icon={<FaHome />} onClick={() => handleMenuItemClick(3)}> Assistência social</MenuItem>
-          <MenuItem icon={<FaShieldAlt />} onClick={() => handleMenuItemClick(4)}> Segurança</MenuItem>
-          <MenuItem icon={<FaGlobeAmericas />} onClick={() => handleMenuItemClick(5)}> Meio ambiente</MenuItem>
-          <MenuItem icon={<FaMoneyBillWave />} onClick={() => handleMenuItemClick(6)}> Economia & Finanças</MenuItem>
-          <MenuItem icon={<FaLandmark />} onClick={() => handleMenuItemClick(6)}> Governança</MenuItem>
-          <MenuItem icon={<FaQuestion />} onClick={() => handleMenuItemClick(7)}> Personalizado</MenuItem>
-        </Menu>
-        <Menu>
-          <MenuItem icon={<FaList />} onClick={() => handleMenuItemClick('listarIndicadores')}> Listar indicadores</MenuItem>
-        </Menu>
-      </Menu>
-    </Sidebar >
+      </Sidebar >
 
     </>
   );
