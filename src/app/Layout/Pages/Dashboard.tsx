@@ -12,12 +12,14 @@ const Dashboard = () => {
         <>
             <EixoButton />
             <header className="bg-gray-200 p-4 flex rounded-lg">
-                <DropdownCombo />
+                <div style={{ maxWidth: '100%' }} >
+                    <DropdownCombo />
+                </div>
             </header>
-                <EixoDropdown />
+            <EixoDropdown />
             <hr />
             <Eixos />
-            
+
             <MetricsCards />
         </>
     );

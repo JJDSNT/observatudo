@@ -45,7 +45,7 @@ const EixoDropdown: React.FC = () => {
                     id="eixo"
                     name="eixo"
                     className="block min-w-min p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-
+                    style={{ color: 'black' }}
                     value={selectedEixo || ''}
                     onChange={handleEixoChange}
                 >

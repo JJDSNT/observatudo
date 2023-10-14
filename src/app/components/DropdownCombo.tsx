@@ -77,9 +77,10 @@ const DropdownCombo: React.FC = () => {
           className="block min-w-min p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
           value={estadoSelecionado || ''}
           onChange={handleEstadoChange}
+          style={{ color: 'black' }}
         >
           {estadoSelecionado ? null : (
-            <option value="">Escolha o estado...</option>
+            <option value="">Estado</option>
           )}
           {estados.map((estado) => (
             <option key={estado.codigo} value={estado.codigo}>
@@ -101,6 +102,7 @@ const DropdownCombo: React.FC = () => {
           className="block min-w-min p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
           value={cidadeSelecionada || ''}
           onChange={handleCidadeChange}
+          style={{ color: 'black' }}
         >
           {estadoSelecionado && estadoSelecionado > 0 ? (
             estados.find((estado) => estado.codigo === estadoSelecionado)?.cidades.map((cidade) => (
