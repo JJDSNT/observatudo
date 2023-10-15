@@ -1,5 +1,6 @@
 {
-  "name": "ObservaTudo - Dashboard de indicadores",
+  "name": "Observa Tudo",
+  "description": "Dashboard de indicadores cívicos",
   "short_name": "ObservaTudo",
   "theme_color": "#0c1e35",
   "background_color": "#ffffff",
