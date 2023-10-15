@@ -1,6 +1,12 @@
 {
   "name": "ObservaTudo - Dashboard de indicadores",
   "short_name": "ObservaTudo",
+  "theme_color": "#0c1e35",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "id": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,10 +19,20 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#0c1e35",
-  "background_color": "#ffffff",
-  "display": "standalone",
-  "start_url": "/",
-  "id": "/",
-  "scope": "/"
+  "screenshots": [
+    {
+      "src": "/observatudo_desktop.jpg",
+      "sizes": "1905x880",
+      "type": "image/jpg",
+      "form_factor": "wide",
+      "label": "Observa Tudo"
+    },
+    {
+      "src": "source/image2.gif",
+      "sizes": "900x1600",
+      "type": "image/jpg",
+      "form_factor": "narrow",
+      "label": "Observa Tudo Mobile"
+    }
+  ]  
 }
