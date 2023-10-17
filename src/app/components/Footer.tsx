@@ -7,7 +7,7 @@ const Footer = () => {
             <hr className="w-1/3 my-4 border-gray-300" />
             <p className="mb-2">Desenvolvido com <span role="img" aria-label="Coração">❤️</span> dedicação.</p>
             <div className="flex items-center">
-                <span>
+                <span style={{ marginRight: '5px' }}>
                     <FaGithub />
                 </span>
                 <a

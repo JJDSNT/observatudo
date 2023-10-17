@@ -61,7 +61,7 @@ const Aside = () => {
             <ThemeSelector />
           </Menu>
           <Menu>
-            {session && (
+            {session && session.user.role === 'admin' && ( 
               <MenuItem icon={<FaCogs />} component={<Link href="/admin" />}> Admin</MenuItem>
             )}
             <MenuItem icon={<FaArrowsAltH />} onClick={() => handleCollapsedChange()}> Menu</MenuItem>

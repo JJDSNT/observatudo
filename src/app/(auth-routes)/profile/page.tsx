@@ -2,16 +2,12 @@ import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/utils/auth";
 
-export default async function ProtectedRoute() {
+export default async function Profile() {
   const session = await getServerSession(authOptions);
   if (!session || !session.user) {
     redirect("/api/auth/signin");
   }
 
-console.log(session.user);
-  if (session?.user.role === "admin") {
-    return <p>You are an admin, welcome!</p>
-  }
 
   
 

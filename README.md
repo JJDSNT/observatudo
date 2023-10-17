@@ -5,10 +5,11 @@ Este é meu primeiro projeto dedicado ao estudo e aprendizado do desenvolvimento
 ## Tecnologias Utilizadas
 
 - **Frontend:**
-  - Next.js: Um framework de React para desenvolvimento web.
-  - TypeScript: Uma linguagem de programação que adiciona tipos estáticos ao JavaScript.
-  - Zustand: Um gerenciador de estado
-  - TypeORM: ORM
+  - [Next.js](https://nextjs.org/): Um framework de React para desenvolvimento web.
+  - [TypeScript](https://www.typescriptlang.org/): Uma linguagem de programação que adiciona tipos estáticos ao JavaScript.
+  - [Zustand](https://zustand-demo.pmnd.rs/): Um gerenciador de estado
+  - [TypeORM](https://typeorm.io/): ORM
+  - [NextAuth](https://next-auth.js.org/): Autenticação
   - [React Pro Sidebar](https://github.com/azouaoui-med/react-pro-sidebar): Uma barra lateral responsiva para aplicações React.
 
 ## Funcionalidades Principais

@@ -1,9 +1,9 @@
-
+/*
 export async function GET() {
     return Response.json({ message: 'Para popular dados dos indicadores descomente essa rota!' });
 }
-/*
-import { populateIndicadoresDatabase } from "@/app/controllers/ParseCSustentaveisIndicadoresCSV";
+*/
+import { populateIndicadoresDatabase } from "@/app/controllers/data/ParseCSustentaveisIndicadoresCSV";
 
 export async function GET() {
     try {
@@ -17,4 +17,3 @@ export async function GET() {
     }
 }
 
-*/

@@ -2,8 +2,11 @@ import { Entity, Column, ManyToOne, ManyToMany, OneToMany, JoinTable, PrimaryCol
 import type { Relation } from "typeorm";
 import { Localidade } from "./Localidade";
 import { Eixo } from "./Eixo"
+import { EixoUsuario } from '@/app/models/EixoUsuario';
 import { Fonte } from "./Fonte"
 import { ValorIndicador } from "./ValorIndicador"
+import { EixoPadrao } from "./EixoPadrao";
+
 
 
 @Entity({ name: 'indicador' })
@@ -12,14 +15,14 @@ export class Indicador {
   @PrimaryColumn()
   id!: number;
 
-  @ManyToOne('Fonte', 'indicadores')
-  fonte!: Relation<Fonte>;
-
   @Column({ nullable: false })
   nome: string;
 
   @Column({ length: 700 })
   descricao: string;
+
+  @ManyToOne('Fonte', 'indicadores')
+  fonte!: Relation<Fonte>;
 
   @Column({ nullable: true, type: 'varchar' })
   dono: string | null;
@@ -27,9 +30,22 @@ export class Indicador {
   @Column({ nullable: true, type: 'varchar' })
   email: string | null;
 
+
+/*
   @ManyToMany(() => Eixo, eixo => eixo.indicadores)
   //@JoinTable({ name: "indicador_eixo" }) - colocar apenas em um lado do relacionamento
   eixos?: Relation<Eixo[]> | null;
+*/
+
+  @ManyToMany(() => EixoPadrao, eixoPadrao => eixoPadrao.indicadores)
+  //@JoinTable({ name: "indicador_eixo" }) - colocar apenas em um lado do relacionamento
+  eixosPadrao?: Relation<Eixo[]> | null;
+
+
+  @ManyToMany(() => EixoUsuario, eixoUsuario => eixoUsuario.indicadores)
+//  @JoinColumn()
+  eixosUsuario?: EixoUsuario[] | null;
+
 
   //@ManyToMany(() => Localidade, localidade => localidade.indicadores)
   //localidades!: Relation<Localidade[]>;
@@ -42,7 +58,6 @@ export class Indicador {
     nome: string,
     descricao: string,
     fonte: Fonte,
-    eixos?: Eixo[] | null,
     dono?: string,
     email?: string,
   ) {
@@ -50,7 +65,6 @@ export class Indicador {
     this.nome = nome;
     this.descricao = descricao;
     this.fonte = fonte;
-    this.eixos = eixos;
     this.dono = dono ?? null;
     this.email = email ?? null;
   }

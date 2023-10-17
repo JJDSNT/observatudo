@@ -1,3 +1,5 @@
+//https://stackoverflow.com/questions/60140903/cannot-read-property-tablepath-of-undefined-type-orm
+import { AppDataSource } from "@/app/infra/database";
 import { EixoService } from "@/app/services/EixoService";
 import { IndicadorService } from "@/app/services/IndicadorService";
 
@@ -43,18 +45,25 @@ const indicadorService = new IndicadorService();
 
 export async function classifyindicador(): Promise<void> {
 
+    if (!AppDataSource.isInitialized) {
+        try {
+            await AppDataSource.initialize();
+        } catch (err) {
+            console.error(`### CLASSIFY INDICADOR: Data Source initialization error`, err);
+        }
+    }
+
     for (const indicator of indicatorsToUpdate) {
         const eixo = await eixoService.getEixoById(indicator.eixoId);
         if (eixo){
             console.log("indicadorId: "+indicator.codigo_indicador);
             const loadedindicador = await indicadorService.buscarIndicadorPorId(parseInt(indicator.codigo_indicador));
             if (loadedindicador){
-                //console.log("adicionando: "+loadedindicador+" no eixo "+eixo);
-                await eixoService.adicionarIndicadoresAoEixo(eixo.id, [loadedindicador]);
+                console.log("adicionando: "+JSON.stringify(loadedindicador)+" no eixo "+JSON.stringify(eixo));
+                await eixoService.adicionarIndicadoresAoEixoPadrao(eixo.id, [loadedindicador]);
             }
         }
     }
-
 
 
 }

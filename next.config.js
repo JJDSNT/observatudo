@@ -44,7 +44,7 @@ const nextConfig = {
   reactStrictMode: true,
   staticPageGenerationTimeout: 200,
   compiler: {
-    removeConsole: process.env.NODE_ENV !== 'development',
+//    removeConsole: process.env.NODE_ENV !== 'development',
   },
   experimental: {
     serverComponentsExternalPackages: ["typeorm", "typedi"],

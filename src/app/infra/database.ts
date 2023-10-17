@@ -2,7 +2,6 @@
 
 import 'reflect-metadata';
 import { DataSource, DataSourceOptions } from 'typeorm';
-//import { User } from '../entities/User';
 import { Localidade } from "@/app/models/Localidade";
 import { Pais } from "@/app/models/Pais";
 import { Estado } from "@/app/models/Estado";
@@ -10,8 +9,11 @@ import { Cidade } from "@/app/models/Cidade";
 import { Indicador } from "@/app/models/Indicador";
 import { Fonte } from "@/app/models/Fonte"
 import { Eixo } from "@/app/models/Eixo";
+import { EixoPadrao } from "@/app/models/EixoPadrao";
+import { EixoUsuario } from '../models/EixoUsuario';
 import { ValorIndicador } from "@/app/models/ValorIndicador";
-
+import { Usuario } from "@/app/models/Usuario";
+//import { SelecaoIndicador } from '@/app/models/SelecaoIndicador';
 
 //const entitiesPath = join(process.cwd(),'src/app/models/**/*.ts');
 /*
@@ -34,9 +36,8 @@ import dotenv from "dotenv";
 dotenv.config();
 */
 
-let options: DataSourceOptions;
 
-options = {
+export const options: DataSourceOptions = {
     type: 'oracle',
     username: process.env.TYPEORM_USERNAME,
     password: process.env.TYPEORM_PASSWORD,
@@ -44,8 +45,8 @@ options = {
     connectString: process.env.TYPEORM_CONNECTSTRING,
     logging: false,
     logger: 'advanced-console',
-    synchronize: false,
-    entities: [Cidade, Eixo, Estado, Fonte, Indicador, Localidade, Pais, ValorIndicador],
+    synchronize: true,
+    entities: [Cidade, Eixo, EixoPadrao, EixoUsuario, Estado, Fonte, Indicador, Localidade, Pais, Usuario, ValorIndicador],
 }
 
 
@@ -60,7 +61,7 @@ export const initializeDatabase = async (): Promise<void> => {
             await AppDataSource.initialize();
             console.log(`Data Source has been initialized`);
         } catch (error) {
-            console.error(`######DATABASE: Data Source initialization error: `, error);
+            console.error(`### DATABASE: Data Source initialization error: `, error);
             process.exit(1);
         }
     }

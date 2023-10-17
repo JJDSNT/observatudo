@@ -15,6 +15,15 @@ export class IndicadorService {
   async buscarTodosIndicadores(): Promise<Indicador[] | null> {
     return await this.indicadorRepository.find(
       {
+        //relations: ['eixos'],
+        //loadRelationIds: true,
+      }
+    );
+  }
+
+  async buscarTodosIndicadoresComEixo(): Promise<Indicador[] | null> {
+    return await this.indicadorRepository.find(
+      {
         relations: ['eixos'],
         //loadRelationIds: true,
       }
@@ -24,8 +33,17 @@ export class IndicadorService {
   async buscarIndicadorPorId(cod: number): Promise<Indicador | null> {
     const indicador = await this.indicadorRepository.findOne({
       where: { id: cod },
+      //relations: ['eixos'],
+      //loadRelationIds: true,
+    });
+    return indicador;
+  }
+
+  async buscarIndicadorCompletoPorId(cod: number): Promise<Indicador | null> {
+    const indicador = await this.indicadorRepository.findOne({
+      where: { id: cod },
       relations: ['eixos'],
-      loadRelationIds: true,
+      //loadRelationIds: true,
     });
     return indicador;
   }

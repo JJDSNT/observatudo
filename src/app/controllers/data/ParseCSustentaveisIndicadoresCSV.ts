@@ -1,4 +1,6 @@
 //https://github.com/vercel/next.js/discussions/48324
+//https://dev.to/zhnedyalkow/the-easiest-way-to-patch-your-npm-package-
+
 import { Localidade } from "../../models/Localidade";
 import { Pais } from "@/app/models/Pais";
 import { Estado } from "../../models/Estado";
@@ -31,7 +33,7 @@ export async function populateIndicadoresDatabase(): Promise<void> {
             await AppDataSource.initialize();
             console.log("Data Source initialized!");
         } catch (err) {
-            console.error(`#####POPULATING INDICADORES: Data Source initialization error`, err);
+            console.error(`### POPULATING INDICADORES: Data Source initialization error`, err);
         }
     }
 

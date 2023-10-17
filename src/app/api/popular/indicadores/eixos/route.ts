@@ -1,9 +1,9 @@
-
+/*
 export async function GET() {
     return Response.json({ message: 'Para popular dados dos indicadores descomente essa rota!' });
 }
-/*
-import { classifyindicador } from "@/app/controllers/ClassifyIndicadorContoller";
+*/
+import { classifyindicador } from "@/app/controllers/data/ClassifyIndicadorContoller";
 
 export async function GET() {
     try {
@@ -16,4 +16,4 @@ export async function GET() {
         return Response.json({ message: "Unknown error occurred" }, { status: 500 });
     }
 }
-*/
+

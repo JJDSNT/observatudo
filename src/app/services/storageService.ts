@@ -1,4 +1,5 @@
 //https://stackoverflow.com/questions/39861239/read-and-parse-csv-file-in-s3-without-downloading-the-entire-file#39861758
+//https://github.com/vercel/next.js/discussions/48324
 import * as objectStorage from "oci-objectstorage";
 import { OciError } from "oci-common";
 import { objectStorageClient } from '@/app/infra/storage';
