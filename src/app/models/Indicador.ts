@@ -31,20 +31,20 @@ export class Indicador {
   email: string | null;
 
 
-/*
+
   @ManyToMany(() => Eixo, eixo => eixo.indicadores)
   //@JoinTable({ name: "indicador_eixo" }) - colocar apenas em um lado do relacionamento
   eixos?: Relation<Eixo[]> | null;
-*/
+
 
   @ManyToMany(() => EixoPadrao, eixoPadrao => eixoPadrao.indicadores)
   //@JoinTable({ name: "indicador_eixo" }) - colocar apenas em um lado do relacionamento
-  eixosPadrao?: Relation<Eixo[]> | null;
+  eixosPadrao?: Relation<EixoPadrao[]> | null;
 
 
   @ManyToMany(() => EixoUsuario, eixoUsuario => eixoUsuario.indicadores)
 //  @JoinColumn()
-  eixosUsuario?: EixoUsuario[] | null;
+  eixosUsuario?: Relation<EixoUsuario[]> | null;
 
 
   //@ManyToMany(() => Localidade, localidade => localidade.indicadores)

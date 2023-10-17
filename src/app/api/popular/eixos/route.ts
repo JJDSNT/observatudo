@@ -1,10 +1,10 @@
 import { getServerSession } from "next-auth"
 import { createEixos } from "@/app/controllers/data/CreateEixosController";
-/*
+
 export async function GET() {
     return Response.json({ message: 'Para popular os eixos voce precisa estar logado como administrador!' });
 }
-*/
+/*
 export async function GET() {
 
     const session = await getServerSession();
@@ -24,3 +24,4 @@ export async function GET() {
     }
 }
 
+*/

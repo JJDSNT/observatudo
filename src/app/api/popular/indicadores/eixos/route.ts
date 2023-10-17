@@ -1,8 +1,8 @@
-/*
+
 export async function GET() {
     return Response.json({ message: 'Para popular dados dos indicadores descomente essa rota!' });
 }
-*/
+/*
 import { classifyindicador } from "@/app/controllers/data/ClassifyIndicadorContoller";
 
 export async function GET() {
@@ -17,3 +17,4 @@ export async function GET() {
     }
 }
 
+*/

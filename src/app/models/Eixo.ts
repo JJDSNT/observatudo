@@ -62,21 +62,68 @@ export class Eixo {
   @Column()
   cor!: string;
 
-/*
+//depois comentar
   @ManyToMany('Indicador', 'eixos')
   @JoinTable({ name: "indicador_eixo" })
   indicadores!: Relation<Indicador[] | undefined>;
-*/
-  getIndicadores(): Indicador[] | undefined {
-    return [];//this.indicadores;
-  }
 
+  
   @OneToMany(() => EixoPadrao, eixoPadrao => eixoPadrao.eixo)
   eixosPadrao!: Relation<EixoPadrao[]>;
 
-  
   @OneToMany(() => EixoUsuario, eixoUsuario => eixoUsuario.eixo)
   eixosUsuario!: Relation<EixoUsuario[]>;
+
+  @ManyToMany('Indicador', 'eixosPadrao')
+  @JoinTable({ name: "indicador_eixopadrao" })
+  indicadoresPadrao!: Relation<Indicador[]>;
+
+  @ManyToMany(() => Indicador, indicador => indicador.eixosUsuario)
+  @JoinTable({ name: "indicador_eixousuario" })
+  indicadoresUsuario!: Indicador[];
+
+  getIndicadores(): Indicador[] {
+    // Lógica para retornar todos os indicadores do eixo
+    return [...this.indicadoresPadrao];
+    //return [...this.indicadoresPadrao, ...this.indicadoresUsuario];
+  }
+
+/*
+  getIndicadoresOld(): Indicador[] {
+    const indicadoresEixoPadrao = this.getIndicadoresEixoPadraoOld();
+    const indicadoresEixoUsuario = this.getIndicadoresEixoUsuarioOld();
+    return [...indicadoresEixoPadrao, ...indicadoresEixoUsuario];
+  }
+
+  getIndicadoresEixoPadraoOld(): Indicador[] {
+    // Lógica para acessar os indicadores do EixoPadrao e classificá-los
+    // Substitua o exemplo abaixo com a lógica específica do seu sistema
+    if (this.eixosPadrao) {
+      return this.eixosPadrao.reduce((indicadores: Indicador[], eixoPadrao: EixoPadrao) => {
+        if (eixoPadrao.indicadores) {
+          indicadores.push(...eixoPadrao.indicadores);
+        }
+        return indicadores;
+      }, []).sort((a, b) => a.nome.localeCompare(b.nome));
+    }
+    return [];
+  }
+
+  // Método para retornar os indicadores do EixoUsuario classificados
+  getIndicadoresEixoUsuarioOld(): Indicador[] {
+    // Lógica para acessar os indicadores do EixoUsuario e classificá-los
+    // Substitua o exemplo abaixo com a lógica específica do seu sistema
+    if (this.eixosUsuario) {
+      return this.eixosUsuario.reduce((indicadores: Indicador[], eixoUsuario: EixoUsuario) => {
+        if (eixoUsuario.indicadores) {
+          indicadores.push(...eixoUsuario.indicadores);
+        }
+        return indicadores;
+      }, []).sort((a, b) => a.nome.localeCompare(b.nome));
+    }
+    return [];
+  }
+*/
 
 }
 

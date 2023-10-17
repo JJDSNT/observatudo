@@ -2,19 +2,18 @@ import { Service } from 'typedi';
 import { In, Repository } from 'typeorm';
 import { AppDataSource } from "@/app/infra/database";
 import { Eixo } from '@/app/models/Eixo';
-import { EixoRepository } from '@/app/repositories/EixoRepository';
-import { Indicador } from '../models/Indicador';
-import { EixoPadrao } from '../models/EixoPadrao';
-import { EixoUsuario } from '../models/EixoUsuario';
+import { EixoRepository, EixoPadraoRepository, EixoUsuarioRepository } from '@/app/repositories/EixoRepository';
+import { Indicador } from '@/app/models/Indicador';
+import { EixoPadrao } from '@/app/models/EixoPadrao';
+import { EixoUsuario } from '@/app/models/EixoUsuario';
 
-//import { SelecaoIndicador } from '@/app/models/SelecaoIndicador'
 
 if (!AppDataSource.isInitialized) {
   try {
       await AppDataSource.initialize();
       console.log("Data Source initialized!");
   } catch (err) {
-      console.error(`### POPULATING INDICADORES: Data Source initialization error`, err);
+      console.error(`### EixoService: POPULATING INDICADORES: Data Source initialization error`, err);
   }
 }
 
@@ -22,6 +21,8 @@ if (!AppDataSource.isInitialized) {
 export class EixoService {
 
   private eixoRepository: Repository<Eixo> = EixoRepository;
+  private eixoPadraoRepository: Repository<EixoPadrao> = EixoPadraoRepository;
+  private eixoUsuarioRepository: Repository<EixoUsuario> = EixoUsuarioRepository;
 
   constructor() { }
 
@@ -32,12 +33,25 @@ export class EixoService {
   }
 
   async getEixosComIndicadores(): Promise<Eixo[]> {
+    const eixos = await this.eixoRepository.find({
+      relations: ['indicadores', "indicadores.valoresIndicador", "indicadores.valoresIndicador.localidade"] 
+      //, 'indicadoresPadrao', 'indicadoresUsuario'
+    });
+  
+    return eixos;
+  }
+
+  async getEixosComIndicadoresOld(): Promise<Eixo[]> {
     return await this.eixoRepository.find(
       {
         relations: ['indicadores', "indicadores.valoresIndicador", "indicadores.valoresIndicador.localidade"],
       }
     );
   }
+
+  
+
+
 
   public async getEixoById(eixoId: number): Promise<Eixo | null> {
     const eixo = await this.eixoRepository.findOneBy({ id: In([eixoId]) });
@@ -47,7 +61,7 @@ export class EixoService {
   
   public async adicionarIndicadoresAoEixoPadrao(eixoId: number, indicadores: Indicador[]): Promise<void> {
     //const eixoRepository = AppDataSource.getRepository(Eixo);
-    const eixoPadraoRepository = AppDataSource.getRepository(EixoPadrao);
+    //const eixoPadraoRepository = AppDataSource.getRepository(EixoPadrao);
   
     const eixo = await this.eixoRepository.findOneBy({ id: In([eixoId]) });;
   
@@ -60,9 +74,9 @@ export class EixoService {
       const eixoPadrao = new EixoPadrao();
       eixoPadrao.eixo = eixo as unknown as Eixo;
       eixoPadrao.indicadores = [indicador];
-  console.log(JSON.stringify(eixo)+ " e AQUI!?!? "+ JSON.stringify(indicador));
+      console.log(JSON.stringify(eixo)+ " e AQUI!?!? "+ JSON.stringify(indicador));
       // Salvar EixoPadrao
-      await AppDataSource.manager.save(eixoPadrao);
+      await this.eixoPadraoRepository.save(eixoPadrao);
       console.log ('adicionado ?');
     }
 
@@ -97,7 +111,8 @@ export class EixoService {
       throw error;
     }
   }
-/*
+
+  //não apagar (referencia que funciona)
   public async adicionarIndicadoresAoEixo(eixoId: number, indicadores: Indicador[]): Promise<void> {
     try {
       const eixo = await this.eixoRepository.findOne({
@@ -119,5 +134,5 @@ export class EixoService {
       throw error;
     }
   }
-*/
+
 }

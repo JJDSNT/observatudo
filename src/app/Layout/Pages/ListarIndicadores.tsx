@@ -6,7 +6,7 @@ interface Eixo {
   nome: string;
   cor: string;
   indicadores: Array<{
-    codigo_indicador: string;
+    id: number;//estranho, é indiferente ser id ou codigo_indicador
     nome: string;
     descricao: string;
   }>;
@@ -40,10 +40,10 @@ function ListarIndicadores() {
           <div key={eixo.id} className={`p-4 ${eixo.cor}`}>
             <h2 className="text-2xl font-bold mb-2">{eixo.nome}</h2>
             {eixo.indicadores.map((indicador) => (
-              <div key={indicador.codigo_indicador} className="mb-2">
+              <div key={indicador.id} className="mb-2">
                 <h3 className="text-lg font-semibold">{indicador.nome}</h3>
                 <p className="text-sm">{indicador.descricao}</p>
-                <p className="text-sm">{indicador.codigo_indicador}</p>
+                <p className="text-sm">{indicador.id}</p>
               </div>
             ))}
           </div>

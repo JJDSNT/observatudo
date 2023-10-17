@@ -47,7 +47,7 @@ const nextConfig = {
 //    removeConsole: process.env.NODE_ENV !== 'development',
   },
   experimental: {
-    serverComponentsExternalPackages: ["typeorm", "typedi"],
+    serverComponentsExternalPackages: ["typeorm", "typedi"],//incluir oci-sdk?
     serverMinification: false, //typeorm
     esmExternals: 'loose', //oci sdk
   },
