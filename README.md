@@ -7,10 +7,12 @@ Este é meu primeiro projeto dedicado ao estudo e aprendizado do desenvolvimento
 - **Frontend:**
   - [Next.js](https://nextjs.org/): Um framework de React para desenvolvimento web.
   - [TypeScript](https://www.typescriptlang.org/): Uma linguagem de programação que adiciona tipos estáticos ao JavaScript.
-  - [Zustand](https://zustand-demo.pmnd.rs/): Um gerenciador de estado
-  - [TypeORM](https://typeorm.io/): ORM
-  - [NextAuth](https://next-auth.js.org/): Autenticação
+  - [Zustand](https://zustand-demo.pmnd.rs/): Um gerenciador de estado.
+  - [NextAuth](https://next-auth.js.org/): Autenticação.
   - [React Pro Sidebar](https://github.com/azouaoui-med/react-pro-sidebar): Uma barra lateral responsiva para aplicações React.
+- **Backend:**
+  - [TypeORM](https://typeorm.io/): ORM.
+  - [OCI-Typescript-SDK](https://github.com/oracle/oci-typescript-sdk/tree/master): SDK Typescript da oracle cloud
 
 ## Funcionalidades Principais
 
@@ -21,44 +23,53 @@ Este é meu primeiro projeto dedicado ao estudo e aprendizado do desenvolvimento
 
 1. Clone este repositório em sua máquina local:
 
-   ```bash
-   git clone https://github.com/JJDSNT/observatudo
+  ```bash
+  git clone https://github.com/JJDSNT/observatudo
+  ```
+
+2. Navegue até o diretório do projeto:
+
+  ```bash
+  cd nome-do-repo
+  ```
+
+3. Instale as dependências do projeto:
+
+  ```bash
+  npm install
+  ```
+
+4. Inicie o servidor de desenvolvimento:
+
+  ```bash
+  npm run dev
+  ```
+
+5. O projeto estará disponível em http://localhost:3000.
 
 
-1 Navegue até o diretório do projeto:
 
 
-    cd nome-do-repo
-
-2 Instale as dependências do projeto:
-
-npm install
-
-3 Inicie o servidor de desenvolvimento:
-
-npm run dev
-
-4 O projeto estará disponível em http://localhost:3000.
-
-
-
-
-Contribuições
+## Contribuições
 Contribuições são bem-vindas! Se você deseja contribuir para este projeto, siga estas etapas:
 
-1 Faça um fork deste repositório.
+1. Faça um fork deste repositório.
 
-2 Crie uma branch para sua contribuição:
+2. Crie uma branch para sua contribuição:
 
-git checkout -b minha-contribuicao
+  ```bash
+  git checkout -b minha-contribuicao
+  ```
 
-3 Faça as alterações desejadas.
+3. Faça as alterações desejadas.
 
-4 Envie as alterações para o seu fork:
+4. Envie as alterações para o seu fork:
 
-git push origin minha-contribuicao
+  ```bash
+  git push origin minha-contribuicao
+  ```
 
-5 Abra um pull request neste repositório com a descrição de suas alterações.
+5. Abra um pull request neste repositório com a descrição de suas alterações.
 
 
 ---
