@@ -1,4 +1,5 @@
 "use client";
+// https://github.com/azouaoui-med/react-pro-sidebar/issues/175
 // https://github.com/azouaoui-med/react-pro-sidebar/blob/master/CHANGELOG.md
 import React from 'react';
 import Link from "next/link";
@@ -36,7 +37,7 @@ const Aside = () => {
         image={sidebarBg.src}
         collapsed={collapsed}
         toggled={toggled}
-        breakPoint="all"
+        breakPoint={typeof window !== 'undefined' ? 'all' : undefined}
         onBackdropClick={handleBackdropClick}
         width='270px'
         collapsedWidth='80px'
