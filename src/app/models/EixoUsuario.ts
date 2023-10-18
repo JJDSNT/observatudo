@@ -16,7 +16,7 @@ export class EixoUsuario {
 
   @ManyToOne(() => Eixo, eixo => eixo.eixosUsuario)
   @JoinColumn({ name: 'eixo_id' })
-  eixo!: Relation<Eixo>;
+  eixos!: Relation<Eixo>;
 
   @ManyToMany(() => Indicador, indicador => indicador.eixosUsuario)
   @JoinTable({ 

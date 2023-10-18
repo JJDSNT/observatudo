@@ -37,9 +37,9 @@ export class Indicador {
   eixos?: Relation<Eixo[]> | null;
 
 
-  @ManyToMany(() => EixoPadrao, eixoPadrao => eixoPadrao.indicadores)
+  @ManyToMany(() => EixoPadrao, eixoPadrao => eixoPadrao.indicador)
   //@JoinTable({ name: "indicador_eixo" }) - colocar apenas em um lado do relacionamento
-  eixosPadrao?: Relation<EixoPadrao[]> | null;
+  eixoPadrao?: Relation<EixoPadrao[]> | null;
 
 
   @ManyToMany(() => EixoUsuario, eixoUsuario => eixoUsuario.indicadores)

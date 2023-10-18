@@ -69,14 +69,14 @@ export class Eixo {
 
   
   @OneToMany(() => EixoPadrao, eixoPadrao => eixoPadrao.eixo)
-  eixosPadrao!: Relation<EixoPadrao[]>;
+  eixoPadrao!: Relation<EixoPadrao[]>;
 
-  @OneToMany(() => EixoUsuario, eixoUsuario => eixoUsuario.eixo)
+  @OneToMany(() => EixoUsuario, eixoUsuario => eixoUsuario.eixos)
   eixosUsuario!: Relation<EixoUsuario[]>;
 
-  @ManyToMany('Indicador', 'eixosPadrao')
+  @ManyToMany('Indicador', 'eixoPadrao')
   @JoinTable({ name: "indicador_eixopadrao" })
-  indicadoresPadrao!: Relation<Indicador[]>;
+  indicadorPadrao!: Relation<Indicador[]>;
 
   @ManyToMany(() => Indicador, indicador => indicador.eixosUsuario)
   @JoinTable({ name: "indicador_eixousuario" })
@@ -84,7 +84,7 @@ export class Eixo {
 
   getIndicadores(): Indicador[] {
     // Lógica para retornar todos os indicadores do eixo
-    return [...this.indicadoresPadrao];
+    return [...this.indicadorPadrao];
     //return [...this.indicadoresPadrao, ...this.indicadoresUsuario];
   }
 

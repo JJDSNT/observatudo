@@ -15,9 +15,12 @@ export class EixoController {
   public async getEixos(): Promise<Eixo[] | null> {
     return this.eixoService.getEixos();
   }
-
   public async teste(): Promise<Eixo[] | null>{
-    return this.eixoService.getEixosComIndicadores()
+    return this.eixoService.teste();
+  }
+
+  public async getEixosPadrao(): Promise<EixoPadrao[] | null>{
+    return this.eixoService.getEixosPadrao();
   }
 
   public async getEixosComIndicadoresEValores(): Promise<Eixo[] | null> {

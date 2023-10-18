@@ -26,11 +26,22 @@ export class EixoService {
 
   constructor() { }
 
-
-
   async getEixos(): Promise<Eixo[]> {
     return this.eixoRepository.find();
   }
+
+  async getEixosPadrao(): Promise<EixoPadrao[]> {
+    return this.eixoPadraoRepository.find({
+      relations: ['indicador','eixo']
+    });
+  }
+
+  async teste(): Promise<Eixo[]> {
+    return this.eixoRepository.find({
+      relations: ['eixoPadrao', 'eixoPadrao.indicador','eixoPadrao.indicador.valoresIndicador']
+    });
+  }
+
 
   async getEixosComIndicadores(): Promise<Eixo[]> {
     const eixos = await this.eixoRepository.find({
@@ -49,7 +60,6 @@ export class EixoService {
     );
   }
 
-  
 
 
 
@@ -58,7 +68,7 @@ export class EixoService {
     return eixo;
   }
 
-  
+/*  
   public async adicionarIndicadoresAoEixoPadrao(eixoId: number, indicadores: Indicador[]): Promise<void> {
     //const eixoRepository = AppDataSource.getRepository(Eixo);
     //const eixoPadraoRepository = AppDataSource.getRepository(EixoPadrao);
@@ -81,7 +91,7 @@ export class EixoService {
     }
 
   }
-
+*/
   public async getEntityById(entityId: number, entityType: 'eixo' | 'eixoPadrao' | 'eixoUsuario'): Promise<Eixo | EixoPadrao | EixoUsuario | null> {
     let entityRepository;
     switch (entityType) {

@@ -9,7 +9,7 @@ import { useSidebarStore } from '@/app/stores/useSidebarStore';
 import { useInfoStore } from '@/app/stores/useInfoStore';
 import sidebarBg from './assets/bg.jpg';
 import { useSession } from 'next-auth/react';
-import ThemeSelector from '../components/ThemeSelector';
+import ThemeSelector from './ThemeSelector';
 
 
 const Aside = () => {
@@ -31,6 +31,7 @@ const Aside = () => {
 
   return (
     <>
+    <nav>
       <Sidebar
         image={sidebarBg.src}
         collapsed={collapsed}
@@ -67,7 +68,7 @@ const Aside = () => {
             <MenuItem icon={<FaArrowsAltH />} onClick={() => handleCollapsedChange()}> Menu</MenuItem>
           </Menu>
           <Menu>
-            <MenuItem icon={<FaChartBar />} onClick={() => handleMenuItemClick('dashboard')}> Dashboard</MenuItem>
+            <MenuItem icon={<FaChartBar />} component={<Link href="/" />}> Dashboard</MenuItem>
           </Menu>
           <Menu>
             <MenuItem icon={<FaHeartbeat />} onClick={() => handleMenuItemClick(1)}> Saúde</MenuItem>
@@ -80,11 +81,11 @@ const Aside = () => {
             <MenuItem icon={<FaQuestion />} onClick={() => handleMenuItemClick(7)}> Personalizado</MenuItem>
           </Menu>
           <Menu>
-            <MenuItem icon={<FaList />} onClick={() => handleMenuItemClick('listarIndicadores')}> Listar indicadores</MenuItem>
+            <MenuItem icon={<FaList />} component={<Link href="/indicadores" />}> Listar indicadores</MenuItem>
           </Menu>
         </Menu>
       </Sidebar >
-
+      </nav>
     </>
   );
 };

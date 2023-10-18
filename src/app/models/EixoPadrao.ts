@@ -9,18 +9,18 @@ export class EixoPadrao {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @ManyToOne(() => Eixo, eixo => eixo.eixosPadrao)
+  @ManyToOne(() => Eixo, eixo => eixo.eixoPadrao)
   eixo!: Relation<Eixo>;
 
-  @ManyToMany(() => Indicador, indicador => indicador.eixosPadrao)
+  @ManyToMany(() => Indicador, indicador => indicador.eixoPadrao)
   @JoinTable({
     name: 'eixo_padrao_indicador',
     joinColumn: { name: 'eixo_padrao_id', referencedColumnName: 'id' },
     inverseJoinColumn: { name: 'indicador_id', referencedColumnName: 'id' }
   })
-  indicadores!: Relation<Indicador[]>;
+  indicador!: Relation<Indicador[]>;
 
   getIndicadores(): Indicador[] | undefined {
-    return this.indicadores;
+    return this.indicador;
   }
 }

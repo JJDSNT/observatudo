@@ -1,12 +1,12 @@
 'use client'
 import React from 'react';
-import Layout from '@/app/Layout/Layout';
+import Main from '@/app/components/Main'
 
 
 const Home = () => {
   return (
     <div className="container mx-auto p-4">
-      {typeof window !== 'undefined' && <Layout />}
+      {typeof window !== 'undefined' && <Main />}
     </div>
   );
 };
