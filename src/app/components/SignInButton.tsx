@@ -49,6 +49,7 @@ const SignInButton = () => {
   }, [isMenuOpen]);
 
   const handleMenuToggle = () => {
+    console.log('toggle menu');
     setIsMenuOpen(!isMenuOpen);
   };
 
