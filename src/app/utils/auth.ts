@@ -69,8 +69,8 @@ export const authOptions: NextAuthOptions = {
       clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
       privateKey: process.env.FIREBASE_PRIVATE_KEY
     })
-  }),*/
+  }),
   session: {
     strategy: 'jwt'
-  },
+  },*/
 };
