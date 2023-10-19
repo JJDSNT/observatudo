@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import httpClient from '@/app/utils/httpClient';
 import { useInfoStore } from '@/app/stores/useInfoStore';
 
+
 interface Estado {
   codigo: number;
   nome: string;

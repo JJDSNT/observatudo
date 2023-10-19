@@ -1,10 +1,11 @@
-import './globals.css'
+import './styles/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 import { getServerSession } from "next-auth";
-import SessionProvider from "@/app/components/SessionProvider";
-import Layout from './components/Layout';
+import SessionProvider from "@/app/providers/SessionProvider";
+import Layout from '@/app/components/Layout';
+import Providers from '@/app/providers/providers';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -61,11 +62,13 @@ export default async function RootLayout({
   const session = await getServerSession();
 
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" className='light' style={{ colorScheme: 'light' }}>
       <head />
       <body className={inter.className}>
         <SessionProvider session={session}>
-          <Layout>{children}</Layout>
+          <Providers>
+            <Layout>{children}</Layout>
+          </Providers>
         </SessionProvider>
       </body>
     </html>

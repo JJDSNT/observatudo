@@ -1,10 +1,11 @@
+//https://www.linkedin.com/pulse/implement-dark-mode-tailwindcss-nextjs13-app-5-simple-lucas-los-arcos/
 "use client"
 import React, { ReactNode } from 'react';
+import { useSidebarStore } from '@/app/stores/useSidebarStore';
 import Navbar from './Navbar';
 import Aside from './Aside';
 import Footer from './Footer';
 
-import { useSidebarStore } from '@/app/stores/useSidebarStore';
 
 type LayoutProps = {
   children: ReactNode;
@@ -23,17 +24,16 @@ const Layout = ({ children }: LayoutProps) => {
     paddingRight: '15px'
   };
 
-  
 
   return (
-    <div>
+    <>
       <Navbar />
-      <main className="container mx-auto mt-10" style={{ display: 'flex', marginTop: `${navbarHeight}px`  }}>
+      <main className="container mx-auto mt-10" style={{ display: 'flex', marginTop: `${navbarHeight}px` }}>
         <Aside />
-        <section style={mainStyles}>{children}</section> 
+        <section style={mainStyles}>{children}</section>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 

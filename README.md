@@ -5,14 +5,18 @@ Este é meu primeiro projeto dedicado ao estudo e aprendizado do desenvolvimento
 ## Tecnologias Utilizadas
 
 - **Frontend:**
-  - [Next.js](https://nextjs.org/): Um framework de React para desenvolvimento web.
-  - [TypeScript](https://www.typescriptlang.org/): Uma linguagem de programação que adiciona tipos estáticos ao JavaScript.
-  - [Zustand](https://zustand-demo.pmnd.rs/): Um gerenciador de estado.
-  - [NextAuth](https://next-auth.js.org/): Autenticação.
-  - [React Pro Sidebar](https://github.com/azouaoui-med/react-pro-sidebar): Uma barra lateral responsiva para aplicações React.
-- **Backend:**
-  - [TypeORM](https://typeorm.io/): ORM.
-  - [OCI-Typescript-SDK](https://github.com/oracle/oci-typescript-sdk/tree/master): SDK Typescript da oracle cloud
+- [Next.js](https://nextjs.org/): Framework de React para desenvolvimento web.
+- [TypeScript](https://www.typescriptlang.org/): Uma linguagem de programação que adiciona tipos estáticos ao JavaScript.
+- [NextAuth](https://next-auth.js.org/): Framework de autenticação.
+- [Zustand](https://zustand-demo.pmnd.rs/): Biblioteca de gerenciamento de estado.
+- [React Pro Sidebar](https://github.com/azouaoui-med/react-pro-sidebar): Uma barra lateral responsiva para aplicações React.
+- [NextThemes](https://github.com/pacocoursey/next-themes): Uma abstração para o gerenciamento de temas em aplicações Next.js.
+- [NextUI](https://nextui.org/): Biblioteca de interface de usuário para Next.js com componentes estilizados com o tailwind.
+- [Tailwind](https://tailwindcss.com/): Framework CSS utility-first.
+
+**Backend:**
+- [TypeORM](https://typeorm.io/): Um Object-Relational Mapping (ORM).
+- [OCI-Typescript-SDK](https://github.com/oracle/oci-typescript-sdk/tree/master): SDK TypeScript da Oracle Cloud.
 
 ## Funcionalidades Principais
 
