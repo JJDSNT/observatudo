@@ -12,6 +12,8 @@ export class Usuario {
   @Column()
   nome: string;
 
+//auth_table_id?
+
   @Column({ type: 'varchar', default: 'user' })
   role?: string | null | undefined;
 
