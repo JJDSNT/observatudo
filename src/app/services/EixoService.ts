@@ -52,6 +52,12 @@ export class EixoService {
     return eixos;
   }
 
+//se não existir eixo usuario retorna o eixo padrao
+
+//ao adicionar indicador ao eixo usuario
+//checar se existe o usuario no banco, se não existe, criar
+//checar se existe eixousuario, se não exisitir criar copiando o eixopadrao
+
   async getEixosComIndicadoresOld(): Promise<Eixo[]> {
     return await this.eixoRepository.find(
       {

@@ -1,4 +1,3 @@
-"use client"
 import IndicadorSearch from '@/app/components/IndicadorSearch';
 
 const IndicadoresPage = () => {

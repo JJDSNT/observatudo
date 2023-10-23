@@ -23,6 +23,7 @@ const IndicadorSearch = () => {
   const fetchData = async () => {
     try {
       const response = await httpClient.get('/api/indicadores');
+      console.log('sucesso')
       setIndicadores(response.data.indicadores);
     } catch (error) {
       console.error('Houve um erro ao buscar os dados:', error);
