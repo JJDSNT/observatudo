@@ -1,7 +1,8 @@
+'use client'
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import httpClient from '@/app/utils/httpClient';
 import { Input } from '@nextui-org/react';
-'use client'
+
 import { SearchIcon } from '../components2/SearchIcon';
 
 // Função para remover acentos e caracteres especiais
