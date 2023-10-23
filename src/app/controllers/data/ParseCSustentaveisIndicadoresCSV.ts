@@ -1,3 +1,4 @@
+'use server'
 //https://github.com/vercel/next.js/discussions/48324
 //https://dev.to/zhnedyalkow/the-easiest-way-to-patch-your-npm-package-
 
