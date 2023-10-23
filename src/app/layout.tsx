@@ -65,11 +65,9 @@ export default async function RootLayout({
     <html lang="pt-br" className='light' style={{ colorScheme: 'light' }}>
       <head />
       <body className={inter.className}>
-        <SessionProvider session={session}>
-          <Providers>
+          <Providers session={session}>
             <Layout>{children}</Layout>
           </Providers>
-        </SessionProvider>
       </body>
     </html>
   )

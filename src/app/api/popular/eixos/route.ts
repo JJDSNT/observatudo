@@ -1,3 +1,5 @@
+//https://next-auth.js.org/configuration/nextjs
+
 import { getServerSession } from "next-auth"
 import { createEixos } from "@/app/controllers/data/CreateEixosController";
 

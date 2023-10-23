@@ -5,6 +5,7 @@ import { useSidebarStore } from '@/app/stores/useSidebarStore';
 import Navbar from './Navbar';
 import Aside from './Aside';
 import Footer from './Footer';
+import { NavbarWrapper } from '../components2/Navbar';
 
 
 type LayoutProps = {
@@ -27,7 +28,9 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>
-      <Navbar />
+      <header>
+        <NavbarWrapper />
+      </header>
       <main className="container mx-auto mt-10" style={{ display: 'flex', marginTop: `${navbarHeight}px` }}>
         <Aside />
         <section style={mainStyles}>{children}</section>

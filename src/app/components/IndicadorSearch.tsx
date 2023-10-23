@@ -1,5 +1,7 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import httpClient from '@/app/utils/httpClient';
+import { Input } from '@nextui-org/react';
+import { SearchIcon } from '../components2/SearchIcon';
 
 // Função para remover acentos e caracteres especiais
 const removeAccents = (str: string) => {
@@ -48,6 +50,18 @@ const IndicadorSearch = () => {
           placeholder="Pesquisar indicadores..."
           value={searchTerm}
           onChange={handleSearch}
+        />
+        <Input
+          classNames={{
+            base: "max-w-full sm:max-w-[10rem] h-10",
+            mainWrapper: "h-full",
+            input: "text-small",
+            inputWrapper: "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
+          }}
+          placeholder="Type to search..."
+          size="sm"
+          startContent={<SearchIcon size={18} width={undefined} height={undefined} />}
+          type="search"
         />
         <ul>
           {filteredIndicadores.map((indicador) => (

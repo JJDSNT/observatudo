@@ -9,10 +9,11 @@ export default async function ProtectedRoute() {
   }
 
 console.log(session.user);
+/*
   if (session?.user.role === "admin") {
     return <p>You are an admin, welcome!</p>
   }
-
+*/
   
 
   return (
