@@ -10,9 +10,6 @@ export class Usuario {
   id!: number;
 
   @Column()
-  id_auth_table!: string;
-
-  @Column()
   nome: string;
 
   @Column({ type: 'varchar', default: 'user' })
@@ -26,10 +23,9 @@ export class Usuario {
   @JoinColumn()
   eixos!: EixoUsuario[];
 
-  constructor(nome: string, email: string, id_auth_table: string) {
+  constructor(nome: string, email: string) {
     this.nome = nome;
     this.email = email;
-    this.id_auth_table = id_auth_table;
   }
 
 }
