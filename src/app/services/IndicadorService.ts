@@ -2,6 +2,16 @@ import { Service } from 'typedi';
 import { In, Repository } from 'typeorm';
 import { Indicador } from "@/app/models/Indicador";
 import { IndicadorRepository } from "@/app/repositories/IndicadorRepository"
+import { AppDataSource } from '../infra/database';
+
+if (!AppDataSource.isInitialized) {
+  try {
+      await AppDataSource.initialize();
+      console.log("Data Source initialized!");
+  } catch (err) {
+      console.error(`### IndicadorService: Data Source initialization error`, err);
+  }
+}
 
 @Service()
 export class IndicadorService {
@@ -11,7 +21,9 @@ export class IndicadorService {
   constructor() { }
 
   async buscarTodosIndicadores(): Promise<Indicador[] | null> {
-    const indicadores = await this.indicadorRepository.find();
+    const indicadores = await this.indicadorRepository.find({
+      relations:['fonte']
+    });
     return indicadores;
   }
 

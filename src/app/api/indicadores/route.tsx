@@ -5,6 +5,7 @@ export async function GET() {
   try {
     const indicadorController = Container.get(IndicadorController);
     const indicadores = await indicadorController.buscarTodosIndicadores();
+    console.log('indicador final')
     return Response.json({ indicadores });
   } catch (error: unknown) {
     if (error instanceof Error) {
