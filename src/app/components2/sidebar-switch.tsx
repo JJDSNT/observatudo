@@ -6,7 +6,7 @@ export const SidebarSwitch = () => {
   const { toggleBreakPoint, breakPoint } = useSidebarStore();
 
   return (
-    <div className="flex gap-4">
+    <div className="hidden md:flex gap-4">
       <Switch
         defaultSelected={breakPoint === BreakPoint.MD}
         size="md"

@@ -1,7 +1,7 @@
 //https://www.linkedin.com/pulse/implement-dark-mode-tailwindcss-nextjs13-app-5-simple-lucas-los-arcos/
 "use client"
 import React, { ReactNode } from 'react';
-import { useSidebarStore } from '@/app/stores/useSidebarStore';
+import { BreakPoint, useSidebarStore } from '@/app/stores/useSidebarStore';
 import Navbar from './Navbar';
 import Aside from './Aside';
 import Footer from './Footer';
@@ -13,7 +13,7 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => {
-  const { toggled, setToggled, handleBackdropClick, collapsed } = useSidebarStore();
+  const { toggled, setToggled, handleBackdropClick, collapsed, breakPoint } = useSidebarStore();
 
   const sidebarWidth = toggled ? (collapsed ? 80 : 250) : 0;
   const navbarHeight = 40;
@@ -36,6 +36,7 @@ const Layout = ({ children }: LayoutProps) => {
       <main className="container mx-auto mt-10" style={{ display: 'flex' }}>
         <Aside />
         <section style={mainStyles}>{children}</section>
+        {breakPoint === BreakPoint.ALL && toggled && (
         <style jsx>{`
           @media (min-width: 768px) {
             /* Define as regras de estilo que devem ser aplicadas apenas em telas maiores que 768px de largura (tamanhos de tela maiores que tablets) */
@@ -45,6 +46,7 @@ const Layout = ({ children }: LayoutProps) => {
             }
           }
         `}</style>
+        )}
       </main>
       <Footer />
     </>
