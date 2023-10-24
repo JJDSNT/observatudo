@@ -1,5 +1,5 @@
 //https://github.com/Siumauricio/nextui-dashboard-template/blob/main/components/navbar/user-dropdown.tsx
-import { Avatar, Button, Input, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
+import { Avatar, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
 import React from "react";
 
 import { useSidebarStore } from "@/app/stores/useSidebarStore";
@@ -8,6 +8,7 @@ import { FaBars } from "react-icons/fa";
 import { UserDropdown } from "./user-dropdown";
 import { SidebarSwitch } from "./sidebar-switch"
 import logo from "@/app/components/assets/logo.jpg";
+import Link from "next/link";
 
 
 

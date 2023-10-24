@@ -7,10 +7,10 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
-  Link,
   NavbarItem,
 } from '@nextui-org/react';
 import { FaUser } from 'react-icons/fa';
+import Link from 'next/link';
 
 export const UserDropdown = () => {
   const { data: session } = useSession();

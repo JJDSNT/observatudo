@@ -24,7 +24,8 @@ const Layout = ({ children }: LayoutProps) => {
     paddingLeft: '15px',
     paddingRight: '15px',
     marginTop: `${navbarHeight}px`,
-    minHeight: '100vh'
+    minHeight: '100vh',
+    width: '100%'
   };
 
 
@@ -35,7 +36,7 @@ const Layout = ({ children }: LayoutProps) => {
       </header>
       <main className="container mx-auto mt-10" style={{ display: 'flex' }}>
         <Aside />
-        <section style={mainStyles}>{children}</section>
+        <section className="w-full" style={mainStyles}>{children}</section>
         {breakPoint === BreakPoint.ALL && toggled && (
         <style jsx>{`
           @media (min-width: 768px) {

@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 import { getServerSession } from "next-auth";
-import SessionProvider from "@/app/providers/SessionProvider";
 import Layout from '@/app/components/Layout';
 import Providers from '@/app/providers/providers';
 

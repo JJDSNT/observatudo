@@ -45,8 +45,8 @@ const IndicadorSearch = () => {
   ) : [];
 
   return (
-    <div className="bg-gray-100 min-h-screen p-8">
-      <div className="max-w-md mx-auto">
+    <div className='flex items-start rounded-3xl border-8 border-red-500 justify-center min-h-screen mt-0'>
+    <div className="w-full items-start bg-white border-8 border-green-700 rounded-3xl p-8 shadow-lg mt-0">
         <input
           className="w-full border-2 border-gray-300 p-2 rounded-md mb-4"
           type="text"
