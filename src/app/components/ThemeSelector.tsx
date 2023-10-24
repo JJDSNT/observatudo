@@ -27,7 +27,7 @@ const ThemeSelector = () => {
 
     return (
         <div className="p-2 text-center">
-            <button aria-label='Toggle Dark Mode' onClick={toggleTheme} className='rounded-lg p-2transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-700'>
+            <button aria-label='Toggle Dark Mode' onClick={toggleTheme}>
                 {theme === 'light' ? '☀️' : '🌙'}
             </button>
         </div>

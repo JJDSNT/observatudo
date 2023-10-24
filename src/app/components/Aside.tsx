@@ -1,9 +1,8 @@
 "use client";
 // https://github.com/azouaoui-med/react-pro-sidebar/issues/175
 // https://github.com/azouaoui-med/react-pro-sidebar/blob/master/CHANGELOG.md
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Sidebar, Menu, MenuItem, sidebarClasses } from 'react-pro-sidebar';
 import { FaLandmark, FaArrowsAltH, FaChartBar, FaGlobeAmericas, FaHeartbeat, FaHome, FaList, FaMoneyBillWave, FaQuestion, FaUserGraduate, FaShieldAlt, FaCentercode } from 'react-icons/fa';
 import { useSidebarStore } from '@/app/stores/useSidebarStore';
@@ -15,7 +14,7 @@ import ThemeSelector from './ThemeSelector';
 
 const Aside = () => {
   const { setEixo } = useInfoStore();
-  const { handleCollapsedChange, collapsed, handleBackdropClick, toggled, setActivePage } = useSidebarStore();
+  const { handleCollapsedChange, collapsed, handleBackdropClick, toggled, breakPoint, setActivePage } = useSidebarStore();
 
   const handleMenuItemClick = (item: string | number): void => {
     if (typeof item === 'number') {
@@ -35,15 +34,15 @@ const Aside = () => {
         image={sidebarBg.src}
         collapsed={collapsed}
         toggled={toggled}
-        breakPoint={typeof window !== 'undefined' ? 'all' : undefined}
+        breakPoint={typeof window !== 'undefined' ? breakPoint : undefined}
         onBackdropClick={handleBackdropClick}
-        width='270px'
+        width='250px'
         collapsedWidth='80px'
         rootStyles={{
           border: 'none',
           [`.${sidebarClasses.container}`]: {
             backgroundColor: 'rgba(30, 64, 175, 0.5)',
-            paddingTop: '70px',
+            paddingTop: '100px',
             height: '100%',
             //zIndex: '5',
             top: 0,

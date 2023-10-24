@@ -11,10 +11,12 @@ const Navbar = () => {
   const { handleToggleSidebar } = useSidebarStore();
   const { theme } = useTheme();
   const { data: session } = useSession();
-
+  //old backgroundColor: theme === 'light' ? 'rgba(37, 47, 110, 1)' : 'rgba(10, 20, 38, 1)'
+//old sidebar rgba(30, 64, 175, 0.5)
   return (
     <header>
-      <nav className="p-2" role="navigation" style={{ backgroundColor: theme === 'light' ? 'rgba(37, 47, 110, 1)' : 'rgba(10, 20, 38, 1)', zIndex: 1000, position: 'fixed', width: '100%', top: 0, left: 0, right: 0, margin: 0 }}>
+      
+      <nav className="p-2 dark:bg-indigo-900 bg-indigo-700" role="navigation" style={{ zIndex: 1000, position: 'fixed', width: '100%', top: 0, left: 0, right: 0, margin: 0 }}>
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
             <div className="mr-3" id="navbar_logo" style={{ border: 0 }}>
@@ -22,7 +24,7 @@ const Navbar = () => {
                 <img className="rounded-full" width={32} src={logo.src} alt="logo" />
               </Link>
             </div>
-            <h1 className=" text-lg font-bold">ObservaTudo</h1>
+            <h1 className=" text-lg font-bold dark:text-white">ObservaTudo</h1>
           </div>
           <div className="ml-auto flex items-center">
             <SignInButton />

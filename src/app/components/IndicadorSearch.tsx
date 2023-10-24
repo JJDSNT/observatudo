@@ -3,7 +3,7 @@ import React, { useState, useEffect, ChangeEvent } from 'react';
 import httpClient from '@/app/utils/httpClient';
 import { Input } from '@nextui-org/react';
 
-import { SearchIcon } from '../components2/SearchIcon';
+import { SearchIcon } from '../components2/ui/SearchIcon';
 
 // Função para remover acentos e caracteres especiais
 const removeAccents = (str: string) => {

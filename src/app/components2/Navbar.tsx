@@ -6,9 +6,9 @@ import { useSidebarStore } from "@/app/stores/useSidebarStore";
 import { useTheme } from "next-themes";
 import { FaBars } from "react-icons/fa";
 import { UserDropdown } from "./user-dropdown";
-import { SearchIcon } from "./SearchIcon.jsx";
+import { SidebarSwitch } from "./sidebar-switch"
 import logo from "@/app/components/assets/logo.jpg";
-import { signIn, signOut } from "next-auth/react";
+
 
 
 export const NavbarWrapper = () => {
@@ -17,11 +17,10 @@ export const NavbarWrapper = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="p-2" style={{ backgroundColor: theme === 'light' ? 'rgba(37, 47, 110, 1)' : 'rgba(10, 20, 38, 1)', zIndex: 1000, position: 'fixed', width: '100%', top: 0, left: 0, right: 0, margin: 0 }}>
+    <div className="p-0" style={{ zIndex: 1000, position: 'fixed', width: '100%', top: 0, left: 0, right: 0, margin: 0 }}>
       <Navbar
-        isBordered
         role="navigation"
-        className="w-full"
+        className="w-full dark:bg-indigo-900 bg-indigo-50"
         classNames={{
           wrapper: "w-full max-w-full",
         }}
@@ -38,10 +37,13 @@ export const NavbarWrapper = () => {
                 />
               </Link>
             </div>
-            <h1 className="text-lg font-bold">ObservaTudo</h1>
+            <h1 className="text-lg font-bold dark:text-white">ObservaTudo</h1>
           </div>
         </NavbarBrand>
         <NavbarContent justify="end">
+          <NavbarItem>
+            <SidebarSwitch />
+          </NavbarItem>
           <NavbarItem>
             <UserDropdown />
           </NavbarItem>
