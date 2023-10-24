@@ -62,6 +62,7 @@ const Aside = () => {
           <Menu>
             <ThemeSelector />
           </Menu>
+          <pre>{JSON.stringify(session?.user.role)}</pre>
           <Menu>
             {session && session.user.role === 'admin' && ( 
               <MenuItem icon={<FaCogs />} component={<Link href="/admin" />}> Admin</MenuItem>

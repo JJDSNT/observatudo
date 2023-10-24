@@ -1,5 +1,5 @@
-import IndicadorController from "@/app/controllers/IndicadorController";
 import { Container } from "typedi";
+import IndicadorController from "@/app/controllers/IndicadorController";
 
 export async function GET() {
   try {

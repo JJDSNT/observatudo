@@ -10,6 +10,7 @@ import {
   Link,
   NavbarItem,
 } from '@nextui-org/react';
+import { FaUser } from 'react-icons/fa';
 
 export const UserDropdown = () => {
   const { data: session } = useSession();
@@ -30,7 +31,7 @@ export const UserDropdown = () => {
   if (!session) {
     return (
       <Button onPress={handleSignIn} color="primary" variant="flat">
-        SignIn
+        Entrar
       </Button>
     );
   }
@@ -40,6 +41,7 @@ export const UserDropdown = () => {
       <NavbarItem>
         <DropdownTrigger>
           <Avatar
+            icon={<FaUser />}
             as="button"
             color="secondary"
             size="md"
