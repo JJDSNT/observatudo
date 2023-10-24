@@ -1,23 +1,21 @@
 "use client";
 // https://github.com/azouaoui-med/react-pro-sidebar/issues/175
 // https://github.com/azouaoui-med/react-pro-sidebar/blob/master/CHANGELOG.md
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Sidebar, Menu, MenuItem, sidebarClasses } from 'react-pro-sidebar';
-import { FaCogs, FaLandmark, FaArrowsAltH, FaGithub, FaChartBar, FaGlobeAmericas, FaHeartbeat, FaHome, FaList, FaMoneyBillWave, FaQuestion, FaUserGraduate, FaShieldAlt, FaCentercode } from 'react-icons/fa';
+import { FaLandmark, FaArrowsAltH, FaChartBar, FaGlobeAmericas, FaHeartbeat, FaHome, FaList, FaMoneyBillWave, FaQuestion, FaUserGraduate, FaShieldAlt, FaCentercode } from 'react-icons/fa';
 import { useSidebarStore } from '@/app/stores/useSidebarStore';
 import { useInfoStore } from '@/app/stores/useInfoStore';
 import sidebarBg from './assets/bg.jpg';
-import { useSession } from 'next-auth/react';
 import ThemeSelector from './ThemeSelector';
+
 
 
 const Aside = () => {
   const { setEixo } = useInfoStore();
   const { handleCollapsedChange, collapsed, handleBackdropClick, toggled, setActivePage } = useSidebarStore();
-
-  const { data: session } = useSession();
 
   const handleMenuItemClick = (item: string | number): void => {
     if (typeof item === 'number') {
@@ -62,11 +60,7 @@ const Aside = () => {
           <Menu>
             <ThemeSelector />
           </Menu>
-          <pre>{JSON.stringify(session?.user.role)}</pre>
           <Menu>
-            {session && session.user.role === 'admin' && ( 
-              <MenuItem icon={<FaCogs />} component={<Link href="/admin" />}> Admin</MenuItem>
-            )}
             <MenuItem icon={<FaArrowsAltH />} onClick={() => handleCollapsedChange()}> Menu</MenuItem>
           </Menu>
           <Menu>

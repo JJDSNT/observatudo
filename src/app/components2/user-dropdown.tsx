@@ -35,7 +35,7 @@ export const UserDropdown = () => {
       </Button>
     );
   }
-  
+
   return (
     <Dropdown placement="bottom-end" trigger="press">
       <NavbarItem>
@@ -50,9 +50,6 @@ export const UserDropdown = () => {
         </DropdownTrigger>
       </NavbarItem>
       <DropdownMenu aria-label="User menu actions" onAction={(actionKey) => console.log({ actionKey })}>
-        <DropdownItem key="team_settings" textValue="Team Settings">
-          Team Settings
-        </DropdownItem>
         <DropdownItem
           key="profile"
           textValue="Profile"
@@ -64,10 +61,15 @@ export const UserDropdown = () => {
         <DropdownItem key="settings" textValue="Settings">
           <Link href="/profile">Profile</Link>
         </DropdownItem>
+        {session && session.user.role === 'admin' ? (
+          <DropdownItem key="admin_settings" textValue="Admin Settings">
+            <Link href="/admin">Admin</Link>
+          </DropdownItem>
+        ) : <DropdownItem key="empty" textValue="" /> }
         <DropdownItem key="configurations" textValue="Configurations">
           Configurations
         </DropdownItem>
-        <DropdownItem  key="logout" textValue="Sign Out" color="danger" className="text-danger">
+        <DropdownItem key="logout" textValue="Sign Out" color="danger" className="text-danger">
           <Button onPress={handleSignOut}>
             <span>Sair</span>
           </Button>
