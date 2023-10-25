@@ -45,7 +45,7 @@ export const options: DataSourceOptions = {
     connectString: process.env.TYPEORM_CONNECTSTRING,
     logging: false,
     logger: 'advanced-console',
-    synchronize: true,
+    synchronize: false,
     entities: [Cidade, Eixo, EixoPadrao, EixoUsuario, Estado, Fonte, Indicador, Localidade, Pais, Usuario, ValorIndicador],
 }
 

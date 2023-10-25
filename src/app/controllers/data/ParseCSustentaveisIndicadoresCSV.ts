@@ -1,4 +1,4 @@
-'use server'
+
 //https://github.com/vercel/next.js/discussions/48324
 //https://dev.to/zhnedyalkow/the-easiest-way-to-patch-your-npm-package-
 
@@ -37,6 +37,8 @@ export async function populateIndicadoresDatabase(): Promise<void> {
             console.error(`### POPULATING INDICADORES: Data Source initialization error`, err);
         }
     }
+
+    AppDataSource.manager.save(fonte);
 
     if (jsonDataIndicadores) {
         // Create an empty array to store unique indicators

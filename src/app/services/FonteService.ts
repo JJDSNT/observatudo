@@ -22,29 +22,9 @@ export class FonteService {
   constructor() { }
 
   async getFontes(): Promise<Fonte[]> {
-    return this.fonteRepository.find();
-  }
-/*
-  async getEixosPadrao(): Promise<EixoPadrao[]> {
-    return this.eixoPadraoRepository.find({
-      relations: ['indicador','eixo']
+    return this.fonteRepository.find({
+      relations: ['indicadores']
     });
   }
 
-  async teste(): Promise<Eixo[]> {
-    return this.eixoRepository.find({
-      relations: ['eixoPadrao', 'eixoPadrao.indicador','eixoPadrao.indicador.valoresIndicador']
-    });
-  }
-
-
-  async getEixosComIndicadores(): Promise<Eixo[]> {
-    const eixos = await this.eixoRepository.find({
-      relations: ['indicadores', "indicadores.valoresIndicador", "indicadores.valoresIndicador.localidade"] 
-      //, 'indicadoresPadrao', 'indicadoresUsuario'
-    });
-  
-    return eixos;
-  }
-*/
 }  

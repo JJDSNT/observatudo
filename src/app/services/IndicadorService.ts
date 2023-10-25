@@ -3,6 +3,7 @@ import { In, Repository } from 'typeorm';
 import { Indicador } from "@/app/models/Indicador";
 import { IndicadorRepository } from "@/app/repositories/IndicadorRepository"
 import { AppDataSource } from '../infra/database';
+import { Fonte } from '../models/Fonte';
 
 if (!AppDataSource.isInitialized) {
   try {
@@ -36,6 +37,21 @@ export class IndicadorService {
     return indicador;
   }
 
+  async updateIndicadorWithFont(indicador: Indicador, fonte: Fonte): Promise<Indicador | null> {
+  AppDataSource.manager.save(fonte);
+  /*
+    try {
+      indicador.fonte = fonte;
+      console.log(JSON.stringify(indicador)+ ' e '+JSON.stringify(fonte))
+      const updatedIndicador = await this.indicadorRepository.save(indicador);
+      return updatedIndicador;
+    } catch (error) {
+      console.error(`### Update Indicador with Font: Failed to update indicador with font`, error);
+      return null;
+    }
+    */
+   return null
+  }
 
   /*
 
@@ -77,27 +93,7 @@ export class IndicadorService {
       throw error;
     }
   }
-  
-    async buscarIndicadoresPorEixo(eixoId: number): Promise<Indicador[]> {
-      return await this.indicadorRepository.createQueryBuilder("indicador")
-        .leftJoin("indicador.eixos", "eixo")
-        .where("eixo.id = :eixoId", { eixoId })
-        .getMany();
-    }
-  
-    async listarIndicadoresAgrupadosPorEixo() {
-      const indicadores = await this.indicadorRepository
-        .createQueryBuilder('indicador')
-        .leftJoinAndSelect('indicador.eixo', 'eixo')
-        .select('eixo.nome', 'nomeEixo')
-        .addSelect('COUNT(indicador.id)', 'totalIndicadores')
-        .groupBy('eixo.nome')
-        .getRawMany();
     
-      return indicadores;
-    }
-  
-  
   
   async buscarIndicadoresComValoresPorEixo(localidadeId: number): Promise<any[]> {
     return await this.indicadorRepository.createQueryBuilder("indicador")

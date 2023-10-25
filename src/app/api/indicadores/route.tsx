@@ -4,6 +4,7 @@ import IndicadorController from "@/app/controllers/IndicadorController";
 export async function GET() {
   try {
     const indicadorController = Container.get(IndicadorController);
+    console.log('teste');
     const indicadores = await indicadorController.buscarTodosIndicadores();
     console.log('indicador final')
     return Response.json({ indicadores });

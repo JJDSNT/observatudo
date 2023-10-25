@@ -59,4 +59,18 @@ export async function addFonte(): Promise<void> {
         }
     }
 
+
+    for (const indicador of indicatorsToUpdate) {
+        try {
+            const existingIndicador = await indicadorService.buscarIndicadorPorId(parseInt(indicador.codigo_indicador));
+            if (existingIndicador) {
+                existingIndicador.fonte = fonte; // atribuir a fonte ao indicador
+                await indicadorService.updateIndicadorWithFont(existingIndicador,fonte); // atualizar o indicador com a fonte
+            }
+        } catch (error) {
+            console.error(`### Add Indicador font: Failed to add font to indicador ${indicador.codigo_indicador}`, error);
+        }
+    }
+
+
 }
