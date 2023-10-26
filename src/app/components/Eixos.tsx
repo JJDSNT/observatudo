@@ -57,7 +57,6 @@ const Eixos: React.FC = () => {
   };
 
   return (
-    <div className='hidden md:block'>
       <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
         {eixos.map((eixo, index) => (
           <button

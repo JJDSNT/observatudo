@@ -22,7 +22,11 @@ const Dashboard = () => {
                 </div>
             </div>
             <hr />
+            <>
+            <div className='hidden md:block'>
             <Eixos />
+            </div>
+            </>
             <MetricsCards />
         </div>
     );
