@@ -43,6 +43,7 @@ const nextConfig = {
   swcMinify: false,
   reactStrictMode: true,
   staticPageGenerationTimeout: 200,
+  output: "standalone",
   compiler: {
 //    removeConsole: process.env.NODE_ENV !== 'development',
   },
