@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect, ChangeEvent } from 'react';
-import httpClient from '@/app/utils/httpClient';
+import httpClient, { useFetch } from '@/app/utils/httpClient';
 import { Input } from '@nextui-org/react';
 
 import { SearchIcon } from '../components2/ui/SearchIcon';
@@ -21,7 +21,9 @@ interface Indicador {
 const IndicadorSearch = () => {
   const [indicadores, setIndicadores] = useState<Indicador[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
-
+  const { data } = useFetch('/api/indicadores');
+  /*
+  usar os parametros de isloading e error do swr
   const fetchData = async () => {
     try {
       const response = await httpClient.get('/api/indicadores');
@@ -31,10 +33,15 @@ const IndicadorSearch = () => {
       console.error('Houve um erro ao buscar os dados:', error);
     }
   };
-
+*/
   useEffect(() => {
-    fetchData();
-  }, []);
+    try{
+      console.log(data);
+      setIndicadores(data.indicadores);
+    } catch (error) {
+      console.error('Ocorreu um erro ao buscar os indicadores:', error);
+    }
+  }, [data]);
 
   const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(removeAccents(event.target.value.toLowerCase()));
@@ -43,6 +50,11 @@ const IndicadorSearch = () => {
   const filteredIndicadores = indicadores ? indicadores.filter((indicador) =>
     removeAccents(indicador.nome.toLowerCase()).includes(searchTerm)
   ) : [];
+
+  if (indicadores.length === 0) {
+    return <div>Carregando...</div>;
+  }
+
 
   return (
     <div className='flex items-start rounded-3xl border-8 border-red-500 justify-center min-h-screen mt-0'>
