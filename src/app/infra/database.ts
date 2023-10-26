@@ -55,7 +55,7 @@ export const AppDataSource = new DataSource({
     ...options
 });
 
-export const initializeDatabase = async (logCodePlace: string): Promise<void> => {
+export const initializeDatabase = async (logCodePlace = 'falta passa o argumento'): Promise<void> => {
     if (!AppDataSource.isInitialized) {
         try {
             await AppDataSource.initialize();
