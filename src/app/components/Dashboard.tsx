@@ -16,11 +16,11 @@ const Dashboard = () => {
                     <DropdownCombo />
                 </div>
             </header>
-            <div className='md:hidden'>
+            <div>
                 <EixoDropdown />
             </div>
             <hr />
-            <div className='hidden md:block'>
+            <div>
                 <Eixos />
             </div>
 
