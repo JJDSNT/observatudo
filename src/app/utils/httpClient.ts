@@ -1,3 +1,4 @@
+//https://blog.rocketseat.com.br/react-hook-swr-melhor-ux-no-consumo-de-api-no-front-end-react/
 import axios from 'axios';
 import useSWR from 'swr';
 
@@ -10,8 +11,9 @@ const httpClient = axios.create({
   },
 });
 
-export function useFetch<Data = any, Error = any, isLoading = any>(url: string) {
-  const { data, error, isLoading } = useSWR<Data, Error>(url, async (url: string) => {
+//usar os parametros de isloading e error do swr
+export function useFetch<Data = any, Error = any>(url: string) {
+  const { data, error } = useSWR<Data, Error>(url, async (url: string) => {
     const response = await httpClient.get(url);
     return response.data;
   })
@@ -19,7 +21,6 @@ export function useFetch<Data = any, Error = any, isLoading = any>(url: string) 
   return { data, error }
 }
 
-//usar os parametros de isloading e error do swr
 
 httpClient.interceptors.response.use(
     response => response,
