@@ -12,7 +12,7 @@ const httpClient = axios.create({
 });
 
 //usar os parametros de isloading e error do swr
-export function useFetch<Data = any, Error = any>(url: string) {
+/*export function useFetch<Data = any, Error = any>(url: string) {
   const { data, error } = useSWR<Data, Error>(url, async (url: string) => {
     const response = await httpClient.get(url);
     return response.data;
@@ -20,7 +20,7 @@ export function useFetch<Data = any, Error = any>(url: string) {
 
   return { data, error }
 }
-
+*/
 
 httpClient.interceptors.response.use(
     response => response,

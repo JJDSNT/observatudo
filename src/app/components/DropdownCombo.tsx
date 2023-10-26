@@ -1,7 +1,7 @@
-'use client'
 import React, { useState, useEffect } from 'react';
-import httpClient, { useFetch } from '@/app/utils/httpClient';
+import httpClient from '@/app/utils/httpClient';
 import { useInfoStore } from '@/app/stores/useInfoStore';
+
 
 interface Estado {
   codigo: number;
@@ -21,31 +21,28 @@ interface Estado {
 const DropdownCombo: React.FC = () => {
   const [estados, setEstados] = useState<Estado[]>([]);
   const { estadoSelecionado, cidadeSelecionada, setEstado, setCidade } = useInfoStore();
-  const { data } = useFetch('/api/localidades');
-
-//olhar preload?
-//https://swr.vercel.app/docs/prefetching
-//https://blog.rocketseat.com.br/react-hook-swr-melhor-ux-no-consumo-de-api-no-front-end-react/
-//olhar usememo
-//https://stackoverflow.com/questions/66640405/too-many-re-renders-when-setting-state-useswr
 
   useEffect(() => {
-    try {
-      //const data = response.data;
-      //console.log(data);
-      if (data && data.estados) {
-        const estadoSelecionado = data.estados[0] ? data.estados[0].estado : null;
-        const cidades = estadoSelecionado ? estadoSelecionado.cidades : [];
-  
-        setEstados(data.estados);
-        setEstado(estadoSelecionado ? estadoSelecionado.codigo : null);
-        setCidade(cidades[0] ? cidades[0].codigo : null);
+    const fetchEstadosECidades = async () => {
+      try {
+        const response = await httpClient.get('/api/localidades');
+        const data = response.data;
+
+        if (data && data.estados) {
+          const estadoSelecionado = data.estados[0] ? data.estados[0].estado : null;
+          const cidades = estadoSelecionado ? estadoSelecionado.cidades : [];
+
+          setEstados(data.estados);
+          setEstado(estadoSelecionado ? estadoSelecionado.codigo : null);
+          setCidade(cidades[0] ? cidades[0].codigo : null);
+        }
+      } catch (error) {
+        console.error('Ocorreu um erro ao buscar os estados e cidades:', error);
       }
-    } catch (error) {
-      console.error('Ocorreu um erro ao buscar os estados e cidades:', error);
-    }
-  
-  }, [data]);
+    };
+
+    fetchEstadosECidades();
+  }, []);
 
   const handleEstadoChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const estadoId = parseInt(event.target.value);
