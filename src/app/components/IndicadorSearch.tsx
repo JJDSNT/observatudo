@@ -21,7 +21,7 @@ interface Indicador {
 const IndicadorSearch = () => {
   const [indicadores, setIndicadores] = useState<Indicador[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const { data } = useFetch('/api/indicadores');
+  //const { data } = useFetch('/api/indicadores');
   /*
   usar os parametros de isloading e error do swr
   const fetchData = async () => {
@@ -34,14 +34,23 @@ const IndicadorSearch = () => {
     }
   };
 */
-  useEffect(() => {
-    try{
-      console.log(data);
-      setIndicadores(data.indicadores);
+const IndicadorSearch = () => {
+  const [indicadores, setIndicadores] = useState<Indicador[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const fetchData = async () => {
+    try {
+      const response = await httpClient.get('/api/indicadores');
+      console.log('sucesso')
+      setIndicadores(response.data.indicadores);
     } catch (error) {
-      console.error('Ocorreu um erro ao buscar os indicadores:', error);
+      console.error('Houve um erro ao buscar os dados:', error);
     }
-  }, [data]);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(removeAccents(event.target.value.toLowerCase()));
