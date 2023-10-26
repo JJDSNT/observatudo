@@ -9,23 +9,18 @@ const Dashboard = () => {
     const { estadoSelecionado, cidadeSelecionada, eixoSelecionado, setEstado, setCidade, setEixo } = useInfoStore();
 
     return (
-        <>
+        <div className="container mx-auto">
             <EixoButton />
             <header className="bg-gray-200 p-4 flex rounded-lg">
                 <div style={{ maxWidth: '100%' }} >
                     <DropdownCombo />
                 </div>
             </header>
-            <div className='md:hidden'>
                 <EixoDropdown />
-            </div>
             <hr />
-            <div className='hidden md:block'>
                 <Eixos />
-            </div>
-
             <MetricsCards />
-        </>
+        </div>
     );
 };
 

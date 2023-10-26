@@ -1,13 +1,13 @@
 'use client'
 
-import Main from "./components/Main";
+import Main from "./components/Dashboard";
 
-const Home = () => {
+const Dashboard = () => {
     return (
       <div className="container mx-auto p-4">
-        {typeof window !== 'undefined' && <Main />}
+        {typeof window !== 'undefined' && <Dashboard />}
       </div>
     );
   };
   
-  export default Home;
+  export default Dashboard;

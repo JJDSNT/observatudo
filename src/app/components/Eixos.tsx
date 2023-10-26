@@ -57,17 +57,19 @@ const Eixos: React.FC = () => {
   };
 
   return (
-    <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-      {eixos.map((eixo, index) => (
-        <button
-          key={index}
-          type="button"
-          className={`${eixo.cor} text-black border rounded-lg p-4 flex flex-col items-center justify-center space-y-2`}
-          onClick={() => handleEixoSelecionado(eixo.id)}
-        >
-          {renderIcon(eixo.icon)}<span>{eixo.nomeLegivel}</span>
-        </button>
-      ))}
+    <div className='hidden md:block'>
+      <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+        {eixos.map((eixo, index) => (
+          <button
+            key={index}
+            type="button"
+            className={`${eixo.cor} text-black border rounded-lg p-4 flex flex-col items-center justify-center space-y-2`}
+            onClick={() => handleEixoSelecionado(eixo.id)}
+          >
+            {renderIcon(eixo.icon)}<span>{eixo.nomeLegivel}</span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

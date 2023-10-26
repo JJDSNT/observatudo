@@ -36,26 +36,28 @@ const EixoDropdown: React.FC = () => {
     };
 
     return (
-        <div className="flex">
-            <div className="mr-4">
-                <label htmlFor="eixo" className="block mb-1 text-sm font-medium text-gray-700">
-                    Eixo
-                </label>
-                <select
-                    id="eixo"
-                    name="eixo"
-                    className="block min-w-min p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                    style={{ color: 'black' }}
-                    value={selectedEixo || ''}
-                    onChange={handleEixoChange}
-                >
-                    <option value="">Selecione um eixo</option>
-                    {eixos.map((eixo) => (
-                        <option key={eixo.id} value={eixo.id}>
-                            {eixo.nome}
-                        </option>
-                    ))}
-                </select>
+        <div className='md:hidden'>
+            <div className="flex">
+                <div className="mr-4">
+                    <label htmlFor="eixo" className="block mb-1 text-sm font-medium text-gray-700">
+                        Eixo
+                    </label>
+                    <select
+                        id="eixo"
+                        name="eixo"
+                        className="block min-w-min p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        style={{ color: 'black' }}
+                        value={selectedEixo || ''}
+                        onChange={handleEixoChange}
+                    >
+                        <option value="">Selecione um eixo</option>
+                        {eixos.map((eixo) => (
+                            <option key={eixo.id} value={eixo.id}>
+                                {eixo.nome}
+                            </option>
+                        ))}
+                    </select>
+                </div>
             </div>
         </div>
     );
