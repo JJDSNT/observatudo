@@ -6,10 +6,10 @@ export async function GET() {
   initializeDatabase()//passar parametro de onde esta sendo chamado para log do erro
 
   try {
-    const fontes = await AppDataSource.manager.getRepository(Indicador).find({
+    const indicadores = await AppDataSource.manager.getRepository(Indicador).find({
       //relations:['fonte']
     });
-    return Response.json({ fontes });
+    return Response.json({ indicadores });
   } catch (error: unknown) {
     if (error instanceof Error) {
       return Response.json({ message: error.message }, { status: 500 });
