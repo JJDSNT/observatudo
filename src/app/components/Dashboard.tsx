@@ -17,11 +17,14 @@ const Dashboard = () => {
                 </div>
             </header>
             <>
+            testando1
                 <div className='md:hidden'>
                     <EixoDropdown />
                 </div>
-            </>
+                </>
             <hr />
+            
+            testando2
             <>
             <div className='hidden md:block'>
             <Eixos />

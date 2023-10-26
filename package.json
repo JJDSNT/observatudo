@@ -47,7 +47,7 @@
     "patch-package": "^8.0.0",
     "postcss": "latest",
     "postinstall-postinstall": "^2.1.0",
-    "tailwindcss": "latest",
+    "tailwindcss": "^3.3.5",
     "typescript": "latest"
   }
 }
