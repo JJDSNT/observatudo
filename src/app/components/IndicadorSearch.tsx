@@ -18,7 +18,7 @@ interface Indicador {
   email: string | null;
 }
 
-const IndicadorSearch = () => {
+/*const IndicadorSearch = () => {
   const [indicadores, setIndicadores] = useState<Indicador[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   //const { data } = useFetch('/api/indicadores');
@@ -34,7 +34,7 @@ const IndicadorSearch = () => {
     }
   };
 */
-const IndicadorSearch = () => {
+ const IndicadorSearch = () => {
   const [indicadores, setIndicadores] = useState<Indicador[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -99,6 +99,6 @@ const IndicadorSearch = () => {
     </div>
   );
 };
-};
+
 
 export default IndicadorSearch;
