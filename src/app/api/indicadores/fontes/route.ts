@@ -1,15 +1,14 @@
-import { Container } from 'typedi';
-import { FonteController } from "@/app/controllers/FonteController";
-
-process.on('unhandledRejection', (reason, promise) => {
-  console.error('Unhandled Promise Rejection:', reason);
-  // Faça o que for necessário com a promessa não tratada, como registrar ou realizar alguma ação específica.
-});
+import { AppDataSource, initializeDatabase } from '@/app/infra/database';
+import { Fonte } from '@/app/models/Fonte';
 
 export async function GET() {
+
+  initializeDatabase()//passar parametro de onde esta sendo chamado para log do erro
+
   try {
-    const fonteController = Container.get(FonteController);
-    const fontes = await fonteController.getFontes();
+    const fontes = await AppDataSource.manager.getRepository(Fonte).find({
+      relations: ['indicadores']
+    });
     return Response.json({ fontes });
   } catch (error: unknown) {
     if (error instanceof Error) {
