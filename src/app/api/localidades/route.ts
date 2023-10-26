@@ -3,7 +3,7 @@ import { Estado } from '@/app/models/Estado';
 
 export async function GET() {
 
-  initializeDatabase()//passar parametro de onde esta sendo chamado para log do erro
+  initializeDatabase('/api/localidades')//passar parametro de onde esta sendo chamado para log do erro
 
   try {
     const estados = await AppDataSource.manager.getRepository(Estado).find({

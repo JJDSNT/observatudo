@@ -3,7 +3,7 @@ import { Indicador } from '@/app/models/Indicador';
 
 export async function GET() {
 
-  initializeDatabase('api/indicadores')//passar parametro de onde esta sendo chamado para log do erro
+  initializeDatabase('/api/indicadores')
 
   try {
     const indicadores = await AppDataSource.manager.getRepository(Indicador).find({
