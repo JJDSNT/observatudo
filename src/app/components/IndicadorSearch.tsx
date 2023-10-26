@@ -99,5 +99,6 @@ const IndicadorSearch = () => {
     </div>
   );
 };
+};
 
 export default IndicadorSearch;
