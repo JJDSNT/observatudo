@@ -69,7 +69,6 @@ const Eixos: React.FC = () => {
           </button>
         ))}
       </div>
-    </div>
   );
 };
 
