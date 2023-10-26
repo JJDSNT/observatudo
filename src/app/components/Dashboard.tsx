@@ -16,21 +16,8 @@ const Dashboard = () => {
                     <DropdownCombo />
                 </div>
             </header>
-            <div className='md:hidden'>
-            <div className='container'>
-                testando1
-                
-                    <EixoDropdown />
-                </div>
-            </div>
+            <EixoDropdown />
             <hr />
-            <div className='hidden md:block'>
-            testando2
-            <div className='container'>
-                
-                    <Eixos />
-                </div>
-            </div>
             <MetricsCards />
         </div>
     );
